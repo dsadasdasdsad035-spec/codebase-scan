@@ -1,0 +1,5719 @@
+[
+  {
+    "name": "BrandForm",
+    "file": "src/views/mall/product/brand/BrandForm.vue",
+    "native_kind": "component",
+    "semantic_kind": "page",
+    "attributes": [],
+    "behaviors": [
+      "component: BrandForm"
+    ],
+    "constraints": [],
+    "events": [],
+    "source_nodes": [
+      "component:2d7a9b88d8c6b9d362467ec2d6beba0e"
+    ]
+  },
+  {
+    "name": "submitForm",
+    "file": "src/views/mall/product/brand/BrandForm.vue",
+    "native_kind": "function",
+    "semantic_kind": "function",
+    "attributes": [
+      "(())"
+    ],
+    "behaviors": [
+      "在 BrandForm.vue 中定义的内部函数"
+    ],
+    "constraints": [
+      "作用域: src/views/mall/product/brand/BrandForm.vue"
+    ],
+    "events": [],
+    "source_nodes": [
+      "function:0ba0f3cd489315ec2a05e20e44f8f415"
+    ]
+  },
+  {
+    "name": "resetForm",
+    "file": "src/views/mall/product/brand/BrandForm.vue",
+    "native_kind": "function",
+    "semantic_kind": "function",
+    "attributes": [
+      "(())"
+    ],
+    "behaviors": [
+      "在 BrandForm.vue 中定义的内部函数"
+    ],
+    "constraints": [
+      "作用域: src/views/mall/product/brand/BrandForm.vue"
+    ],
+    "events": [],
+    "source_nodes": [
+      "function:2ff4a2531cd1d9710f8ba8dbe26124c8"
+    ]
+  },
+  {
+    "name": "open",
+    "file": "src/views/mall/product/brand/BrandForm.vue",
+    "native_kind": "function",
+    "semantic_kind": "function",
+    "attributes": [
+      "((type: string, id?: number))"
+    ],
+    "behaviors": [
+      "在 BrandForm.vue 中定义的内部函数"
+    ],
+    "constraints": [
+      "作用域: src/views/mall/product/brand/BrandForm.vue"
+    ],
+    "events": [],
+    "source_nodes": [
+      "function:e181605e242ecbff487c7a4385925e83"
+    ]
+  },
+  {
+    "name": "index",
+    "file": "src/views/mall/product/brand/index.vue",
+    "native_kind": "component",
+    "semantic_kind": "page",
+    "attributes": [
+      "name (string): 搜索条件 - 品牌名称",
+      "status (number): 搜索条件 - 状态 0=禁用 1=启用",
+      "createTime (string[]): 搜索条件 - 创建时间区间",
+      "pageNo/pageSize: 分页参数",
+      "loading/total/list: 列表状态与数据"
+    ],
+    "behaviors": [
+      "提供按品牌名称、状态、创建时间区间查询品牌列表",
+      "提供新增、编辑、删除品牌操作",
+      "展示品牌图片、状态、排序等属性",
+      "维护权限点 product:brand:create/update/delete"
+    ],
+    "constraints": [
+      "需要 product:* 权限点"
+    ],
+    "events": [
+      "@success: 表单提交成功后通知父组件刷新"
+    ],
+    "source_nodes": [
+      "component:fbb82fd3451fdc7dcf941a9a95fdcb8b"
+    ],
+    "interactions": [
+      {
+        "element": "搜索按钮",
+        "user_action": "点击搜索",
+        "api_call": "getBrandParam(queryParams)",
+        "success_effect": "刷新品牌列表",
+        "failure_effect": "显示加载失败"
+      },
+      {
+        "element": "重置按钮",
+        "user_action": "点击重置",
+        "api_call": "无（仅清空表单）",
+        "success_effect": "清空搜索条件并查询",
+        "failure_effect": "无"
+      },
+      {
+        "element": "新增按钮",
+        "user_action": "点击新增",
+        "api_call": "openForm('create') 触发 BrandForm 弹窗",
+        "success_effect": "弹出新增品牌表单",
+        "failure_effect": "权限不足时按钮隐藏"
+      },
+      {
+        "element": "编辑按钮",
+        "user_action": "点击行内编辑",
+        "api_call": "openForm('update', id) → getBrand(id)",
+        "success_effect": "弹出回显数据的编辑表单",
+        "failure_effect": "权限不足时按钮隐藏"
+      },
+      {
+        "element": "删除按钮",
+        "user_action": "点击行内删除",
+        "api_call": "deleteBrand(id)",
+        "success_effect": "提示删除成功并刷新列表",
+        "failure_effect": "用户取消二次确认时不执行"
+      },
+      {
+        "element": "分页",
+        "user_action": "切换页码/页大小",
+        "api_call": "getBrandParam",
+        "success_effect": "加载对应页数据",
+        "failure_effect": "无"
+      }
+    ]
+  },
+  {
+    "name": "resetQuery",
+    "file": "src/views/mall/product/brand/index.vue",
+    "native_kind": "function",
+    "semantic_kind": "function",
+    "attributes": [
+      "name (string): 搜索条件 - 品牌名称",
+      "status (number): 搜索条件 - 状态 0=禁用 1=启用",
+      "createTime (string[]): 搜索条件 - 创建时间区间",
+      "pageNo/pageSize: 分页参数",
+      "loading/total/list: 列表状态与数据"
+    ],
+    "behaviors": [
+      "提供按品牌名称、状态、创建时间区间查询品牌列表",
+      "提供新增、编辑、删除品牌操作",
+      "展示品牌图片、状态、排序等属性",
+      "维护权限点 product:brand:create/update/delete"
+    ],
+    "constraints": [
+      "需要 product:* 权限点"
+    ],
+    "events": [
+      "@success: 表单提交成功后通知父组件刷新"
+    ],
+    "source_nodes": [
+      "function:1b470cebdbb9c91f91e22c51714b130d"
+    ],
+    "interactions": [
+      {
+        "element": "搜索按钮",
+        "user_action": "点击搜索",
+        "api_call": "getBrandParam(queryParams)",
+        "success_effect": "刷新品牌列表",
+        "failure_effect": "显示加载失败"
+      },
+      {
+        "element": "重置按钮",
+        "user_action": "点击重置",
+        "api_call": "无（仅清空表单）",
+        "success_effect": "清空搜索条件并查询",
+        "failure_effect": "无"
+      },
+      {
+        "element": "新增按钮",
+        "user_action": "点击新增",
+        "api_call": "openForm('create') 触发 BrandForm 弹窗",
+        "success_effect": "弹出新增品牌表单",
+        "failure_effect": "权限不足时按钮隐藏"
+      },
+      {
+        "element": "编辑按钮",
+        "user_action": "点击行内编辑",
+        "api_call": "openForm('update', id) → getBrand(id)",
+        "success_effect": "弹出回显数据的编辑表单",
+        "failure_effect": "权限不足时按钮隐藏"
+      },
+      {
+        "element": "删除按钮",
+        "user_action": "点击行内删除",
+        "api_call": "deleteBrand(id)",
+        "success_effect": "提示删除成功并刷新列表",
+        "failure_effect": "用户取消二次确认时不执行"
+      },
+      {
+        "element": "分页",
+        "user_action": "切换页码/页大小",
+        "api_call": "getBrandParam",
+        "success_effect": "加载对应页数据",
+        "failure_effect": "无"
+      }
+    ]
+  },
+  {
+    "name": "handleDelete",
+    "file": "src/views/mall/product/brand/index.vue",
+    "native_kind": "function",
+    "semantic_kind": "function",
+    "attributes": [
+      "name (string): 搜索条件 - 品牌名称",
+      "status (number): 搜索条件 - 状态 0=禁用 1=启用",
+      "createTime (string[]): 搜索条件 - 创建时间区间",
+      "pageNo/pageSize: 分页参数",
+      "loading/total/list: 列表状态与数据"
+    ],
+    "behaviors": [
+      "提供按品牌名称、状态、创建时间区间查询品牌列表",
+      "提供新增、编辑、删除品牌操作",
+      "展示品牌图片、状态、排序等属性",
+      "维护权限点 product:brand:create/update/delete"
+    ],
+    "constraints": [
+      "需要 product:* 权限点"
+    ],
+    "events": [
+      "@success: 表单提交成功后通知父组件刷新"
+    ],
+    "source_nodes": [
+      "function:983b518f40fda455789509dcb62ad231"
+    ],
+    "interactions": [
+      {
+        "element": "搜索按钮",
+        "user_action": "点击搜索",
+        "api_call": "getBrandParam(queryParams)",
+        "success_effect": "刷新品牌列表",
+        "failure_effect": "显示加载失败"
+      },
+      {
+        "element": "重置按钮",
+        "user_action": "点击重置",
+        "api_call": "无（仅清空表单）",
+        "success_effect": "清空搜索条件并查询",
+        "failure_effect": "无"
+      },
+      {
+        "element": "新增按钮",
+        "user_action": "点击新增",
+        "api_call": "openForm('create') 触发 BrandForm 弹窗",
+        "success_effect": "弹出新增品牌表单",
+        "failure_effect": "权限不足时按钮隐藏"
+      },
+      {
+        "element": "编辑按钮",
+        "user_action": "点击行内编辑",
+        "api_call": "openForm('update', id) → getBrand(id)",
+        "success_effect": "弹出回显数据的编辑表单",
+        "failure_effect": "权限不足时按钮隐藏"
+      },
+      {
+        "element": "删除按钮",
+        "user_action": "点击行内删除",
+        "api_call": "deleteBrand(id)",
+        "success_effect": "提示删除成功并刷新列表",
+        "failure_effect": "用户取消二次确认时不执行"
+      },
+      {
+        "element": "分页",
+        "user_action": "切换页码/页大小",
+        "api_call": "getBrandParam",
+        "success_effect": "加载对应页数据",
+        "failure_effect": "无"
+      }
+    ]
+  },
+  {
+    "name": "openForm",
+    "file": "src/views/mall/product/brand/index.vue",
+    "native_kind": "function",
+    "semantic_kind": "function",
+    "attributes": [
+      "name (string): 搜索条件 - 品牌名称",
+      "status (number): 搜索条件 - 状态 0=禁用 1=启用",
+      "createTime (string[]): 搜索条件 - 创建时间区间",
+      "pageNo/pageSize: 分页参数",
+      "loading/total/list: 列表状态与数据"
+    ],
+    "behaviors": [
+      "提供按品牌名称、状态、创建时间区间查询品牌列表",
+      "提供新增、编辑、删除品牌操作",
+      "展示品牌图片、状态、排序等属性",
+      "维护权限点 product:brand:create/update/delete"
+    ],
+    "constraints": [
+      "需要 product:* 权限点"
+    ],
+    "events": [
+      "@success: 表单提交成功后通知父组件刷新"
+    ],
+    "source_nodes": [
+      "function:9d410f93c4e3fb316471e4011bc33645"
+    ],
+    "interactions": [
+      {
+        "element": "搜索按钮",
+        "user_action": "点击搜索",
+        "api_call": "getBrandParam(queryParams)",
+        "success_effect": "刷新品牌列表",
+        "failure_effect": "显示加载失败"
+      },
+      {
+        "element": "重置按钮",
+        "user_action": "点击重置",
+        "api_call": "无（仅清空表单）",
+        "success_effect": "清空搜索条件并查询",
+        "failure_effect": "无"
+      },
+      {
+        "element": "新增按钮",
+        "user_action": "点击新增",
+        "api_call": "openForm('create') 触发 BrandForm 弹窗",
+        "success_effect": "弹出新增品牌表单",
+        "failure_effect": "权限不足时按钮隐藏"
+      },
+      {
+        "element": "编辑按钮",
+        "user_action": "点击行内编辑",
+        "api_call": "openForm('update', id) → getBrand(id)",
+        "success_effect": "弹出回显数据的编辑表单",
+        "failure_effect": "权限不足时按钮隐藏"
+      },
+      {
+        "element": "删除按钮",
+        "user_action": "点击行内删除",
+        "api_call": "deleteBrand(id)",
+        "success_effect": "提示删除成功并刷新列表",
+        "failure_effect": "用户取消二次确认时不执行"
+      },
+      {
+        "element": "分页",
+        "user_action": "切换页码/页大小",
+        "api_call": "getBrandParam",
+        "success_effect": "加载对应页数据",
+        "failure_effect": "无"
+      }
+    ]
+  },
+  {
+    "name": "getList",
+    "file": "src/views/mall/product/brand/index.vue",
+    "native_kind": "function",
+    "semantic_kind": "function",
+    "attributes": [
+      "name (string): 搜索条件 - 品牌名称",
+      "status (number): 搜索条件 - 状态 0=禁用 1=启用",
+      "createTime (string[]): 搜索条件 - 创建时间区间",
+      "pageNo/pageSize: 分页参数",
+      "loading/total/list: 列表状态与数据"
+    ],
+    "behaviors": [
+      "提供按品牌名称、状态、创建时间区间查询品牌列表",
+      "提供新增、编辑、删除品牌操作",
+      "展示品牌图片、状态、排序等属性",
+      "维护权限点 product:brand:create/update/delete"
+    ],
+    "constraints": [
+      "需要 product:* 权限点"
+    ],
+    "events": [
+      "@success: 表单提交成功后通知父组件刷新"
+    ],
+    "source_nodes": [
+      "function:a7b69ca7e3cedfd7627766502b02168b"
+    ],
+    "interactions": [
+      {
+        "element": "搜索按钮",
+        "user_action": "点击搜索",
+        "api_call": "getBrandParam(queryParams)",
+        "success_effect": "刷新品牌列表",
+        "failure_effect": "显示加载失败"
+      },
+      {
+        "element": "重置按钮",
+        "user_action": "点击重置",
+        "api_call": "无（仅清空表单）",
+        "success_effect": "清空搜索条件并查询",
+        "failure_effect": "无"
+      },
+      {
+        "element": "新增按钮",
+        "user_action": "点击新增",
+        "api_call": "openForm('create') 触发 BrandForm 弹窗",
+        "success_effect": "弹出新增品牌表单",
+        "failure_effect": "权限不足时按钮隐藏"
+      },
+      {
+        "element": "编辑按钮",
+        "user_action": "点击行内编辑",
+        "api_call": "openForm('update', id) → getBrand(id)",
+        "success_effect": "弹出回显数据的编辑表单",
+        "failure_effect": "权限不足时按钮隐藏"
+      },
+      {
+        "element": "删除按钮",
+        "user_action": "点击行内删除",
+        "api_call": "deleteBrand(id)",
+        "success_effect": "提示删除成功并刷新列表",
+        "failure_effect": "用户取消二次确认时不执行"
+      },
+      {
+        "element": "分页",
+        "user_action": "切换页码/页大小",
+        "api_call": "getBrandParam",
+        "success_effect": "加载对应页数据",
+        "failure_effect": "无"
+      }
+    ]
+  },
+  {
+    "name": "handleQuery",
+    "file": "src/views/mall/product/brand/index.vue",
+    "native_kind": "function",
+    "semantic_kind": "function",
+    "attributes": [
+      "name (string): 搜索条件 - 品牌名称",
+      "status (number): 搜索条件 - 状态 0=禁用 1=启用",
+      "createTime (string[]): 搜索条件 - 创建时间区间",
+      "pageNo/pageSize: 分页参数",
+      "loading/total/list: 列表状态与数据"
+    ],
+    "behaviors": [
+      "提供按品牌名称、状态、创建时间区间查询品牌列表",
+      "提供新增、编辑、删除品牌操作",
+      "展示品牌图片、状态、排序等属性",
+      "维护权限点 product:brand:create/update/delete"
+    ],
+    "constraints": [
+      "需要 product:* 权限点"
+    ],
+    "events": [
+      "@success: 表单提交成功后通知父组件刷新"
+    ],
+    "source_nodes": [
+      "function:fca2bb4e4ef22a93a183643ecf5f888d"
+    ],
+    "interactions": [
+      {
+        "element": "搜索按钮",
+        "user_action": "点击搜索",
+        "api_call": "getBrandParam(queryParams)",
+        "success_effect": "刷新品牌列表",
+        "failure_effect": "显示加载失败"
+      },
+      {
+        "element": "重置按钮",
+        "user_action": "点击重置",
+        "api_call": "无（仅清空表单）",
+        "success_effect": "清空搜索条件并查询",
+        "failure_effect": "无"
+      },
+      {
+        "element": "新增按钮",
+        "user_action": "点击新增",
+        "api_call": "openForm('create') 触发 BrandForm 弹窗",
+        "success_effect": "弹出新增品牌表单",
+        "failure_effect": "权限不足时按钮隐藏"
+      },
+      {
+        "element": "编辑按钮",
+        "user_action": "点击行内编辑",
+        "api_call": "openForm('update', id) → getBrand(id)",
+        "success_effect": "弹出回显数据的编辑表单",
+        "failure_effect": "权限不足时按钮隐藏"
+      },
+      {
+        "element": "删除按钮",
+        "user_action": "点击行内删除",
+        "api_call": "deleteBrand(id)",
+        "success_effect": "提示删除成功并刷新列表",
+        "failure_effect": "用户取消二次确认时不执行"
+      },
+      {
+        "element": "分页",
+        "user_action": "切换页码/页大小",
+        "api_call": "getBrandParam",
+        "success_effect": "加载对应页数据",
+        "failure_effect": "无"
+      }
+    ]
+  },
+  {
+    "name": "CategoryForm",
+    "file": "src/views/mall/product/category/CategoryForm.vue",
+    "native_kind": "component",
+    "semantic_kind": "page",
+    "attributes": [],
+    "behaviors": [
+      "component: CategoryForm"
+    ],
+    "constraints": [],
+    "events": [],
+    "source_nodes": [
+      "component:415071f3d41649815096ab65c9a139f3"
+    ]
+  },
+  {
+    "name": "submitForm",
+    "file": "src/views/mall/product/category/CategoryForm.vue",
+    "native_kind": "function",
+    "semantic_kind": "function",
+    "attributes": [
+      "(())"
+    ],
+    "behaviors": [
+      "在 CategoryForm.vue 中定义的内部函数"
+    ],
+    "constraints": [
+      "作用域: src/views/mall/product/category/CategoryForm.vue"
+    ],
+    "events": [],
+    "source_nodes": [
+      "function:8d8cc196b410ed153a72c934af1e4d12"
+    ]
+  },
+  {
+    "name": "open",
+    "file": "src/views/mall/product/category/CategoryForm.vue",
+    "native_kind": "function",
+    "semantic_kind": "function",
+    "attributes": [
+      "((type: string, id?: number))"
+    ],
+    "behaviors": [
+      "在 CategoryForm.vue 中定义的内部函数"
+    ],
+    "constraints": [
+      "作用域: src/views/mall/product/category/CategoryForm.vue"
+    ],
+    "events": [],
+    "source_nodes": [
+      "function:c0e495fbc0d04d15d0f8beb91ef364ad"
+    ]
+  },
+  {
+    "name": "resetForm",
+    "file": "src/views/mall/product/category/CategoryForm.vue",
+    "native_kind": "function",
+    "semantic_kind": "function",
+    "attributes": [
+      "(())"
+    ],
+    "behaviors": [
+      "在 CategoryForm.vue 中定义的内部函数"
+    ],
+    "constraints": [
+      "作用域: src/views/mall/product/category/CategoryForm.vue"
+    ],
+    "events": [],
+    "source_nodes": [
+      "function:d9b7876090da3f6ffede63067b77b3b2"
+    ]
+  },
+  {
+    "name": "ProductCategorySelect",
+    "file": "src/views/mall/product/category/components/ProductCategorySelect.vue",
+    "native_kind": "component",
+    "semantic_kind": "page",
+    "attributes": [
+      "modelValue: 选中的分类 ID（单/多）",
+      "multiple: 是否多选（默认 false）",
+      "parentId: 上级品类编号（默认 undefined）"
+    ],
+    "behaviors": [
+      "通过 el-tree-select 提供商品分类的树形单选/多选",
+      "挂载时通过 getCategoryList({parentId}) 加载分类树",
+      "通过 update:modelValue 事件回传选中值"
+    ],
+    "constraints": [
+      "需要传入 modelValue 作为绑定值",
+      "parentId 控制根节点范围"
+    ],
+    "events": [
+      "update:modelValue: 选择变化时回传分类 ID"
+    ],
+    "source_nodes": [
+      "component:90f10902441d322000edf9da69f88370"
+    ]
+  },
+  {
+    "name": "index",
+    "file": "src/views/mall/product/category/index.vue",
+    "native_kind": "component",
+    "semantic_kind": "page",
+    "attributes": [
+      "name (string): 搜索条件 - 分类名称",
+      "list (any[]): 树形分类列表",
+      "loading: 加载状态"
+    ],
+    "behaviors": [
+      "提供按分类名称查询分类树",
+      "提供新增、编辑、删除分类操作",
+      "支持查看某分类下的商品（跳转到 SPU 列表）",
+      "维护权限点 product:category:create/update/delete、product:spu:query"
+    ],
+    "constraints": [
+      "需要 product:* 权限点"
+    ],
+    "events": [
+      "@success: 表单提交成功后通知父组件刷新"
+    ],
+    "source_nodes": [
+      "component:f69675a209b3865375b7e42f60c85466"
+    ],
+    "interactions": [
+      {
+        "element": "搜索按钮",
+        "user_action": "点击搜索",
+        "api_call": "getCategoryList(queryParams)",
+        "success_effect": "刷新分类树",
+        "failure_effect": "无"
+      },
+      {
+        "element": "新增按钮",
+        "user_action": "点击新增",
+        "api_call": "openForm('create')",
+        "success_effect": "弹出新增分类表单",
+        "failure_effect": "权限不足时按钮隐藏"
+      },
+      {
+        "element": "编辑按钮",
+        "user_action": "点击行内编辑",
+        "api_call": "getCategory(id) + openForm('update', id)",
+        "success_effect": "弹出回显数据的编辑表单",
+        "failure_effect": "权限不足时按钮隐藏"
+      },
+      {
+        "element": "查看商品按钮",
+        "user_action": "点击二级分类行内'查看商品'",
+        "api_call": "router.push ProductSpu?categoryId=id",
+        "success_effect": "跳转到该分类下的 SPU 列表",
+        "failure_effect": "权限不足时按钮隐藏"
+      },
+      {
+        "element": "删除按钮",
+        "user_action": "点击行内删除",
+        "api_call": "deleteCategory(id)",
+        "success_effect": "提示删除成功并刷新",
+        "failure_effect": "用户取消二次确认时不执行"
+      }
+    ]
+  },
+  {
+    "name": "handleDelete",
+    "file": "src/views/mall/product/category/index.vue",
+    "native_kind": "function",
+    "semantic_kind": "function",
+    "attributes": [
+      "name (string): 搜索条件 - 分类名称",
+      "list (any[]): 树形分类列表",
+      "loading: 加载状态"
+    ],
+    "behaviors": [
+      "提供按分类名称查询分类树",
+      "提供新增、编辑、删除分类操作",
+      "支持查看某分类下的商品（跳转到 SPU 列表）",
+      "维护权限点 product:category:create/update/delete、product:spu:query"
+    ],
+    "constraints": [
+      "需要 product:* 权限点"
+    ],
+    "events": [
+      "@success: 表单提交成功后通知父组件刷新"
+    ],
+    "source_nodes": [
+      "function:1b078266e21d3e3326ce4fb91f2fa3eb"
+    ],
+    "interactions": [
+      {
+        "element": "搜索按钮",
+        "user_action": "点击搜索",
+        "api_call": "getCategoryList(queryParams)",
+        "success_effect": "刷新分类树",
+        "failure_effect": "无"
+      },
+      {
+        "element": "新增按钮",
+        "user_action": "点击新增",
+        "api_call": "openForm('create')",
+        "success_effect": "弹出新增分类表单",
+        "failure_effect": "权限不足时按钮隐藏"
+      },
+      {
+        "element": "编辑按钮",
+        "user_action": "点击行内编辑",
+        "api_call": "getCategory(id) + openForm('update', id)",
+        "success_effect": "弹出回显数据的编辑表单",
+        "failure_effect": "权限不足时按钮隐藏"
+      },
+      {
+        "element": "查看商品按钮",
+        "user_action": "点击二级分类行内'查看商品'",
+        "api_call": "router.push ProductSpu?categoryId=id",
+        "success_effect": "跳转到该分类下的 SPU 列表",
+        "failure_effect": "权限不足时按钮隐藏"
+      },
+      {
+        "element": "删除按钮",
+        "user_action": "点击行内删除",
+        "api_call": "deleteCategory(id)",
+        "success_effect": "提示删除成功并刷新",
+        "failure_effect": "用户取消二次确认时不执行"
+      }
+    ]
+  },
+  {
+    "name": "handleQuery",
+    "file": "src/views/mall/product/category/index.vue",
+    "native_kind": "function",
+    "semantic_kind": "function",
+    "attributes": [
+      "name (string): 搜索条件 - 分类名称",
+      "list (any[]): 树形分类列表",
+      "loading: 加载状态"
+    ],
+    "behaviors": [
+      "提供按分类名称查询分类树",
+      "提供新增、编辑、删除分类操作",
+      "支持查看某分类下的商品（跳转到 SPU 列表）",
+      "维护权限点 product:category:create/update/delete、product:spu:query"
+    ],
+    "constraints": [
+      "需要 product:* 权限点"
+    ],
+    "events": [
+      "@success: 表单提交成功后通知父组件刷新"
+    ],
+    "source_nodes": [
+      "function:33521b75b5cf86654f4e7e4cf9b6ef5a"
+    ],
+    "interactions": [
+      {
+        "element": "搜索按钮",
+        "user_action": "点击搜索",
+        "api_call": "getCategoryList(queryParams)",
+        "success_effect": "刷新分类树",
+        "failure_effect": "无"
+      },
+      {
+        "element": "新增按钮",
+        "user_action": "点击新增",
+        "api_call": "openForm('create')",
+        "success_effect": "弹出新增分类表单",
+        "failure_effect": "权限不足时按钮隐藏"
+      },
+      {
+        "element": "编辑按钮",
+        "user_action": "点击行内编辑",
+        "api_call": "getCategory(id) + openForm('update', id)",
+        "success_effect": "弹出回显数据的编辑表单",
+        "failure_effect": "权限不足时按钮隐藏"
+      },
+      {
+        "element": "查看商品按钮",
+        "user_action": "点击二级分类行内'查看商品'",
+        "api_call": "router.push ProductSpu?categoryId=id",
+        "success_effect": "跳转到该分类下的 SPU 列表",
+        "failure_effect": "权限不足时按钮隐藏"
+      },
+      {
+        "element": "删除按钮",
+        "user_action": "点击行内删除",
+        "api_call": "deleteCategory(id)",
+        "success_effect": "提示删除成功并刷新",
+        "failure_effect": "用户取消二次确认时不执行"
+      }
+    ]
+  },
+  {
+    "name": "openForm",
+    "file": "src/views/mall/product/category/index.vue",
+    "native_kind": "function",
+    "semantic_kind": "function",
+    "attributes": [
+      "name (string): 搜索条件 - 分类名称",
+      "list (any[]): 树形分类列表",
+      "loading: 加载状态"
+    ],
+    "behaviors": [
+      "提供按分类名称查询分类树",
+      "提供新增、编辑、删除分类操作",
+      "支持查看某分类下的商品（跳转到 SPU 列表）",
+      "维护权限点 product:category:create/update/delete、product:spu:query"
+    ],
+    "constraints": [
+      "需要 product:* 权限点"
+    ],
+    "events": [
+      "@success: 表单提交成功后通知父组件刷新"
+    ],
+    "source_nodes": [
+      "function:48a7dbb99e8cc29cf30782014d630bd0"
+    ],
+    "interactions": [
+      {
+        "element": "搜索按钮",
+        "user_action": "点击搜索",
+        "api_call": "getCategoryList(queryParams)",
+        "success_effect": "刷新分类树",
+        "failure_effect": "无"
+      },
+      {
+        "element": "新增按钮",
+        "user_action": "点击新增",
+        "api_call": "openForm('create')",
+        "success_effect": "弹出新增分类表单",
+        "failure_effect": "权限不足时按钮隐藏"
+      },
+      {
+        "element": "编辑按钮",
+        "user_action": "点击行内编辑",
+        "api_call": "getCategory(id) + openForm('update', id)",
+        "success_effect": "弹出回显数据的编辑表单",
+        "failure_effect": "权限不足时按钮隐藏"
+      },
+      {
+        "element": "查看商品按钮",
+        "user_action": "点击二级分类行内'查看商品'",
+        "api_call": "router.push ProductSpu?categoryId=id",
+        "success_effect": "跳转到该分类下的 SPU 列表",
+        "failure_effect": "权限不足时按钮隐藏"
+      },
+      {
+        "element": "删除按钮",
+        "user_action": "点击行内删除",
+        "api_call": "deleteCategory(id)",
+        "success_effect": "提示删除成功并刷新",
+        "failure_effect": "用户取消二次确认时不执行"
+      }
+    ]
+  },
+  {
+    "name": "getList",
+    "file": "src/views/mall/product/category/index.vue",
+    "native_kind": "function",
+    "semantic_kind": "function",
+    "attributes": [
+      "name (string): 搜索条件 - 分类名称",
+      "list (any[]): 树形分类列表",
+      "loading: 加载状态"
+    ],
+    "behaviors": [
+      "提供按分类名称查询分类树",
+      "提供新增、编辑、删除分类操作",
+      "支持查看某分类下的商品（跳转到 SPU 列表）",
+      "维护权限点 product:category:create/update/delete、product:spu:query"
+    ],
+    "constraints": [
+      "需要 product:* 权限点"
+    ],
+    "events": [
+      "@success: 表单提交成功后通知父组件刷新"
+    ],
+    "source_nodes": [
+      "function:568c23547bddc7903243576531b8dfce"
+    ],
+    "interactions": [
+      {
+        "element": "搜索按钮",
+        "user_action": "点击搜索",
+        "api_call": "getCategoryList(queryParams)",
+        "success_effect": "刷新分类树",
+        "failure_effect": "无"
+      },
+      {
+        "element": "新增按钮",
+        "user_action": "点击新增",
+        "api_call": "openForm('create')",
+        "success_effect": "弹出新增分类表单",
+        "failure_effect": "权限不足时按钮隐藏"
+      },
+      {
+        "element": "编辑按钮",
+        "user_action": "点击行内编辑",
+        "api_call": "getCategory(id) + openForm('update', id)",
+        "success_effect": "弹出回显数据的编辑表单",
+        "failure_effect": "权限不足时按钮隐藏"
+      },
+      {
+        "element": "查看商品按钮",
+        "user_action": "点击二级分类行内'查看商品'",
+        "api_call": "router.push ProductSpu?categoryId=id",
+        "success_effect": "跳转到该分类下的 SPU 列表",
+        "failure_effect": "权限不足时按钮隐藏"
+      },
+      {
+        "element": "删除按钮",
+        "user_action": "点击行内删除",
+        "api_call": "deleteCategory(id)",
+        "success_effect": "提示删除成功并刷新",
+        "failure_effect": "用户取消二次确认时不执行"
+      }
+    ]
+  },
+  {
+    "name": "handleViewSpu",
+    "file": "src/views/mall/product/category/index.vue",
+    "native_kind": "function",
+    "semantic_kind": "function",
+    "attributes": [
+      "name (string): 搜索条件 - 分类名称",
+      "list (any[]): 树形分类列表",
+      "loading: 加载状态"
+    ],
+    "behaviors": [
+      "提供按分类名称查询分类树",
+      "提供新增、编辑、删除分类操作",
+      "支持查看某分类下的商品（跳转到 SPU 列表）",
+      "维护权限点 product:category:create/update/delete、product:spu:query"
+    ],
+    "constraints": [
+      "需要 product:* 权限点"
+    ],
+    "events": [
+      "@success: 表单提交成功后通知父组件刷新"
+    ],
+    "source_nodes": [
+      "function:89dc535188db2fbe0e8e7d01b5a6f124"
+    ],
+    "interactions": [
+      {
+        "element": "搜索按钮",
+        "user_action": "点击搜索",
+        "api_call": "getCategoryList(queryParams)",
+        "success_effect": "刷新分类树",
+        "failure_effect": "无"
+      },
+      {
+        "element": "新增按钮",
+        "user_action": "点击新增",
+        "api_call": "openForm('create')",
+        "success_effect": "弹出新增分类表单",
+        "failure_effect": "权限不足时按钮隐藏"
+      },
+      {
+        "element": "编辑按钮",
+        "user_action": "点击行内编辑",
+        "api_call": "getCategory(id) + openForm('update', id)",
+        "success_effect": "弹出回显数据的编辑表单",
+        "failure_effect": "权限不足时按钮隐藏"
+      },
+      {
+        "element": "查看商品按钮",
+        "user_action": "点击二级分类行内'查看商品'",
+        "api_call": "router.push ProductSpu?categoryId=id",
+        "success_effect": "跳转到该分类下的 SPU 列表",
+        "failure_effect": "权限不足时按钮隐藏"
+      },
+      {
+        "element": "删除按钮",
+        "user_action": "点击行内删除",
+        "api_call": "deleteCategory(id)",
+        "success_effect": "提示删除成功并刷新",
+        "failure_effect": "用户取消二次确认时不执行"
+      }
+    ]
+  },
+  {
+    "name": "resetQuery",
+    "file": "src/views/mall/product/category/index.vue",
+    "native_kind": "function",
+    "semantic_kind": "function",
+    "attributes": [
+      "name (string): 搜索条件 - 分类名称",
+      "list (any[]): 树形分类列表",
+      "loading: 加载状态"
+    ],
+    "behaviors": [
+      "提供按分类名称查询分类树",
+      "提供新增、编辑、删除分类操作",
+      "支持查看某分类下的商品（跳转到 SPU 列表）",
+      "维护权限点 product:category:create/update/delete、product:spu:query"
+    ],
+    "constraints": [
+      "需要 product:* 权限点"
+    ],
+    "events": [
+      "@success: 表单提交成功后通知父组件刷新"
+    ],
+    "source_nodes": [
+      "function:d49d109e19c65eebb5a614b848000d6a"
+    ],
+    "interactions": [
+      {
+        "element": "搜索按钮",
+        "user_action": "点击搜索",
+        "api_call": "getCategoryList(queryParams)",
+        "success_effect": "刷新分类树",
+        "failure_effect": "无"
+      },
+      {
+        "element": "新增按钮",
+        "user_action": "点击新增",
+        "api_call": "openForm('create')",
+        "success_effect": "弹出新增分类表单",
+        "failure_effect": "权限不足时按钮隐藏"
+      },
+      {
+        "element": "编辑按钮",
+        "user_action": "点击行内编辑",
+        "api_call": "getCategory(id) + openForm('update', id)",
+        "success_effect": "弹出回显数据的编辑表单",
+        "failure_effect": "权限不足时按钮隐藏"
+      },
+      {
+        "element": "查看商品按钮",
+        "user_action": "点击二级分类行内'查看商品'",
+        "api_call": "router.push ProductSpu?categoryId=id",
+        "success_effect": "跳转到该分类下的 SPU 列表",
+        "failure_effect": "权限不足时按钮隐藏"
+      },
+      {
+        "element": "删除按钮",
+        "user_action": "点击行内删除",
+        "api_call": "deleteCategory(id)",
+        "success_effect": "提示删除成功并刷新",
+        "failure_effect": "用户取消二次确认时不执行"
+      }
+    ]
+  },
+  {
+    "name": "CommentForm",
+    "file": "src/views/mall/product/comment/CommentForm.vue",
+    "native_kind": "component",
+    "semantic_kind": "page",
+    "attributes": [],
+    "behaviors": [
+      "component: CommentForm"
+    ],
+    "constraints": [],
+    "events": [],
+    "source_nodes": [
+      "component:c60546efcc9ed0b1d4527bb2ee73663d"
+    ]
+  },
+  {
+    "name": "resetForm",
+    "file": "src/views/mall/product/comment/CommentForm.vue",
+    "native_kind": "function",
+    "semantic_kind": "function",
+    "attributes": [
+      "(())"
+    ],
+    "behaviors": [
+      "在 CommentForm.vue 中定义的内部函数"
+    ],
+    "constraints": [
+      "作用域: src/views/mall/product/comment/CommentForm.vue"
+    ],
+    "events": [],
+    "source_nodes": [
+      "function:107b82da86ee29b637904b1ed51f5b67"
+    ]
+  },
+  {
+    "name": "handleSkuChange",
+    "file": "src/views/mall/product/comment/CommentForm.vue",
+    "native_kind": "function",
+    "semantic_kind": "function",
+    "attributes": [
+      "((sku: ProductSpuApi.Sku))"
+    ],
+    "behaviors": [
+      "在 CommentForm.vue 中定义的内部函数"
+    ],
+    "constraints": [
+      "作用域: src/views/mall/product/comment/CommentForm.vue"
+    ],
+    "events": [],
+    "source_nodes": [
+      "function:86b5f815b996c99eccc2ad084e4e4a99"
+    ]
+  },
+  {
+    "name": "open",
+    "file": "src/views/mall/product/comment/CommentForm.vue",
+    "native_kind": "function",
+    "semantic_kind": "function",
+    "attributes": [
+      "((type: string, id?: number))"
+    ],
+    "behaviors": [
+      "在 CommentForm.vue 中定义的内部函数"
+    ],
+    "constraints": [
+      "作用域: src/views/mall/product/comment/CommentForm.vue"
+    ],
+    "events": [],
+    "source_nodes": [
+      "function:c6d7680f3322a5a96575f19cf88ba7dc"
+    ]
+  },
+  {
+    "name": "handleSelectSku",
+    "file": "src/views/mall/product/comment/CommentForm.vue",
+    "native_kind": "function",
+    "semantic_kind": "function",
+    "attributes": [
+      "(())"
+    ],
+    "behaviors": [
+      "在 CommentForm.vue 中定义的内部函数"
+    ],
+    "constraints": [
+      "作用域: src/views/mall/product/comment/CommentForm.vue"
+    ],
+    "events": [],
+    "source_nodes": [
+      "function:d80ee3bc2daa01b0569670e6d81737fa"
+    ]
+  },
+  {
+    "name": "submitForm",
+    "file": "src/views/mall/product/comment/CommentForm.vue",
+    "native_kind": "function",
+    "semantic_kind": "function",
+    "attributes": [
+      "(())"
+    ],
+    "behaviors": [
+      "在 CommentForm.vue 中定义的内部函数"
+    ],
+    "constraints": [
+      "作用域: src/views/mall/product/comment/CommentForm.vue"
+    ],
+    "events": [],
+    "source_nodes": [
+      "function:eec208dbdb1defa7ac5f04c8d0081a5c"
+    ]
+  },
+  {
+    "name": "ReplyForm",
+    "file": "src/views/mall/product/comment/ReplyForm.vue",
+    "native_kind": "component",
+    "semantic_kind": "page",
+    "attributes": [],
+    "behaviors": [
+      "component: ReplyForm"
+    ],
+    "constraints": [],
+    "events": [],
+    "source_nodes": [
+      "component:e3823f838eb365c67f0bd5c29489bd91"
+    ]
+  },
+  {
+    "name": "resetForm",
+    "file": "src/views/mall/product/comment/ReplyForm.vue",
+    "native_kind": "function",
+    "semantic_kind": "function",
+    "attributes": [
+      "(())"
+    ],
+    "behaviors": [
+      "在 ReplyForm.vue 中定义的内部函数"
+    ],
+    "constraints": [
+      "作用域: src/views/mall/product/comment/ReplyForm.vue"
+    ],
+    "events": [],
+    "source_nodes": [
+      "function:6bc33259d86b365404d3086d9360bcd1"
+    ]
+  },
+  {
+    "name": "submitReplyForm",
+    "file": "src/views/mall/product/comment/ReplyForm.vue",
+    "native_kind": "function",
+    "semantic_kind": "function",
+    "attributes": [
+      "(())"
+    ],
+    "behaviors": [
+      "在 ReplyForm.vue 中定义的内部函数"
+    ],
+    "constraints": [
+      "作用域: src/views/mall/product/comment/ReplyForm.vue"
+    ],
+    "events": [],
+    "source_nodes": [
+      "function:ab7eeba32f9d6d94d6fdd0568aa83ab1"
+    ]
+  },
+  {
+    "name": "open",
+    "file": "src/views/mall/product/comment/ReplyForm.vue",
+    "native_kind": "function",
+    "semantic_kind": "function",
+    "attributes": [
+      "((id?: number))"
+    ],
+    "behaviors": [
+      "在 ReplyForm.vue 中定义的内部函数"
+    ],
+    "constraints": [
+      "作用域: src/views/mall/product/comment/ReplyForm.vue"
+    ],
+    "events": [],
+    "source_nodes": [
+      "function:ed2772273afae72ff5827e700c5c68d2"
+    ]
+  },
+  {
+    "name": "index",
+    "file": "src/views/mall/product/comment/index.vue",
+    "native_kind": "component",
+    "semantic_kind": "page",
+    "attributes": [
+      "replyStatus (boolean): 搜索条件 - 是否已回复",
+      "spuName (string): 搜索条件 - 商品名称",
+      "userNickname (string): 搜索条件 - 用户昵称",
+      "orderId (string): 搜索条件 - 订单编号",
+      "createTime (string[]): 搜索条件 - 评论时间区间",
+      "list (any[]): 评论数据列表"
+    ],
+    "behaviors": [
+      "提供按回复状态、商品、用户、订单、时间区间多条件查询评价",
+      "支持添加虚拟评价（仅创建）",
+      "支持回复评价",
+      "支持切换显示/隐藏评论（visible 字段）",
+      "维护权限点 product:comment:create/update"
+    ],
+    "constraints": [
+      "需要 product:* 权限点"
+    ],
+    "events": [
+      "@success: 表单提交成功后通知父组件刷新"
+    ],
+    "source_nodes": [
+      "component:8b462134c11b251f030d72d983c2b803"
+    ],
+    "interactions": [
+      {
+        "element": "搜索按钮",
+        "user_action": "点击搜索",
+        "api_call": "getCommentPage(queryParams)",
+        "success_effect": "刷新评价列表",
+        "failure_effect": "无"
+      },
+      {
+        "element": "添加虚拟评论按钮",
+        "user_action": "点击添加虚拟评论",
+        "api_call": "openForm('create') 触发 CommentForm",
+        "success_effect": "弹出含 SpuShowcase/SkuTableSelect 的评论表单",
+        "failure_effect": "权限不足时按钮隐藏"
+      },
+      {
+        "element": "回复按钮",
+        "user_action": "点击行内回复",
+        "api_call": "handleReply(id) 触发 ReplyForm",
+        "success_effect": "弹出回复输入框",
+        "failure_effect": "权限不足时按钮隐藏"
+      },
+      {
+        "element": "显示/隐藏 Switch",
+        "user_action": "切换可见性",
+        "api_call": "updateCommentVisible({id, visible})",
+        "success_effect": "更新评论可见性",
+        "failure_effect": "用户取消时回滚 visible 状态"
+      },
+      {
+        "element": "分页",
+        "user_action": "切换页码/页大小",
+        "api_call": "getCommentPage",
+        "success_effect": "加载对应页数据",
+        "failure_effect": "无"
+      }
+    ]
+  },
+  {
+    "name": "resetQuery",
+    "file": "src/views/mall/product/comment/index.vue",
+    "native_kind": "function",
+    "semantic_kind": "function",
+    "attributes": [
+      "replyStatus (boolean): 搜索条件 - 是否已回复",
+      "spuName (string): 搜索条件 - 商品名称",
+      "userNickname (string): 搜索条件 - 用户昵称",
+      "orderId (string): 搜索条件 - 订单编号",
+      "createTime (string[]): 搜索条件 - 评论时间区间",
+      "list (any[]): 评论数据列表"
+    ],
+    "behaviors": [
+      "提供按回复状态、商品、用户、订单、时间区间多条件查询评价",
+      "支持添加虚拟评价（仅创建）",
+      "支持回复评价",
+      "支持切换显示/隐藏评论（visible 字段）",
+      "维护权限点 product:comment:create/update"
+    ],
+    "constraints": [
+      "需要 product:* 权限点"
+    ],
+    "events": [
+      "@success: 表单提交成功后通知父组件刷新"
+    ],
+    "source_nodes": [
+      "function:0c7d46ddee76bda10af9720ddd836b9f"
+    ],
+    "interactions": [
+      {
+        "element": "搜索按钮",
+        "user_action": "点击搜索",
+        "api_call": "getCommentPage(queryParams)",
+        "success_effect": "刷新评价列表",
+        "failure_effect": "无"
+      },
+      {
+        "element": "添加虚拟评论按钮",
+        "user_action": "点击添加虚拟评论",
+        "api_call": "openForm('create') 触发 CommentForm",
+        "success_effect": "弹出含 SpuShowcase/SkuTableSelect 的评论表单",
+        "failure_effect": "权限不足时按钮隐藏"
+      },
+      {
+        "element": "回复按钮",
+        "user_action": "点击行内回复",
+        "api_call": "handleReply(id) 触发 ReplyForm",
+        "success_effect": "弹出回复输入框",
+        "failure_effect": "权限不足时按钮隐藏"
+      },
+      {
+        "element": "显示/隐藏 Switch",
+        "user_action": "切换可见性",
+        "api_call": "updateCommentVisible({id, visible})",
+        "success_effect": "更新评论可见性",
+        "failure_effect": "用户取消时回滚 visible 状态"
+      },
+      {
+        "element": "分页",
+        "user_action": "切换页码/页大小",
+        "api_call": "getCommentPage",
+        "success_effect": "加载对应页数据",
+        "failure_effect": "无"
+      }
+    ]
+  },
+  {
+    "name": "handleReply",
+    "file": "src/views/mall/product/comment/index.vue",
+    "native_kind": "function",
+    "semantic_kind": "function",
+    "attributes": [
+      "replyStatus (boolean): 搜索条件 - 是否已回复",
+      "spuName (string): 搜索条件 - 商品名称",
+      "userNickname (string): 搜索条件 - 用户昵称",
+      "orderId (string): 搜索条件 - 订单编号",
+      "createTime (string[]): 搜索条件 - 评论时间区间",
+      "list (any[]): 评论数据列表"
+    ],
+    "behaviors": [
+      "提供按回复状态、商品、用户、订单、时间区间多条件查询评价",
+      "支持添加虚拟评价（仅创建）",
+      "支持回复评价",
+      "支持切换显示/隐藏评论（visible 字段）",
+      "维护权限点 product:comment:create/update"
+    ],
+    "constraints": [
+      "需要 product:* 权限点"
+    ],
+    "events": [
+      "@success: 表单提交成功后通知父组件刷新"
+    ],
+    "source_nodes": [
+      "function:2b389350ac2766a3a092352f313f27a5"
+    ],
+    "interactions": [
+      {
+        "element": "搜索按钮",
+        "user_action": "点击搜索",
+        "api_call": "getCommentPage(queryParams)",
+        "success_effect": "刷新评价列表",
+        "failure_effect": "无"
+      },
+      {
+        "element": "添加虚拟评论按钮",
+        "user_action": "点击添加虚拟评论",
+        "api_call": "openForm('create') 触发 CommentForm",
+        "success_effect": "弹出含 SpuShowcase/SkuTableSelect 的评论表单",
+        "failure_effect": "权限不足时按钮隐藏"
+      },
+      {
+        "element": "回复按钮",
+        "user_action": "点击行内回复",
+        "api_call": "handleReply(id) 触发 ReplyForm",
+        "success_effect": "弹出回复输入框",
+        "failure_effect": "权限不足时按钮隐藏"
+      },
+      {
+        "element": "显示/隐藏 Switch",
+        "user_action": "切换可见性",
+        "api_call": "updateCommentVisible({id, visible})",
+        "success_effect": "更新评论可见性",
+        "failure_effect": "用户取消时回滚 visible 状态"
+      },
+      {
+        "element": "分页",
+        "user_action": "切换页码/页大小",
+        "api_call": "getCommentPage",
+        "success_effect": "加载对应页数据",
+        "failure_effect": "无"
+      }
+    ]
+  },
+  {
+    "name": "openForm",
+    "file": "src/views/mall/product/comment/index.vue",
+    "native_kind": "function",
+    "semantic_kind": "function",
+    "attributes": [
+      "replyStatus (boolean): 搜索条件 - 是否已回复",
+      "spuName (string): 搜索条件 - 商品名称",
+      "userNickname (string): 搜索条件 - 用户昵称",
+      "orderId (string): 搜索条件 - 订单编号",
+      "createTime (string[]): 搜索条件 - 评论时间区间",
+      "list (any[]): 评论数据列表"
+    ],
+    "behaviors": [
+      "提供按回复状态、商品、用户、订单、时间区间多条件查询评价",
+      "支持添加虚拟评价（仅创建）",
+      "支持回复评价",
+      "支持切换显示/隐藏评论（visible 字段）",
+      "维护权限点 product:comment:create/update"
+    ],
+    "constraints": [
+      "需要 product:* 权限点"
+    ],
+    "events": [
+      "@success: 表单提交成功后通知父组件刷新"
+    ],
+    "source_nodes": [
+      "function:4182daa8fbb6c24bd6820de654319b07"
+    ],
+    "interactions": [
+      {
+        "element": "搜索按钮",
+        "user_action": "点击搜索",
+        "api_call": "getCommentPage(queryParams)",
+        "success_effect": "刷新评价列表",
+        "failure_effect": "无"
+      },
+      {
+        "element": "添加虚拟评论按钮",
+        "user_action": "点击添加虚拟评论",
+        "api_call": "openForm('create') 触发 CommentForm",
+        "success_effect": "弹出含 SpuShowcase/SkuTableSelect 的评论表单",
+        "failure_effect": "权限不足时按钮隐藏"
+      },
+      {
+        "element": "回复按钮",
+        "user_action": "点击行内回复",
+        "api_call": "handleReply(id) 触发 ReplyForm",
+        "success_effect": "弹出回复输入框",
+        "failure_effect": "权限不足时按钮隐藏"
+      },
+      {
+        "element": "显示/隐藏 Switch",
+        "user_action": "切换可见性",
+        "api_call": "updateCommentVisible({id, visible})",
+        "success_effect": "更新评论可见性",
+        "failure_effect": "用户取消时回滚 visible 状态"
+      },
+      {
+        "element": "分页",
+        "user_action": "切换页码/页大小",
+        "api_call": "getCommentPage",
+        "success_effect": "加载对应页数据",
+        "failure_effect": "无"
+      }
+    ]
+  },
+  {
+    "name": "handleQuery",
+    "file": "src/views/mall/product/comment/index.vue",
+    "native_kind": "function",
+    "semantic_kind": "function",
+    "attributes": [
+      "replyStatus (boolean): 搜索条件 - 是否已回复",
+      "spuName (string): 搜索条件 - 商品名称",
+      "userNickname (string): 搜索条件 - 用户昵称",
+      "orderId (string): 搜索条件 - 订单编号",
+      "createTime (string[]): 搜索条件 - 评论时间区间",
+      "list (any[]): 评论数据列表"
+    ],
+    "behaviors": [
+      "提供按回复状态、商品、用户、订单、时间区间多条件查询评价",
+      "支持添加虚拟评价（仅创建）",
+      "支持回复评价",
+      "支持切换显示/隐藏评论（visible 字段）",
+      "维护权限点 product:comment:create/update"
+    ],
+    "constraints": [
+      "需要 product:* 权限点"
+    ],
+    "events": [
+      "@success: 表单提交成功后通知父组件刷新"
+    ],
+    "source_nodes": [
+      "function:508e4d8745466220e19f4b5c0020bf69"
+    ],
+    "interactions": [
+      {
+        "element": "搜索按钮",
+        "user_action": "点击搜索",
+        "api_call": "getCommentPage(queryParams)",
+        "success_effect": "刷新评价列表",
+        "failure_effect": "无"
+      },
+      {
+        "element": "添加虚拟评论按钮",
+        "user_action": "点击添加虚拟评论",
+        "api_call": "openForm('create') 触发 CommentForm",
+        "success_effect": "弹出含 SpuShowcase/SkuTableSelect 的评论表单",
+        "failure_effect": "权限不足时按钮隐藏"
+      },
+      {
+        "element": "回复按钮",
+        "user_action": "点击行内回复",
+        "api_call": "handleReply(id) 触发 ReplyForm",
+        "success_effect": "弹出回复输入框",
+        "failure_effect": "权限不足时按钮隐藏"
+      },
+      {
+        "element": "显示/隐藏 Switch",
+        "user_action": "切换可见性",
+        "api_call": "updateCommentVisible({id, visible})",
+        "success_effect": "更新评论可见性",
+        "failure_effect": "用户取消时回滚 visible 状态"
+      },
+      {
+        "element": "分页",
+        "user_action": "切换页码/页大小",
+        "api_call": "getCommentPage",
+        "success_effect": "加载对应页数据",
+        "failure_effect": "无"
+      }
+    ]
+  },
+  {
+    "name": "getList",
+    "file": "src/views/mall/product/comment/index.vue",
+    "native_kind": "function",
+    "semantic_kind": "function",
+    "attributes": [
+      "replyStatus (boolean): 搜索条件 - 是否已回复",
+      "spuName (string): 搜索条件 - 商品名称",
+      "userNickname (string): 搜索条件 - 用户昵称",
+      "orderId (string): 搜索条件 - 订单编号",
+      "createTime (string[]): 搜索条件 - 评论时间区间",
+      "list (any[]): 评论数据列表"
+    ],
+    "behaviors": [
+      "提供按回复状态、商品、用户、订单、时间区间多条件查询评价",
+      "支持添加虚拟评价（仅创建）",
+      "支持回复评价",
+      "支持切换显示/隐藏评论（visible 字段）",
+      "维护权限点 product:comment:create/update"
+    ],
+    "constraints": [
+      "需要 product:* 权限点"
+    ],
+    "events": [
+      "@success: 表单提交成功后通知父组件刷新"
+    ],
+    "source_nodes": [
+      "function:95940bfff3ec38afee79ab8ca6b24b93"
+    ],
+    "interactions": [
+      {
+        "element": "搜索按钮",
+        "user_action": "点击搜索",
+        "api_call": "getCommentPage(queryParams)",
+        "success_effect": "刷新评价列表",
+        "failure_effect": "无"
+      },
+      {
+        "element": "添加虚拟评论按钮",
+        "user_action": "点击添加虚拟评论",
+        "api_call": "openForm('create') 触发 CommentForm",
+        "success_effect": "弹出含 SpuShowcase/SkuTableSelect 的评论表单",
+        "failure_effect": "权限不足时按钮隐藏"
+      },
+      {
+        "element": "回复按钮",
+        "user_action": "点击行内回复",
+        "api_call": "handleReply(id) 触发 ReplyForm",
+        "success_effect": "弹出回复输入框",
+        "failure_effect": "权限不足时按钮隐藏"
+      },
+      {
+        "element": "显示/隐藏 Switch",
+        "user_action": "切换可见性",
+        "api_call": "updateCommentVisible({id, visible})",
+        "success_effect": "更新评论可见性",
+        "failure_effect": "用户取消时回滚 visible 状态"
+      },
+      {
+        "element": "分页",
+        "user_action": "切换页码/页大小",
+        "api_call": "getCommentPage",
+        "success_effect": "加载对应页数据",
+        "failure_effect": "无"
+      }
+    ]
+  },
+  {
+    "name": "handleVisibleChange",
+    "file": "src/views/mall/product/comment/index.vue",
+    "native_kind": "function",
+    "semantic_kind": "function",
+    "attributes": [
+      "replyStatus (boolean): 搜索条件 - 是否已回复",
+      "spuName (string): 搜索条件 - 商品名称",
+      "userNickname (string): 搜索条件 - 用户昵称",
+      "orderId (string): 搜索条件 - 订单编号",
+      "createTime (string[]): 搜索条件 - 评论时间区间",
+      "list (any[]): 评论数据列表"
+    ],
+    "behaviors": [
+      "提供按回复状态、商品、用户、订单、时间区间多条件查询评价",
+      "支持添加虚拟评价（仅创建）",
+      "支持回复评价",
+      "支持切换显示/隐藏评论（visible 字段）",
+      "维护权限点 product:comment:create/update"
+    ],
+    "constraints": [
+      "需要 product:* 权限点"
+    ],
+    "events": [
+      "@success: 表单提交成功后通知父组件刷新"
+    ],
+    "source_nodes": [
+      "function:de7045a0eb3964268aac453faea7dfd5"
+    ],
+    "interactions": [
+      {
+        "element": "搜索按钮",
+        "user_action": "点击搜索",
+        "api_call": "getCommentPage(queryParams)",
+        "success_effect": "刷新评价列表",
+        "failure_effect": "无"
+      },
+      {
+        "element": "添加虚拟评论按钮",
+        "user_action": "点击添加虚拟评论",
+        "api_call": "openForm('create') 触发 CommentForm",
+        "success_effect": "弹出含 SpuShowcase/SkuTableSelect 的评论表单",
+        "failure_effect": "权限不足时按钮隐藏"
+      },
+      {
+        "element": "回复按钮",
+        "user_action": "点击行内回复",
+        "api_call": "handleReply(id) 触发 ReplyForm",
+        "success_effect": "弹出回复输入框",
+        "failure_effect": "权限不足时按钮隐藏"
+      },
+      {
+        "element": "显示/隐藏 Switch",
+        "user_action": "切换可见性",
+        "api_call": "updateCommentVisible({id, visible})",
+        "success_effect": "更新评论可见性",
+        "failure_effect": "用户取消时回滚 visible 状态"
+      },
+      {
+        "element": "分页",
+        "user_action": "切换页码/页大小",
+        "api_call": "getCommentPage",
+        "success_effect": "加载对应页数据",
+        "failure_effect": "无"
+      }
+    ]
+  },
+  {
+    "name": "PropertyForm",
+    "file": "src/views/mall/product/property/PropertyForm.vue",
+    "native_kind": "component",
+    "semantic_kind": "page",
+    "attributes": [],
+    "behaviors": [
+      "component: PropertyForm"
+    ],
+    "constraints": [],
+    "events": [],
+    "source_nodes": [
+      "component:43ccda97fa2906aab36871cb7fca6606"
+    ]
+  },
+  {
+    "name": "open",
+    "file": "src/views/mall/product/property/PropertyForm.vue",
+    "native_kind": "function",
+    "semantic_kind": "function",
+    "attributes": [
+      "((type: string, id?: number))"
+    ],
+    "behaviors": [
+      "在 PropertyForm.vue 中定义的内部函数"
+    ],
+    "constraints": [
+      "作用域: src/views/mall/product/property/PropertyForm.vue"
+    ],
+    "events": [],
+    "source_nodes": [
+      "function:5d53201122f3ffbcc7bb22b2c93cf049"
+    ]
+  },
+  {
+    "name": "resetForm",
+    "file": "src/views/mall/product/property/PropertyForm.vue",
+    "native_kind": "function",
+    "semantic_kind": "function",
+    "attributes": [
+      "(())"
+    ],
+    "behaviors": [
+      "在 PropertyForm.vue 中定义的内部函数"
+    ],
+    "constraints": [
+      "作用域: src/views/mall/product/property/PropertyForm.vue"
+    ],
+    "events": [],
+    "source_nodes": [
+      "function:c028b20c28aad348876b0d76a250d265"
+    ]
+  },
+  {
+    "name": "submitForm",
+    "file": "src/views/mall/product/property/PropertyForm.vue",
+    "native_kind": "function",
+    "semantic_kind": "function",
+    "attributes": [
+      "(())"
+    ],
+    "behaviors": [
+      "在 PropertyForm.vue 中定义的内部函数"
+    ],
+    "constraints": [
+      "作用域: src/views/mall/product/property/PropertyForm.vue"
+    ],
+    "events": [],
+    "source_nodes": [
+      "function:c4e8b6706fdb915669fabc76f1f2e3f8"
+    ]
+  },
+  {
+    "name": "index",
+    "file": "src/views/mall/product/property/index.vue",
+    "native_kind": "component",
+    "semantic_kind": "page",
+    "attributes": [
+      "name (string): 搜索条件 - 属性名称",
+      "createTime (string[]): 搜索条件 - 创建时间区间",
+      "list (any[]): 属性列表数据"
+    ],
+    "behaviors": [
+      "提供按名称、创建时间查询属性列表",
+      "提供新增、编辑、删除属性操作",
+      "支持跳转到属性值列表（按 propertyId）",
+      "维护权限点 product:property:create/update/delete"
+    ],
+    "constraints": [
+      "需要 product:* 权限点"
+    ],
+    "events": [
+      "@success: 表单提交成功后通知父组件刷新"
+    ],
+    "source_nodes": [
+      "component:30b1c90977ec826a83ee2f1777895b5d"
+    ],
+    "interactions": [
+      {
+        "element": "搜索按钮",
+        "user_action": "点击搜索",
+        "api_call": "getPropertyPage(queryParams)",
+        "success_effect": "刷新属性列表",
+        "failure_effect": "无"
+      },
+      {
+        "element": "新增按钮",
+        "user_action": "点击新增",
+        "api_call": "openForm('create') 触发 PropertyForm",
+        "success_effect": "弹出新增属性表单",
+        "failure_effect": "权限不足时按钮隐藏"
+      },
+      {
+        "element": "编辑按钮",
+        "user_action": "点击行内编辑",
+        "api_call": "getProperty(id) + openForm('update', id)",
+        "success_effect": "弹出回显数据的编辑表单",
+        "failure_effect": "权限不足时按钮隐藏"
+      },
+      {
+        "element": "属性值按钮",
+        "user_action": "点击行内属性值",
+        "api_call": "push ProductPropertyValue?propertyId=id",
+        "success_effect": "跳转到属性值列表页",
+        "failure_effect": "无"
+      },
+      {
+        "element": "删除按钮",
+        "user_action": "点击行内删除",
+        "api_call": "deleteProperty(id)",
+        "success_effect": "提示删除成功并刷新",
+        "failure_effect": "用户取消二次确认时不执行"
+      }
+    ]
+  },
+  {
+    "name": "handleQuery",
+    "file": "src/views/mall/product/property/index.vue",
+    "native_kind": "function",
+    "semantic_kind": "function",
+    "attributes": [
+      "name (string): 搜索条件 - 属性名称",
+      "createTime (string[]): 搜索条件 - 创建时间区间",
+      "list (any[]): 属性列表数据"
+    ],
+    "behaviors": [
+      "提供按名称、创建时间查询属性列表",
+      "提供新增、编辑、删除属性操作",
+      "支持跳转到属性值列表（按 propertyId）",
+      "维护权限点 product:property:create/update/delete"
+    ],
+    "constraints": [
+      "需要 product:* 权限点"
+    ],
+    "events": [
+      "@success: 表单提交成功后通知父组件刷新"
+    ],
+    "source_nodes": [
+      "function:0fc13120e85dd40ca886a17091f6e87f"
+    ],
+    "interactions": [
+      {
+        "element": "搜索按钮",
+        "user_action": "点击搜索",
+        "api_call": "getPropertyPage(queryParams)",
+        "success_effect": "刷新属性列表",
+        "failure_effect": "无"
+      },
+      {
+        "element": "新增按钮",
+        "user_action": "点击新增",
+        "api_call": "openForm('create') 触发 PropertyForm",
+        "success_effect": "弹出新增属性表单",
+        "failure_effect": "权限不足时按钮隐藏"
+      },
+      {
+        "element": "编辑按钮",
+        "user_action": "点击行内编辑",
+        "api_call": "getProperty(id) + openForm('update', id)",
+        "success_effect": "弹出回显数据的编辑表单",
+        "failure_effect": "权限不足时按钮隐藏"
+      },
+      {
+        "element": "属性值按钮",
+        "user_action": "点击行内属性值",
+        "api_call": "push ProductPropertyValue?propertyId=id",
+        "success_effect": "跳转到属性值列表页",
+        "failure_effect": "无"
+      },
+      {
+        "element": "删除按钮",
+        "user_action": "点击行内删除",
+        "api_call": "deleteProperty(id)",
+        "success_effect": "提示删除成功并刷新",
+        "failure_effect": "用户取消二次确认时不执行"
+      }
+    ]
+  },
+  {
+    "name": "resetQuery",
+    "file": "src/views/mall/product/property/index.vue",
+    "native_kind": "function",
+    "semantic_kind": "function",
+    "attributes": [
+      "name (string): 搜索条件 - 属性名称",
+      "createTime (string[]): 搜索条件 - 创建时间区间",
+      "list (any[]): 属性列表数据"
+    ],
+    "behaviors": [
+      "提供按名称、创建时间查询属性列表",
+      "提供新增、编辑、删除属性操作",
+      "支持跳转到属性值列表（按 propertyId）",
+      "维护权限点 product:property:create/update/delete"
+    ],
+    "constraints": [
+      "需要 product:* 权限点"
+    ],
+    "events": [
+      "@success: 表单提交成功后通知父组件刷新"
+    ],
+    "source_nodes": [
+      "function:1b6fd000271209a1f7076e28a93d427b"
+    ],
+    "interactions": [
+      {
+        "element": "搜索按钮",
+        "user_action": "点击搜索",
+        "api_call": "getPropertyPage(queryParams)",
+        "success_effect": "刷新属性列表",
+        "failure_effect": "无"
+      },
+      {
+        "element": "新增按钮",
+        "user_action": "点击新增",
+        "api_call": "openForm('create') 触发 PropertyForm",
+        "success_effect": "弹出新增属性表单",
+        "failure_effect": "权限不足时按钮隐藏"
+      },
+      {
+        "element": "编辑按钮",
+        "user_action": "点击行内编辑",
+        "api_call": "getProperty(id) + openForm('update', id)",
+        "success_effect": "弹出回显数据的编辑表单",
+        "failure_effect": "权限不足时按钮隐藏"
+      },
+      {
+        "element": "属性值按钮",
+        "user_action": "点击行内属性值",
+        "api_call": "push ProductPropertyValue?propertyId=id",
+        "success_effect": "跳转到属性值列表页",
+        "failure_effect": "无"
+      },
+      {
+        "element": "删除按钮",
+        "user_action": "点击行内删除",
+        "api_call": "deleteProperty(id)",
+        "success_effect": "提示删除成功并刷新",
+        "failure_effect": "用户取消二次确认时不执行"
+      }
+    ]
+  },
+  {
+    "name": "goValueList",
+    "file": "src/views/mall/product/property/index.vue",
+    "native_kind": "function",
+    "semantic_kind": "function",
+    "attributes": [
+      "name (string): 搜索条件 - 属性名称",
+      "createTime (string[]): 搜索条件 - 创建时间区间",
+      "list (any[]): 属性列表数据"
+    ],
+    "behaviors": [
+      "提供按名称、创建时间查询属性列表",
+      "提供新增、编辑、删除属性操作",
+      "支持跳转到属性值列表（按 propertyId）",
+      "维护权限点 product:property:create/update/delete"
+    ],
+    "constraints": [
+      "需要 product:* 权限点"
+    ],
+    "events": [
+      "@success: 表单提交成功后通知父组件刷新"
+    ],
+    "source_nodes": [
+      "function:71c0d7b712cba37ac01237e16425d7c6"
+    ],
+    "interactions": [
+      {
+        "element": "搜索按钮",
+        "user_action": "点击搜索",
+        "api_call": "getPropertyPage(queryParams)",
+        "success_effect": "刷新属性列表",
+        "failure_effect": "无"
+      },
+      {
+        "element": "新增按钮",
+        "user_action": "点击新增",
+        "api_call": "openForm('create') 触发 PropertyForm",
+        "success_effect": "弹出新增属性表单",
+        "failure_effect": "权限不足时按钮隐藏"
+      },
+      {
+        "element": "编辑按钮",
+        "user_action": "点击行内编辑",
+        "api_call": "getProperty(id) + openForm('update', id)",
+        "success_effect": "弹出回显数据的编辑表单",
+        "failure_effect": "权限不足时按钮隐藏"
+      },
+      {
+        "element": "属性值按钮",
+        "user_action": "点击行内属性值",
+        "api_call": "push ProductPropertyValue?propertyId=id",
+        "success_effect": "跳转到属性值列表页",
+        "failure_effect": "无"
+      },
+      {
+        "element": "删除按钮",
+        "user_action": "点击行内删除",
+        "api_call": "deleteProperty(id)",
+        "success_effect": "提示删除成功并刷新",
+        "failure_effect": "用户取消二次确认时不执行"
+      }
+    ]
+  },
+  {
+    "name": "openForm",
+    "file": "src/views/mall/product/property/index.vue",
+    "native_kind": "function",
+    "semantic_kind": "function",
+    "attributes": [
+      "name (string): 搜索条件 - 属性名称",
+      "createTime (string[]): 搜索条件 - 创建时间区间",
+      "list (any[]): 属性列表数据"
+    ],
+    "behaviors": [
+      "提供按名称、创建时间查询属性列表",
+      "提供新增、编辑、删除属性操作",
+      "支持跳转到属性值列表（按 propertyId）",
+      "维护权限点 product:property:create/update/delete"
+    ],
+    "constraints": [
+      "需要 product:* 权限点"
+    ],
+    "events": [
+      "@success: 表单提交成功后通知父组件刷新"
+    ],
+    "source_nodes": [
+      "function:8e9d32c5635c7af007158454404bbc90"
+    ],
+    "interactions": [
+      {
+        "element": "搜索按钮",
+        "user_action": "点击搜索",
+        "api_call": "getPropertyPage(queryParams)",
+        "success_effect": "刷新属性列表",
+        "failure_effect": "无"
+      },
+      {
+        "element": "新增按钮",
+        "user_action": "点击新增",
+        "api_call": "openForm('create') 触发 PropertyForm",
+        "success_effect": "弹出新增属性表单",
+        "failure_effect": "权限不足时按钮隐藏"
+      },
+      {
+        "element": "编辑按钮",
+        "user_action": "点击行内编辑",
+        "api_call": "getProperty(id) + openForm('update', id)",
+        "success_effect": "弹出回显数据的编辑表单",
+        "failure_effect": "权限不足时按钮隐藏"
+      },
+      {
+        "element": "属性值按钮",
+        "user_action": "点击行内属性值",
+        "api_call": "push ProductPropertyValue?propertyId=id",
+        "success_effect": "跳转到属性值列表页",
+        "failure_effect": "无"
+      },
+      {
+        "element": "删除按钮",
+        "user_action": "点击行内删除",
+        "api_call": "deleteProperty(id)",
+        "success_effect": "提示删除成功并刷新",
+        "failure_effect": "用户取消二次确认时不执行"
+      }
+    ]
+  },
+  {
+    "name": "getList",
+    "file": "src/views/mall/product/property/index.vue",
+    "native_kind": "function",
+    "semantic_kind": "function",
+    "attributes": [
+      "name (string): 搜索条件 - 属性名称",
+      "createTime (string[]): 搜索条件 - 创建时间区间",
+      "list (any[]): 属性列表数据"
+    ],
+    "behaviors": [
+      "提供按名称、创建时间查询属性列表",
+      "提供新增、编辑、删除属性操作",
+      "支持跳转到属性值列表（按 propertyId）",
+      "维护权限点 product:property:create/update/delete"
+    ],
+    "constraints": [
+      "需要 product:* 权限点"
+    ],
+    "events": [
+      "@success: 表单提交成功后通知父组件刷新"
+    ],
+    "source_nodes": [
+      "function:b2e52f55f2ff6ae4d4dae2693322b96b"
+    ],
+    "interactions": [
+      {
+        "element": "搜索按钮",
+        "user_action": "点击搜索",
+        "api_call": "getPropertyPage(queryParams)",
+        "success_effect": "刷新属性列表",
+        "failure_effect": "无"
+      },
+      {
+        "element": "新增按钮",
+        "user_action": "点击新增",
+        "api_call": "openForm('create') 触发 PropertyForm",
+        "success_effect": "弹出新增属性表单",
+        "failure_effect": "权限不足时按钮隐藏"
+      },
+      {
+        "element": "编辑按钮",
+        "user_action": "点击行内编辑",
+        "api_call": "getProperty(id) + openForm('update', id)",
+        "success_effect": "弹出回显数据的编辑表单",
+        "failure_effect": "权限不足时按钮隐藏"
+      },
+      {
+        "element": "属性值按钮",
+        "user_action": "点击行内属性值",
+        "api_call": "push ProductPropertyValue?propertyId=id",
+        "success_effect": "跳转到属性值列表页",
+        "failure_effect": "无"
+      },
+      {
+        "element": "删除按钮",
+        "user_action": "点击行内删除",
+        "api_call": "deleteProperty(id)",
+        "success_effect": "提示删除成功并刷新",
+        "failure_effect": "用户取消二次确认时不执行"
+      }
+    ]
+  },
+  {
+    "name": "handleDelete",
+    "file": "src/views/mall/product/property/index.vue",
+    "native_kind": "function",
+    "semantic_kind": "function",
+    "attributes": [
+      "name (string): 搜索条件 - 属性名称",
+      "createTime (string[]): 搜索条件 - 创建时间区间",
+      "list (any[]): 属性列表数据"
+    ],
+    "behaviors": [
+      "提供按名称、创建时间查询属性列表",
+      "提供新增、编辑、删除属性操作",
+      "支持跳转到属性值列表（按 propertyId）",
+      "维护权限点 product:property:create/update/delete"
+    ],
+    "constraints": [
+      "需要 product:* 权限点"
+    ],
+    "events": [
+      "@success: 表单提交成功后通知父组件刷新"
+    ],
+    "source_nodes": [
+      "function:c7b8bc94bb4bf5741adafcb24dd78973"
+    ],
+    "interactions": [
+      {
+        "element": "搜索按钮",
+        "user_action": "点击搜索",
+        "api_call": "getPropertyPage(queryParams)",
+        "success_effect": "刷新属性列表",
+        "failure_effect": "无"
+      },
+      {
+        "element": "新增按钮",
+        "user_action": "点击新增",
+        "api_call": "openForm('create') 触发 PropertyForm",
+        "success_effect": "弹出新增属性表单",
+        "failure_effect": "权限不足时按钮隐藏"
+      },
+      {
+        "element": "编辑按钮",
+        "user_action": "点击行内编辑",
+        "api_call": "getProperty(id) + openForm('update', id)",
+        "success_effect": "弹出回显数据的编辑表单",
+        "failure_effect": "权限不足时按钮隐藏"
+      },
+      {
+        "element": "属性值按钮",
+        "user_action": "点击行内属性值",
+        "api_call": "push ProductPropertyValue?propertyId=id",
+        "success_effect": "跳转到属性值列表页",
+        "failure_effect": "无"
+      },
+      {
+        "element": "删除按钮",
+        "user_action": "点击行内删除",
+        "api_call": "deleteProperty(id)",
+        "success_effect": "提示删除成功并刷新",
+        "failure_effect": "用户取消二次确认时不执行"
+      }
+    ]
+  },
+  {
+    "name": "ValueForm",
+    "file": "src/views/mall/product/property/value/ValueForm.vue",
+    "native_kind": "component",
+    "semantic_kind": "page",
+    "attributes": [],
+    "behaviors": [
+      "component: ValueForm"
+    ],
+    "constraints": [],
+    "events": [],
+    "source_nodes": [
+      "component:1ba7f951ac58dcb25c3f4a691ecd155e"
+    ]
+  },
+  {
+    "name": "resetForm",
+    "file": "src/views/mall/product/property/value/ValueForm.vue",
+    "native_kind": "function",
+    "semantic_kind": "function",
+    "attributes": [
+      "(())"
+    ],
+    "behaviors": [
+      "在 ValueForm.vue 中定义的内部函数"
+    ],
+    "constraints": [
+      "作用域: src/views/mall/product/property/value/ValueForm.vue"
+    ],
+    "events": [],
+    "source_nodes": [
+      "function:3a1c9f62f7cc30c7b030764959e48e67"
+    ]
+  },
+  {
+    "name": "submitForm",
+    "file": "src/views/mall/product/property/value/ValueForm.vue",
+    "native_kind": "function",
+    "semantic_kind": "function",
+    "attributes": [
+      "(())"
+    ],
+    "behaviors": [
+      "在 ValueForm.vue 中定义的内部函数"
+    ],
+    "constraints": [
+      "作用域: src/views/mall/product/property/value/ValueForm.vue"
+    ],
+    "events": [],
+    "source_nodes": [
+      "function:8cc57992217c8fae444a9e97b5e547b0"
+    ]
+  },
+  {
+    "name": "open",
+    "file": "src/views/mall/product/property/value/ValueForm.vue",
+    "native_kind": "function",
+    "semantic_kind": "function",
+    "attributes": [
+      "((type: string, propertyId: number, id?: number))"
+    ],
+    "behaviors": [
+      "在 ValueForm.vue 中定义的内部函数"
+    ],
+    "constraints": [
+      "作用域: src/views/mall/product/property/value/ValueForm.vue"
+    ],
+    "events": [],
+    "source_nodes": [
+      "function:8e87a0092cc2badf4afbe2ba98e83c54"
+    ]
+  },
+  {
+    "name": "index",
+    "file": "src/views/mall/product/property/value/index.vue",
+    "native_kind": "component",
+    "semantic_kind": "page",
+    "attributes": [
+      "propertyId (number): 当前属性项 ID（来自路由参数）",
+      "name (string): 搜索条件 - 属性值名称",
+      "list: 属性值列表"
+    ],
+    "behaviors": [
+      "通过 getPropertyValuePage 查询指定属性下的属性值列表",
+      "提供新增、编辑、删除属性值操作",
+      "维护权限点 product:property:create/update/delete"
+    ],
+    "constraints": [],
+    "events": [],
+    "source_nodes": [
+      "component:3c079e65e1a015eb488ef8ed4aebf6b6"
+    ],
+    "interactions": [
+      {
+        "element": "搜索按钮",
+        "user_action": "点击搜索",
+        "api_call": "getPropertyValuePage(queryParams)",
+        "success_effect": "刷新属性值列表",
+        "failure_effect": "无"
+      },
+      {
+        "element": "新增按钮",
+        "user_action": "点击新增",
+        "api_call": "openForm('create', propertyId)",
+        "success_effect": "弹出新增属性值表单",
+        "failure_effect": "权限不足时按钮隐藏"
+      },
+      {
+        "element": "编辑按钮",
+        "user_action": "点击行内编辑",
+        "api_call": "getPropertyValue(id) + openForm('update', propertyId, id)",
+        "success_effect": "弹出回显编辑表单",
+        "failure_effect": "权限不足时按钮隐藏"
+      },
+      {
+        "element": "删除按钮",
+        "user_action": "点击行内删除",
+        "api_call": "deletePropertyValue(id)",
+        "success_effect": "提示删除成功并刷新",
+        "failure_effect": "用户取消二次确认时不执行"
+      },
+      {
+        "element": "分页",
+        "user_action": "切换页码/页大小",
+        "api_call": "getPropertyValuePage",
+        "success_effect": "加载对应页数据",
+        "failure_effect": "无"
+      }
+    ]
+  },
+  {
+    "name": "getList",
+    "file": "src/views/mall/product/property/value/index.vue",
+    "native_kind": "function",
+    "semantic_kind": "function",
+    "attributes": [
+      "propertyId (number): 当前属性项 ID（来自路由参数）",
+      "name (string): 搜索条件 - 属性值名称",
+      "list: 属性值列表"
+    ],
+    "behaviors": [
+      "通过 getPropertyValuePage 查询指定属性下的属性值列表",
+      "提供新增、编辑、删除属性值操作",
+      "维护权限点 product:property:create/update/delete"
+    ],
+    "constraints": [],
+    "events": [],
+    "source_nodes": [
+      "function:0f44c68e4bc4460907c088c4101ff216"
+    ],
+    "interactions": [
+      {
+        "element": "搜索按钮",
+        "user_action": "点击搜索",
+        "api_call": "getPropertyValuePage(queryParams)",
+        "success_effect": "刷新属性值列表",
+        "failure_effect": "无"
+      },
+      {
+        "element": "新增按钮",
+        "user_action": "点击新增",
+        "api_call": "openForm('create', propertyId)",
+        "success_effect": "弹出新增属性值表单",
+        "failure_effect": "权限不足时按钮隐藏"
+      },
+      {
+        "element": "编辑按钮",
+        "user_action": "点击行内编辑",
+        "api_call": "getPropertyValue(id) + openForm('update', propertyId, id)",
+        "success_effect": "弹出回显编辑表单",
+        "failure_effect": "权限不足时按钮隐藏"
+      },
+      {
+        "element": "删除按钮",
+        "user_action": "点击行内删除",
+        "api_call": "deletePropertyValue(id)",
+        "success_effect": "提示删除成功并刷新",
+        "failure_effect": "用户取消二次确认时不执行"
+      },
+      {
+        "element": "分页",
+        "user_action": "切换页码/页大小",
+        "api_call": "getPropertyValuePage",
+        "success_effect": "加载对应页数据",
+        "failure_effect": "无"
+      }
+    ]
+  },
+  {
+    "name": "resetQuery",
+    "file": "src/views/mall/product/property/value/index.vue",
+    "native_kind": "function",
+    "semantic_kind": "function",
+    "attributes": [
+      "propertyId (number): 当前属性项 ID（来自路由参数）",
+      "name (string): 搜索条件 - 属性值名称",
+      "list: 属性值列表"
+    ],
+    "behaviors": [
+      "通过 getPropertyValuePage 查询指定属性下的属性值列表",
+      "提供新增、编辑、删除属性值操作",
+      "维护权限点 product:property:create/update/delete"
+    ],
+    "constraints": [],
+    "events": [],
+    "source_nodes": [
+      "function:6c82af8a68e192ae86e7f770a1e5a42e"
+    ],
+    "interactions": [
+      {
+        "element": "搜索按钮",
+        "user_action": "点击搜索",
+        "api_call": "getPropertyValuePage(queryParams)",
+        "success_effect": "刷新属性值列表",
+        "failure_effect": "无"
+      },
+      {
+        "element": "新增按钮",
+        "user_action": "点击新增",
+        "api_call": "openForm('create', propertyId)",
+        "success_effect": "弹出新增属性值表单",
+        "failure_effect": "权限不足时按钮隐藏"
+      },
+      {
+        "element": "编辑按钮",
+        "user_action": "点击行内编辑",
+        "api_call": "getPropertyValue(id) + openForm('update', propertyId, id)",
+        "success_effect": "弹出回显编辑表单",
+        "failure_effect": "权限不足时按钮隐藏"
+      },
+      {
+        "element": "删除按钮",
+        "user_action": "点击行内删除",
+        "api_call": "deletePropertyValue(id)",
+        "success_effect": "提示删除成功并刷新",
+        "failure_effect": "用户取消二次确认时不执行"
+      },
+      {
+        "element": "分页",
+        "user_action": "切换页码/页大小",
+        "api_call": "getPropertyValuePage",
+        "success_effect": "加载对应页数据",
+        "failure_effect": "无"
+      }
+    ]
+  },
+  {
+    "name": "openForm",
+    "file": "src/views/mall/product/property/value/index.vue",
+    "native_kind": "function",
+    "semantic_kind": "function",
+    "attributes": [
+      "propertyId (number): 当前属性项 ID（来自路由参数）",
+      "name (string): 搜索条件 - 属性值名称",
+      "list: 属性值列表"
+    ],
+    "behaviors": [
+      "通过 getPropertyValuePage 查询指定属性下的属性值列表",
+      "提供新增、编辑、删除属性值操作",
+      "维护权限点 product:property:create/update/delete"
+    ],
+    "constraints": [],
+    "events": [],
+    "source_nodes": [
+      "function:847bb4465334fbac2e2b3ad41ef71cff"
+    ],
+    "interactions": [
+      {
+        "element": "搜索按钮",
+        "user_action": "点击搜索",
+        "api_call": "getPropertyValuePage(queryParams)",
+        "success_effect": "刷新属性值列表",
+        "failure_effect": "无"
+      },
+      {
+        "element": "新增按钮",
+        "user_action": "点击新增",
+        "api_call": "openForm('create', propertyId)",
+        "success_effect": "弹出新增属性值表单",
+        "failure_effect": "权限不足时按钮隐藏"
+      },
+      {
+        "element": "编辑按钮",
+        "user_action": "点击行内编辑",
+        "api_call": "getPropertyValue(id) + openForm('update', propertyId, id)",
+        "success_effect": "弹出回显编辑表单",
+        "failure_effect": "权限不足时按钮隐藏"
+      },
+      {
+        "element": "删除按钮",
+        "user_action": "点击行内删除",
+        "api_call": "deletePropertyValue(id)",
+        "success_effect": "提示删除成功并刷新",
+        "failure_effect": "用户取消二次确认时不执行"
+      },
+      {
+        "element": "分页",
+        "user_action": "切换页码/页大小",
+        "api_call": "getPropertyValuePage",
+        "success_effect": "加载对应页数据",
+        "failure_effect": "无"
+      }
+    ]
+  },
+  {
+    "name": "handleDelete",
+    "file": "src/views/mall/product/property/value/index.vue",
+    "native_kind": "function",
+    "semantic_kind": "function",
+    "attributes": [
+      "propertyId (number): 当前属性项 ID（来自路由参数）",
+      "name (string): 搜索条件 - 属性值名称",
+      "list: 属性值列表"
+    ],
+    "behaviors": [
+      "通过 getPropertyValuePage 查询指定属性下的属性值列表",
+      "提供新增、编辑、删除属性值操作",
+      "维护权限点 product:property:create/update/delete"
+    ],
+    "constraints": [],
+    "events": [],
+    "source_nodes": [
+      "function:b33f93568a28e0d831f2f91399ad482a"
+    ],
+    "interactions": [
+      {
+        "element": "搜索按钮",
+        "user_action": "点击搜索",
+        "api_call": "getPropertyValuePage(queryParams)",
+        "success_effect": "刷新属性值列表",
+        "failure_effect": "无"
+      },
+      {
+        "element": "新增按钮",
+        "user_action": "点击新增",
+        "api_call": "openForm('create', propertyId)",
+        "success_effect": "弹出新增属性值表单",
+        "failure_effect": "权限不足时按钮隐藏"
+      },
+      {
+        "element": "编辑按钮",
+        "user_action": "点击行内编辑",
+        "api_call": "getPropertyValue(id) + openForm('update', propertyId, id)",
+        "success_effect": "弹出回显编辑表单",
+        "failure_effect": "权限不足时按钮隐藏"
+      },
+      {
+        "element": "删除按钮",
+        "user_action": "点击行内删除",
+        "api_call": "deletePropertyValue(id)",
+        "success_effect": "提示删除成功并刷新",
+        "failure_effect": "用户取消二次确认时不执行"
+      },
+      {
+        "element": "分页",
+        "user_action": "切换页码/页大小",
+        "api_call": "getPropertyValuePage",
+        "success_effect": "加载对应页数据",
+        "failure_effect": "无"
+      }
+    ]
+  },
+  {
+    "name": "handleQuery",
+    "file": "src/views/mall/product/property/value/index.vue",
+    "native_kind": "function",
+    "semantic_kind": "function",
+    "attributes": [
+      "propertyId (number): 当前属性项 ID（来自路由参数）",
+      "name (string): 搜索条件 - 属性值名称",
+      "list: 属性值列表"
+    ],
+    "behaviors": [
+      "通过 getPropertyValuePage 查询指定属性下的属性值列表",
+      "提供新增、编辑、删除属性值操作",
+      "维护权限点 product:property:create/update/delete"
+    ],
+    "constraints": [],
+    "events": [],
+    "source_nodes": [
+      "function:d4d80a2ab1972a6354ed4c549e48695d"
+    ],
+    "interactions": [
+      {
+        "element": "搜索按钮",
+        "user_action": "点击搜索",
+        "api_call": "getPropertyValuePage(queryParams)",
+        "success_effect": "刷新属性值列表",
+        "failure_effect": "无"
+      },
+      {
+        "element": "新增按钮",
+        "user_action": "点击新增",
+        "api_call": "openForm('create', propertyId)",
+        "success_effect": "弹出新增属性值表单",
+        "failure_effect": "权限不足时按钮隐藏"
+      },
+      {
+        "element": "编辑按钮",
+        "user_action": "点击行内编辑",
+        "api_call": "getPropertyValue(id) + openForm('update', propertyId, id)",
+        "success_effect": "弹出回显编辑表单",
+        "failure_effect": "权限不足时按钮隐藏"
+      },
+      {
+        "element": "删除按钮",
+        "user_action": "点击行内删除",
+        "api_call": "deletePropertyValue(id)",
+        "success_effect": "提示删除成功并刷新",
+        "failure_effect": "用户取消二次确认时不执行"
+      },
+      {
+        "element": "分页",
+        "user_action": "切换页码/页大小",
+        "api_call": "getPropertyValuePage",
+        "success_effect": "加载对应页数据",
+        "failure_effect": "无"
+      }
+    ]
+  },
+  {
+    "name": "SkuList",
+    "file": "src/views/mall/product/spu/components/SkuList.vue",
+    "native_kind": "component",
+    "semantic_kind": "page",
+    "attributes": [
+      "propFormData (Spu): 父组件传入的 SPU 数据",
+      "propertyList (PropertyAndValues[]): 属性与属性值列表",
+      "ruleConfig: 字段校验规则（stock/price/marketPrice/costPrice）",
+      "isBatch: 是否为批量设置模式"
+    ],
+    "behaviors": [
+      "渲染单规格或多规格 SKU 行表格",
+      "支持行内编辑 SKU 名称/价格/市场价/成本价/库存/重量/体积/分销佣金/图片",
+      "支持添加/删除 SKU 行",
+      "支持根据属性组合自动生成 SKU 列表（generateTableData）"
+    ],
+    "constraints": [
+      "商品库存必须 >= 1",
+      "商品价格/市场价/成本价必须 >= 0.01 元"
+    ],
+    "events": [
+      "validateSku: 校验通过返回 OK，否则抛错"
+    ],
+    "source_nodes": [
+      "component:7e42462b163ba6dd1fd60611ebe27fc6"
+    ]
+  },
+  {
+    "name": "validateData",
+    "file": "src/views/mall/product/spu/components/SkuList.vue",
+    "native_kind": "function",
+    "semantic_kind": "function",
+    "attributes": [
+      "propFormData (Spu): 父组件传入的 SPU 数据",
+      "propertyList (PropertyAndValues[]): 属性与属性值列表",
+      "ruleConfig: 字段校验规则（stock/price/marketPrice/costPrice）",
+      "isBatch: 是否为批量设置模式"
+    ],
+    "behaviors": [
+      "渲染单规格或多规格 SKU 行表格",
+      "支持行内编辑 SKU 名称/价格/市场价/成本价/库存/重量/体积/分销佣金/图片",
+      "支持添加/删除 SKU 行",
+      "支持根据属性组合自动生成 SKU 列表（generateTableData）"
+    ],
+    "constraints": [
+      "商品库存必须 >= 1",
+      "商品价格/市场价/成本价必须 >= 0.01 元"
+    ],
+    "events": [
+      "validateSku: 校验通过返回 OK，否则抛错"
+    ],
+    "source_nodes": [
+      "function:197c6e72717370df78e532ba3d756191"
+    ]
+  },
+  {
+    "name": "getValue",
+    "file": "src/views/mall/product/spu/components/SkuList.vue",
+    "native_kind": "function",
+    "semantic_kind": "function",
+    "attributes": [
+      "propFormData (Spu): 父组件传入的 SPU 数据",
+      "propertyList (PropertyAndValues[]): 属性与属性值列表",
+      "ruleConfig: 字段校验规则（stock/price/marketPrice/costPrice）",
+      "isBatch: 是否为批量设置模式"
+    ],
+    "behaviors": [
+      "渲染单规格或多规格 SKU 行表格",
+      "支持行内编辑 SKU 名称/价格/市场价/成本价/库存/重量/体积/分销佣金/图片",
+      "支持添加/删除 SKU 行",
+      "支持根据属性组合自动生成 SKU 列表（generateTableData）"
+    ],
+    "constraints": [
+      "商品库存必须 >= 1",
+      "商品价格/市场价/成本价必须 >= 0.01 元"
+    ],
+    "events": [
+      "validateSku: 校验通过返回 OK，否则抛错"
+    ],
+    "source_nodes": [
+      "function:4fd52dab4f252072da929dcb9a00f848"
+    ]
+  },
+  {
+    "name": "handleSelectionChange",
+    "file": "src/views/mall/product/spu/components/SkuList.vue",
+    "native_kind": "function",
+    "semantic_kind": "function",
+    "attributes": [
+      "propFormData (Spu): 父组件传入的 SPU 数据",
+      "propertyList (PropertyAndValues[]): 属性与属性值列表",
+      "ruleConfig: 字段校验规则（stock/price/marketPrice/costPrice）",
+      "isBatch: 是否为批量设置模式"
+    ],
+    "behaviors": [
+      "渲染单规格或多规格 SKU 行表格",
+      "支持行内编辑 SKU 名称/价格/市场价/成本价/库存/重量/体积/分销佣金/图片",
+      "支持添加/删除 SKU 行",
+      "支持根据属性组合自动生成 SKU 列表（generateTableData）"
+    ],
+    "constraints": [
+      "商品库存必须 >= 1",
+      "商品价格/市场价/成本价必须 >= 0.01 元"
+    ],
+    "events": [
+      "validateSku: 校验通过返回 OK，否则抛错"
+    ],
+    "source_nodes": [
+      "function:6b3e5eb9d56b24249d2dc5ed9ba603d7"
+    ]
+  },
+  {
+    "name": "batchAdd",
+    "file": "src/views/mall/product/spu/components/SkuList.vue",
+    "native_kind": "function",
+    "semantic_kind": "function",
+    "attributes": [
+      "propFormData (Spu): 父组件传入的 SPU 数据",
+      "propertyList (PropertyAndValues[]): 属性与属性值列表",
+      "ruleConfig: 字段校验规则（stock/price/marketPrice/costPrice）",
+      "isBatch: 是否为批量设置模式"
+    ],
+    "behaviors": [
+      "渲染单规格或多规格 SKU 行表格",
+      "支持行内编辑 SKU 名称/价格/市场价/成本价/库存/重量/体积/分销佣金/图片",
+      "支持添加/删除 SKU 行",
+      "支持根据属性组合自动生成 SKU 列表（generateTableData）"
+    ],
+    "constraints": [
+      "商品库存必须 >= 1",
+      "商品价格/市场价/成本价必须 >= 0.01 元"
+    ],
+    "events": [
+      "validateSku: 校验通过返回 OK，否则抛错"
+    ],
+    "source_nodes": [
+      "function:76a29b606f3d666334474a18eab39553"
+    ]
+  },
+  {
+    "name": "generateTableData",
+    "file": "src/views/mall/product/spu/components/SkuList.vue",
+    "native_kind": "function",
+    "semantic_kind": "function",
+    "attributes": [
+      "propFormData (Spu): 父组件传入的 SPU 数据",
+      "propertyList (PropertyAndValues[]): 属性与属性值列表",
+      "ruleConfig: 字段校验规则（stock/price/marketPrice/costPrice）",
+      "isBatch: 是否为批量设置模式"
+    ],
+    "behaviors": [
+      "渲染单规格或多规格 SKU 行表格",
+      "支持行内编辑 SKU 名称/价格/市场价/成本价/库存/重量/体积/分销佣金/图片",
+      "支持添加/删除 SKU 行",
+      "支持根据属性组合自动生成 SKU 列表（generateTableData）"
+    ],
+    "constraints": [
+      "商品库存必须 >= 1",
+      "商品价格/市场价/成本价必须 >= 0.01 元"
+    ],
+    "events": [
+      "validateSku: 校验通过返回 OK，否则抛错"
+    ],
+    "source_nodes": [
+      "function:890b526789763b7cae124733b36b2f4a"
+    ]
+  },
+  {
+    "name": "getSkuTableRef",
+    "file": "src/views/mall/product/spu/components/SkuList.vue",
+    "native_kind": "function",
+    "semantic_kind": "function",
+    "attributes": [
+      "propFormData (Spu): 父组件传入的 SPU 数据",
+      "propertyList (PropertyAndValues[]): 属性与属性值列表",
+      "ruleConfig: 字段校验规则（stock/price/marketPrice/costPrice）",
+      "isBatch: 是否为批量设置模式"
+    ],
+    "behaviors": [
+      "渲染单规格或多规格 SKU 行表格",
+      "支持行内编辑 SKU 名称/价格/市场价/成本价/库存/重量/体积/分销佣金/图片",
+      "支持添加/删除 SKU 行",
+      "支持根据属性组合自动生成 SKU 列表（generateTableData）"
+    ],
+    "constraints": [
+      "商品库存必须 >= 1",
+      "商品价格/市场价/成本价必须 >= 0.01 元"
+    ],
+    "events": [
+      "validateSku: 校验通过返回 OK，否则抛错"
+    ],
+    "source_nodes": [
+      "function:8cd51b2da28349673efa8f9f762daebc"
+    ]
+  },
+  {
+    "name": "build",
+    "file": "src/views/mall/product/spu/components/SkuList.vue",
+    "native_kind": "function",
+    "semantic_kind": "function",
+    "attributes": [
+      "propFormData (Spu): 父组件传入的 SPU 数据",
+      "propertyList (PropertyAndValues[]): 属性与属性值列表",
+      "ruleConfig: 字段校验规则（stock/price/marketPrice/costPrice）",
+      "isBatch: 是否为批量设置模式"
+    ],
+    "behaviors": [
+      "渲染单规格或多规格 SKU 行表格",
+      "支持行内编辑 SKU 名称/价格/市场价/成本价/库存/重量/体积/分销佣金/图片",
+      "支持添加/删除 SKU 行",
+      "支持根据属性组合自动生成 SKU 列表（generateTableData）"
+    ],
+    "constraints": [
+      "商品库存必须 >= 1",
+      "商品价格/市场价/成本价必须 >= 0.01 元"
+    ],
+    "events": [
+      "validateSku: 校验通过返回 OK，否则抛错"
+    ],
+    "source_nodes": [
+      "function:8d7e00e0ee78f16bdb7022b3abfda7f6"
+    ]
+  },
+  {
+    "name": "imagePreview",
+    "file": "src/views/mall/product/spu/components/SkuList.vue",
+    "native_kind": "function",
+    "semantic_kind": "function",
+    "attributes": [
+      "propFormData (Spu): 父组件传入的 SPU 数据",
+      "propertyList (PropertyAndValues[]): 属性与属性值列表",
+      "ruleConfig: 字段校验规则（stock/price/marketPrice/costPrice）",
+      "isBatch: 是否为批量设置模式"
+    ],
+    "behaviors": [
+      "渲染单规格或多规格 SKU 行表格",
+      "支持行内编辑 SKU 名称/价格/市场价/成本价/库存/重量/体积/分销佣金/图片",
+      "支持添加/删除 SKU 行",
+      "支持根据属性组合自动生成 SKU 列表（generateTableData）"
+    ],
+    "constraints": [
+      "商品库存必须 >= 1",
+      "商品价格/市场价/成本价必须 >= 0.01 元"
+    ],
+    "events": [
+      "validateSku: 校验通过返回 OK，否则抛错"
+    ],
+    "source_nodes": [
+      "function:9ba09aca2dcb056383a8eae177449ef3"
+    ]
+  },
+  {
+    "name": "validateSku",
+    "file": "src/views/mall/product/spu/components/SkuList.vue",
+    "native_kind": "function",
+    "semantic_kind": "function",
+    "attributes": [
+      "propFormData (Spu): 父组件传入的 SPU 数据",
+      "propertyList (PropertyAndValues[]): 属性与属性值列表",
+      "ruleConfig: 字段校验规则（stock/price/marketPrice/costPrice）",
+      "isBatch: 是否为批量设置模式"
+    ],
+    "behaviors": [
+      "渲染单规格或多规格 SKU 行表格",
+      "支持行内编辑 SKU 名称/价格/市场价/成本价/库存/重量/体积/分销佣金/图片",
+      "支持添加/删除 SKU 行",
+      "支持根据属性组合自动生成 SKU 列表（generateTableData）"
+    ],
+    "constraints": [
+      "商品库存必须 >= 1",
+      "商品价格/市场价/成本价必须 >= 0.01 元"
+    ],
+    "events": [
+      "validateSku: 校验通过返回 OK，否则抛错"
+    ],
+    "source_nodes": [
+      "function:bbc892e79b566236119ac170ef597403"
+    ]
+  },
+  {
+    "name": "validateProperty",
+    "file": "src/views/mall/product/spu/components/SkuList.vue",
+    "native_kind": "function",
+    "semantic_kind": "function",
+    "attributes": [
+      "propFormData (Spu): 父组件传入的 SPU 数据",
+      "propertyList (PropertyAndValues[]): 属性与属性值列表",
+      "ruleConfig: 字段校验规则（stock/price/marketPrice/costPrice）",
+      "isBatch: 是否为批量设置模式"
+    ],
+    "behaviors": [
+      "渲染单规格或多规格 SKU 行表格",
+      "支持行内编辑 SKU 名称/价格/市场价/成本价/库存/重量/体积/分销佣金/图片",
+      "支持添加/删除 SKU 行",
+      "支持根据属性组合自动生成 SKU 列表（generateTableData）"
+    ],
+    "constraints": [
+      "商品库存必须 >= 1",
+      "商品价格/市场价/成本价必须 >= 0.01 元"
+    ],
+    "events": [
+      "validateSku: 校验通过返回 OK，否则抛错"
+    ],
+    "source_nodes": [
+      "function:d48e48b7e3b35eca9e00e143dc330b80"
+    ]
+  },
+  {
+    "name": "deleteSku",
+    "file": "src/views/mall/product/spu/components/SkuList.vue",
+    "native_kind": "function",
+    "semantic_kind": "function",
+    "attributes": [
+      "propFormData (Spu): 父组件传入的 SPU 数据",
+      "propertyList (PropertyAndValues[]): 属性与属性值列表",
+      "ruleConfig: 字段校验规则（stock/price/marketPrice/costPrice）",
+      "isBatch: 是否为批量设置模式"
+    ],
+    "behaviors": [
+      "渲染单规格或多规格 SKU 行表格",
+      "支持行内编辑 SKU 名称/价格/市场价/成本价/库存/重量/体积/分销佣金/图片",
+      "支持添加/删除 SKU 行",
+      "支持根据属性组合自动生成 SKU 列表（generateTableData）"
+    ],
+    "constraints": [
+      "商品库存必须 >= 1",
+      "商品价格/市场价/成本价必须 >= 0.01 元"
+    ],
+    "events": [
+      "validateSku: 校验通过返回 OK，否则抛错"
+    ],
+    "source_nodes": [
+      "function:fda1719dc49f8b9ffda9be10e550710e"
+    ]
+  },
+  {
+    "name": "SkuTableSelect",
+    "file": "src/views/mall/product/spu/components/SkuTableSelect.vue",
+    "native_kind": "component",
+    "semantic_kind": "page",
+    "attributes": [
+      "spuId: 关联的 SPU ID",
+      "分页参数与多选模式"
+    ],
+    "behaviors": [
+      "通过弹窗展示指定 SPU 下的 SKU 列表供选择",
+      "选择后通过 @change 事件回传选中的 SKU"
+    ],
+    "constraints": [
+      "必须传入 spuId 才能加载 SKU 列表"
+    ],
+    "events": [
+      "@change: 选择完成后回传 Sku 对象"
+    ],
+    "source_nodes": [
+      "component:71096ed3227a58af4005a43b8f2b0711"
+    ]
+  },
+  {
+    "name": "open",
+    "file": "src/views/mall/product/spu/components/SkuTableSelect.vue",
+    "native_kind": "function",
+    "semantic_kind": "function",
+    "attributes": [
+      "spuId: 关联的 SPU ID",
+      "分页参数与多选模式"
+    ],
+    "behaviors": [
+      "通过弹窗展示指定 SPU 下的 SKU 列表供选择",
+      "选择后通过 @change 事件回传选中的 SKU"
+    ],
+    "constraints": [
+      "必须传入 spuId 才能加载 SKU 列表"
+    ],
+    "events": [
+      "@change: 选择完成后回传 Sku 对象"
+    ],
+    "source_nodes": [
+      "function:7d0e023221da5caad277bceacc0d402b"
+    ]
+  },
+  {
+    "name": "handleSelected",
+    "file": "src/views/mall/product/spu/components/SkuTableSelect.vue",
+    "native_kind": "function",
+    "semantic_kind": "function",
+    "attributes": [
+      "spuId: 关联的 SPU ID",
+      "分页参数与多选模式"
+    ],
+    "behaviors": [
+      "通过弹窗展示指定 SPU 下的 SKU 列表供选择",
+      "选择后通过 @change 事件回传选中的 SKU"
+    ],
+    "constraints": [
+      "必须传入 spuId 才能加载 SKU 列表"
+    ],
+    "events": [
+      "@change: 选择完成后回传 Sku 对象"
+    ],
+    "source_nodes": [
+      "function:d92f07a9fc62809214f738b579c1aab4"
+    ]
+  },
+  {
+    "name": "getSpuDetail",
+    "file": "src/views/mall/product/spu/components/SkuTableSelect.vue",
+    "native_kind": "function",
+    "semantic_kind": "function",
+    "attributes": [
+      "spuId: 关联的 SPU ID",
+      "分页参数与多选模式"
+    ],
+    "behaviors": [
+      "通过弹窗展示指定 SPU 下的 SKU 列表供选择",
+      "选择后通过 @change 事件回传选中的 SKU"
+    ],
+    "constraints": [
+      "必须传入 spuId 才能加载 SKU 列表"
+    ],
+    "events": [
+      "@change: 选择完成后回传 Sku 对象"
+    ],
+    "source_nodes": [
+      "function:f07be261990cd790d2fd9239fec8aa16"
+    ]
+  },
+  {
+    "name": "SpuShowcase",
+    "file": "src/views/mall/product/spu/components/SpuShowcase.vue",
+    "native_kind": "component",
+    "semantic_kind": "page",
+    "attributes": [
+      "modelValue: 选中的 SPU ID",
+      "limit: 最大可选数量"
+    ],
+    "behaviors": [
+      "通过 el-select + 自定义模板展示 SPU 列表",
+      "选中后通过 update:modelValue 事件回传 SPU ID"
+    ],
+    "constraints": [
+      "必须传入 modelValue 作为绑定值"
+    ],
+    "events": [
+      "update:modelValue: 选择 SPU 时回传 ID"
+    ],
+    "source_nodes": [
+      "component:e66cfb70aadcb8c836cba8d713911f31"
+    ]
+  },
+  {
+    "name": "handleRemoveSpu",
+    "file": "src/views/mall/product/spu/components/SpuShowcase.vue",
+    "native_kind": "function",
+    "semantic_kind": "function",
+    "attributes": [
+      "modelValue: 选中的 SPU ID",
+      "limit: 最大可选数量"
+    ],
+    "behaviors": [
+      "通过 el-select + 自定义模板展示 SPU 列表",
+      "选中后通过 update:modelValue 事件回传 SPU ID"
+    ],
+    "constraints": [
+      "必须传入 modelValue 作为绑定值"
+    ],
+    "events": [
+      "update:modelValue: 选择 SPU 时回传 ID"
+    ],
+    "source_nodes": [
+      "function:1460a47696e10c18218c6624c1c0befb"
+    ]
+  },
+  {
+    "name": "handleSpuSelected",
+    "file": "src/views/mall/product/spu/components/SpuShowcase.vue",
+    "native_kind": "function",
+    "semantic_kind": "function",
+    "attributes": [
+      "modelValue: 选中的 SPU ID",
+      "limit: 最大可选数量"
+    ],
+    "behaviors": [
+      "通过 el-select + 自定义模板展示 SPU 列表",
+      "选中后通过 update:modelValue 事件回传 SPU ID"
+    ],
+    "constraints": [
+      "必须传入 modelValue 作为绑定值"
+    ],
+    "events": [
+      "update:modelValue: 选择 SPU 时回传 ID"
+    ],
+    "source_nodes": [
+      "function:3864e03cb2fa42506b72d44c626c400b"
+    ]
+  },
+  {
+    "name": "openSpuTableSelect",
+    "file": "src/views/mall/product/spu/components/SpuShowcase.vue",
+    "native_kind": "function",
+    "semantic_kind": "function",
+    "attributes": [
+      "modelValue: 选中的 SPU ID",
+      "limit: 最大可选数量"
+    ],
+    "behaviors": [
+      "通过 el-select + 自定义模板展示 SPU 列表",
+      "选中后通过 update:modelValue 事件回传 SPU ID"
+    ],
+    "constraints": [
+      "必须传入 modelValue 作为绑定值"
+    ],
+    "events": [
+      "update:modelValue: 选择 SPU 时回传 ID"
+    ],
+    "source_nodes": [
+      "function:8460f543229a992726ffb30a03064eea"
+    ]
+  },
+  {
+    "name": "emitSpuChange",
+    "file": "src/views/mall/product/spu/components/SpuShowcase.vue",
+    "native_kind": "function",
+    "semantic_kind": "function",
+    "attributes": [
+      "modelValue: 选中的 SPU ID",
+      "limit: 最大可选数量"
+    ],
+    "behaviors": [
+      "通过 el-select + 自定义模板展示 SPU 列表",
+      "选中后通过 update:modelValue 事件回传 SPU ID"
+    ],
+    "constraints": [
+      "必须传入 modelValue 作为绑定值"
+    ],
+    "events": [
+      "update:modelValue: 选择 SPU 时回传 ID"
+    ],
+    "source_nodes": [
+      "function:853f1edbc5253c3b63ea40fe7cae5ed2"
+    ]
+  },
+  {
+    "name": "SpuTableSelect",
+    "file": "src/views/mall/product/spu/components/SpuTableSelect.vue",
+    "native_kind": "component",
+    "semantic_kind": "page",
+    "attributes": [
+      "分页参数、多选模式"
+    ],
+    "behaviors": [
+      "通过弹窗展示 SPU 列表供选择",
+      "选择后通过 @change 事件回传 SPU 对象"
+    ],
+    "constraints": [
+      "弹窗中可按名称/分类/状态过滤"
+    ],
+    "events": [
+      "@change: 选择完成后回传 Spu 对象"
+    ],
+    "source_nodes": [
+      "component:8aa636172dabd1f67e1b4ded472f0715"
+    ]
+  },
+  {
+    "name": "handleEmitChange",
+    "file": "src/views/mall/product/spu/components/SpuTableSelect.vue",
+    "native_kind": "function",
+    "semantic_kind": "function",
+    "attributes": [
+      "分页参数、多选模式"
+    ],
+    "behaviors": [
+      "通过弹窗展示 SPU 列表供选择",
+      "选择后通过 @change 事件回传 SPU 对象"
+    ],
+    "constraints": [
+      "弹窗中可按名称/分类/状态过滤"
+    ],
+    "events": [
+      "@change: 选择完成后回传 Spu 对象"
+    ],
+    "source_nodes": [
+      "function:086cc19ad9ca4ff9f799ddd96ef0e948"
+    ]
+  },
+  {
+    "name": "getList",
+    "file": "src/views/mall/product/spu/components/SpuTableSelect.vue",
+    "native_kind": "function",
+    "semantic_kind": "function",
+    "attributes": [
+      "分页参数、多选模式"
+    ],
+    "behaviors": [
+      "通过弹窗展示 SPU 列表供选择",
+      "选择后通过 @change 事件回传 SPU 对象"
+    ],
+    "constraints": [
+      "弹窗中可按名称/分类/状态过滤"
+    ],
+    "events": [
+      "@change: 选择完成后回传 Spu 对象"
+    ],
+    "source_nodes": [
+      "function:84e0d2c124752eb4b76817f1a2cb4fcf"
+    ]
+  },
+  {
+    "name": "resetQuery",
+    "file": "src/views/mall/product/spu/components/SpuTableSelect.vue",
+    "native_kind": "function",
+    "semantic_kind": "function",
+    "attributes": [
+      "分页参数、多选模式"
+    ],
+    "behaviors": [
+      "通过弹窗展示 SPU 列表供选择",
+      "选择后通过 @change 事件回传 SPU 对象"
+    ],
+    "constraints": [
+      "弹窗中可按名称/分类/状态过滤"
+    ],
+    "events": [
+      "@change: 选择完成后回传 Spu 对象"
+    ],
+    "source_nodes": [
+      "function:a66b16feb10d16531e4220cb1b944489"
+    ]
+  },
+  {
+    "name": "handleQuery",
+    "file": "src/views/mall/product/spu/components/SpuTableSelect.vue",
+    "native_kind": "function",
+    "semantic_kind": "function",
+    "attributes": [
+      "分页参数、多选模式"
+    ],
+    "behaviors": [
+      "通过弹窗展示 SPU 列表供选择",
+      "选择后通过 @change 事件回传 SPU 对象"
+    ],
+    "constraints": [
+      "弹窗中可按名称/分类/状态过滤"
+    ],
+    "events": [
+      "@change: 选择完成后回传 Spu 对象"
+    ],
+    "source_nodes": [
+      "function:b8b1135eca51e6dff50c44f7d42599cb"
+    ]
+  },
+  {
+    "name": "handleCheckOne",
+    "file": "src/views/mall/product/spu/components/SpuTableSelect.vue",
+    "native_kind": "function",
+    "semantic_kind": "function",
+    "attributes": [
+      "分页参数、多选模式"
+    ],
+    "behaviors": [
+      "通过弹窗展示 SPU 列表供选择",
+      "选择后通过 @change 事件回传 SPU 对象"
+    ],
+    "constraints": [
+      "弹窗中可按名称/分类/状态过滤"
+    ],
+    "events": [
+      "@change: 选择完成后回传 Spu 对象"
+    ],
+    "source_nodes": [
+      "function:bf0fde1854d983b1f93818197dc757bb"
+    ]
+  },
+  {
+    "name": "calculateIsCheckAll",
+    "file": "src/views/mall/product/spu/components/SpuTableSelect.vue",
+    "native_kind": "function",
+    "semantic_kind": "function",
+    "attributes": [
+      "分页参数、多选模式"
+    ],
+    "behaviors": [
+      "通过弹窗展示 SPU 列表供选择",
+      "选择后通过 @change 事件回传 SPU 对象"
+    ],
+    "constraints": [
+      "弹窗中可按名称/分类/状态过滤"
+    ],
+    "events": [
+      "@change: 选择完成后回传 Spu 对象"
+    ],
+    "source_nodes": [
+      "function:ccfb91d9c3545034a03ba4d5c1b62b24"
+    ]
+  },
+  {
+    "name": "handleCheckAll",
+    "file": "src/views/mall/product/spu/components/SpuTableSelect.vue",
+    "native_kind": "function",
+    "semantic_kind": "function",
+    "attributes": [
+      "分页参数、多选模式"
+    ],
+    "behaviors": [
+      "通过弹窗展示 SPU 列表供选择",
+      "选择后通过 @change 事件回传 SPU 对象"
+    ],
+    "constraints": [
+      "弹窗中可按名称/分类/状态过滤"
+    ],
+    "events": [
+      "@change: 选择完成后回传 Spu 对象"
+    ],
+    "source_nodes": [
+      "function:d12400fd995ce2a54846e93e8e2200ec"
+    ]
+  },
+  {
+    "name": "open",
+    "file": "src/views/mall/product/spu/components/SpuTableSelect.vue",
+    "native_kind": "function",
+    "semantic_kind": "function",
+    "attributes": [
+      "分页参数、多选模式"
+    ],
+    "behaviors": [
+      "通过弹窗展示 SPU 列表供选择",
+      "选择后通过 @change 事件回传 SPU 对象"
+    ],
+    "constraints": [
+      "弹窗中可按名称/分类/状态过滤"
+    ],
+    "events": [
+      "@change: 选择完成后回传 Spu 对象"
+    ],
+    "source_nodes": [
+      "function:e935125994cf576e4bf7aa9b741d9ad9"
+    ]
+  },
+  {
+    "name": "handleSingleSelected",
+    "file": "src/views/mall/product/spu/components/SpuTableSelect.vue",
+    "native_kind": "function",
+    "semantic_kind": "function",
+    "attributes": [
+      "分页参数、多选模式"
+    ],
+    "behaviors": [
+      "通过弹窗展示 SPU 列表供选择",
+      "选择后通过 @change 事件回传 SPU 对象"
+    ],
+    "constraints": [
+      "弹窗中可按名称/分类/状态过滤"
+    ],
+    "events": [
+      "@change: 选择完成后回传 Spu 对象"
+    ],
+    "source_nodes": [
+      "function:f12631fe0ce7e9a215d0e922f8756021"
+    ]
+  },
+  {
+    "name": "findCheckedIndex",
+    "file": "src/views/mall/product/spu/components/SpuTableSelect.vue",
+    "native_kind": "function",
+    "semantic_kind": "function",
+    "attributes": [
+      "分页参数、多选模式"
+    ],
+    "behaviors": [
+      "通过弹窗展示 SPU 列表供选择",
+      "选择后通过 @change 事件回传 SPU 对象"
+    ],
+    "constraints": [
+      "弹窗中可按名称/分类/状态过滤"
+    ],
+    "events": [
+      "@change: 选择完成后回传 Spu 对象"
+    ],
+    "source_nodes": [
+      "function:f8a4a76d0897fd28729065e1e1de0835"
+    ]
+  },
+  {
+    "name": "Spu",
+    "file": "src/views/mall/product/spu/components/SpuTableSelect.vue",
+    "native_kind": "type_alias",
+    "semantic_kind": "function",
+    "attributes": [
+      "分页参数、多选模式"
+    ],
+    "behaviors": [
+      "通过弹窗展示 SPU 列表供选择",
+      "选择后通过 @change 事件回传 SPU 对象"
+    ],
+    "constraints": [
+      "弹窗中可按名称/分类/状态过滤"
+    ],
+    "events": [
+      "@change: 选择完成后回传 Spu 对象"
+    ],
+    "source_nodes": [
+      "type_alias:48f0a26dcd18470119368438facd193f"
+    ]
+  },
+  {
+    "name": "getPropertyList",
+    "file": "src/views/mall/product/spu/components/index.ts",
+    "native_kind": "function",
+    "semantic_kind": "function",
+    "attributes": [
+      "SkuList: 组件引用",
+      "getPropertyList(data): 从 SPU 数据提取属性与属性值",
+      "PropertyAndValues: 类型定义",
+      "RuleConfig: SKU 字段校验配置"
+    ],
+    "behaviors": [
+      "集中导出 spu 子组件与工具类型"
+    ],
+    "constraints": [
+      "模块入口文件"
+    ],
+    "events": [],
+    "source_nodes": [
+      "function:6ccfe1247d1a30d364a2631571e8a4ef"
+    ]
+  },
+  {
+    "name": "RuleConfig",
+    "file": "src/views/mall/product/spu/components/index.ts",
+    "native_kind": "interface",
+    "semantic_kind": "function",
+    "attributes": [
+      "SkuList: 组件引用",
+      "getPropertyList(data): 从 SPU 数据提取属性与属性值",
+      "PropertyAndValues: 类型定义",
+      "RuleConfig: SKU 字段校验配置"
+    ],
+    "behaviors": [
+      "集中导出 spu 子组件与工具类型"
+    ],
+    "constraints": [
+      "模块入口文件"
+    ],
+    "events": [],
+    "source_nodes": [
+      "interface:6eb1c94a3db1ccc7ba8f144c08a3505f"
+    ]
+  },
+  {
+    "name": "PropertyAndValues",
+    "file": "src/views/mall/product/spu/components/index.ts",
+    "native_kind": "interface",
+    "semantic_kind": "function",
+    "attributes": [
+      "SkuList: 组件引用",
+      "getPropertyList(data): 从 SPU 数据提取属性与属性值",
+      "PropertyAndValues: 类型定义",
+      "RuleConfig: SKU 字段校验配置"
+    ],
+    "behaviors": [
+      "集中导出 spu 子组件与工具类型"
+    ],
+    "constraints": [
+      "模块入口文件"
+    ],
+    "events": [],
+    "source_nodes": [
+      "interface:a1c5f793e565f505d421a07437dff916"
+    ]
+  },
+  {
+    "name": "DeliveryForm",
+    "file": "src/views/mall/product/spu/form/DeliveryForm.vue",
+    "native_kind": "component",
+    "semantic_kind": "page",
+    "attributes": [
+      "deliveryTypes: 配送方式数组（快递/自提等）",
+      "deliveryTemplateId: 运费模板 ID",
+      "weight (number): 商品重量（克）",
+      "volume (number): 商品体积（立方厘米）"
+    ],
+    "behaviors": [
+      "选择配送方式与运费模板",
+      "填写重量与体积（用于运费计算）",
+      "通过 validate() 校验表单，通过后回写到父组件 formData"
+    ],
+    "constraints": [
+      "weight/volume 需为非负数"
+    ],
+    "events": [
+      "update:activeName: 校验失败时切到本 Tab"
+    ],
+    "source_nodes": [
+      "component:13391245e64d2417c7bc0b6da4718a78"
+    ]
+  },
+  {
+    "name": "validate",
+    "file": "src/views/mall/product/spu/form/DeliveryForm.vue",
+    "native_kind": "function",
+    "semantic_kind": "function",
+    "attributes": [
+      "deliveryTypes: 配送方式数组（快递/自提等）",
+      "deliveryTemplateId: 运费模板 ID",
+      "weight (number): 商品重量（克）",
+      "volume (number): 商品体积（立方厘米）"
+    ],
+    "behaviors": [
+      "选择配送方式与运费模板",
+      "填写重量与体积（用于运费计算）",
+      "通过 validate() 校验表单，通过后回写到父组件 formData"
+    ],
+    "constraints": [
+      "weight/volume 需为非负数"
+    ],
+    "events": [
+      "update:activeName: 校验失败时切到本 Tab"
+    ],
+    "source_nodes": [
+      "function:282f66136518dad20b3b356fbdbc52be"
+    ]
+  },
+  {
+    "name": "DescriptionForm",
+    "file": "src/views/mall/product/spu/form/DescriptionForm.vue",
+    "native_kind": "component",
+    "semantic_kind": "page",
+    "attributes": [
+      "description: 商品详情（富文本/HTML）"
+    ],
+    "behaviors": [
+      "提供富文本编辑器编辑商品详情",
+      "通过 validate() 校验后回写 formData"
+    ],
+    "constraints": [
+      "description 通常必填（具体见 rules）"
+    ],
+    "events": [
+      "update:activeName: 校验失败时切到本 Tab"
+    ],
+    "source_nodes": [
+      "component:7a6ff01634b3ee0a30a8a774844408c9"
+    ]
+  },
+  {
+    "name": "validate",
+    "file": "src/views/mall/product/spu/form/DescriptionForm.vue",
+    "native_kind": "function",
+    "semantic_kind": "function",
+    "attributes": [
+      "description: 商品详情（富文本/HTML）"
+    ],
+    "behaviors": [
+      "提供富文本编辑器编辑商品详情",
+      "通过 validate() 校验后回写 formData"
+    ],
+    "constraints": [
+      "description 通常必填（具体见 rules）"
+    ],
+    "events": [
+      "update:activeName: 校验失败时切到本 Tab"
+    ],
+    "source_nodes": [
+      "function:27ee4015cb03e206122b304137ed1747"
+    ]
+  },
+  {
+    "name": "InfoForm",
+    "file": "src/views/mall/product/spu/form/InfoForm.vue",
+    "native_kind": "component",
+    "semantic_kind": "page",
+    "attributes": [],
+    "behaviors": [
+      "component: InfoForm"
+    ],
+    "constraints": [],
+    "events": [],
+    "source_nodes": [
+      "component:68c9a279711c588e6c9f52ac19abc2be"
+    ]
+  },
+  {
+    "name": "validate",
+    "file": "src/views/mall/product/spu/form/InfoForm.vue",
+    "native_kind": "function",
+    "semantic_kind": "function",
+    "attributes": [
+      "(())"
+    ],
+    "behaviors": [
+      "在 InfoForm.vue 中定义的内部函数"
+    ],
+    "constraints": [
+      "作用域: src/views/mall/product/spu/form/InfoForm.vue"
+    ],
+    "events": [],
+    "source_nodes": [
+      "function:3ee3f59c63bcf5d1fbb9bf7c20498611"
+    ]
+  },
+  {
+    "name": "refreshCategoryList",
+    "file": "src/views/mall/product/spu/form/InfoForm.vue",
+    "native_kind": "function",
+    "semantic_kind": "function",
+    "attributes": [
+      "(())"
+    ],
+    "behaviors": [
+      "在 InfoForm.vue 中定义的内部函数"
+    ],
+    "constraints": [
+      "作用域: src/views/mall/product/spu/form/InfoForm.vue"
+    ],
+    "events": [],
+    "source_nodes": [
+      "function:6077ca04a35f29525fc794e567fa82c9"
+    ]
+  },
+  {
+    "name": "refreshBrandList",
+    "file": "src/views/mall/product/spu/form/InfoForm.vue",
+    "native_kind": "function",
+    "semantic_kind": "function",
+    "attributes": [
+      "(())"
+    ],
+    "behaviors": [
+      "在 InfoForm.vue 中定义的内部函数"
+    ],
+    "constraints": [
+      "作用域: src/views/mall/product/spu/form/InfoForm.vue"
+    ],
+    "events": [],
+    "source_nodes": [
+      "function:74ceee70dd63e5541c12045851a21167"
+    ]
+  },
+  {
+    "name": "OtherForm",
+    "file": "src/views/mall/product/spu/form/OtherForm.vue",
+    "native_kind": "component",
+    "semantic_kind": "page",
+    "attributes": [
+      "sort: 排序值（数字，越大越靠前）",
+      "giveIntegral: 赠送积分",
+      "virtualSalesCount: 虚拟销量"
+    ],
+    "behaviors": [
+      "设置商品的排序、赠送积分、虚拟销量等",
+      "通过 validate() 校验后回写 formData"
+    ],
+    "constraints": [
+      "sort 默认 0，虚拟销量用于展示不影响实际库存"
+    ],
+    "events": [
+      "update:activeName: 校验失败时切到本 Tab"
+    ],
+    "source_nodes": [
+      "component:70c3384cad029eedab3d527723aaebb4"
+    ]
+  },
+  {
+    "name": "validate",
+    "file": "src/views/mall/product/spu/form/OtherForm.vue",
+    "native_kind": "function",
+    "semantic_kind": "function",
+    "attributes": [
+      "sort: 排序值（数字，越大越靠前）",
+      "giveIntegral: 赠送积分",
+      "virtualSalesCount: 虚拟销量"
+    ],
+    "behaviors": [
+      "设置商品的排序、赠送积分、虚拟销量等",
+      "通过 validate() 校验后回写 formData"
+    ],
+    "constraints": [
+      "sort 默认 0，虚拟销量用于展示不影响实际库存"
+    ],
+    "events": [
+      "update:activeName: 校验失败时切到本 Tab"
+    ],
+    "source_nodes": [
+      "function:ef43eb3b7fd2b986b48b84c5432ee412"
+    ]
+  },
+  {
+    "name": "ProductAttributes",
+    "file": "src/views/mall/product/spu/form/ProductAttributes.vue",
+    "native_kind": "component",
+    "semantic_kind": "page",
+    "attributes": [
+      "propertyList: 属性项与属性值列表",
+      "isDetail: 是否为详情模式"
+    ],
+    "behaviors": [
+      "展示已选商品属性（propertyId+valueId 组合）",
+      "支持删除单个属性组合",
+      "通过 @success 事件触发父组件重新生成 SKU 列表"
+    ],
+    "constraints": [
+      "依赖父组件传入的 propertyList"
+    ],
+    "events": [
+      "@success: 属性变更后通知父组件重新生成 SKU"
+    ],
+    "source_nodes": [
+      "component:61fc70313ceef9ac0c4570dba9d9ac51"
+    ]
+  },
+  {
+    "name": "setInputRef",
+    "file": "src/views/mall/product/spu/form/ProductAttributes.vue",
+    "native_kind": "function",
+    "semantic_kind": "function",
+    "attributes": [
+      "propertyList: 属性项与属性值列表",
+      "isDetail: 是否为详情模式"
+    ],
+    "behaviors": [
+      "展示已选商品属性（propertyId+valueId 组合）",
+      "支持删除单个属性组合",
+      "通过 @success 事件触发父组件重新生成 SKU 列表"
+    ],
+    "constraints": [
+      "依赖父组件传入的 propertyList"
+    ],
+    "events": [
+      "@success: 属性变更后通知父组件重新生成 SKU"
+    ],
+    "source_nodes": [
+      "function:1ac42d415c2437d1c7d5634f68a7cfa4"
+    ]
+  },
+  {
+    "name": "handleCloseValue",
+    "file": "src/views/mall/product/spu/form/ProductAttributes.vue",
+    "native_kind": "function",
+    "semantic_kind": "function",
+    "attributes": [
+      "propertyList: 属性项与属性值列表",
+      "isDetail: 是否为详情模式"
+    ],
+    "behaviors": [
+      "展示已选商品属性（propertyId+valueId 组合）",
+      "支持删除单个属性组合",
+      "通过 @success 事件触发父组件重新生成 SKU 列表"
+    ],
+    "constraints": [
+      "依赖父组件传入的 propertyList"
+    ],
+    "events": [
+      "@success: 属性变更后通知父组件重新生成 SKU"
+    ],
+    "source_nodes": [
+      "function:5e10bc5c3c08dd09052f9433c898dcef"
+    ]
+  },
+  {
+    "name": "handleCloseProperty",
+    "file": "src/views/mall/product/spu/form/ProductAttributes.vue",
+    "native_kind": "function",
+    "semantic_kind": "function",
+    "attributes": [
+      "propertyList: 属性项与属性值列表",
+      "isDetail: 是否为详情模式"
+    ],
+    "behaviors": [
+      "展示已选商品属性（propertyId+valueId 组合）",
+      "支持删除单个属性组合",
+      "通过 @success 事件触发父组件重新生成 SKU 列表"
+    ],
+    "constraints": [
+      "依赖父组件传入的 propertyList"
+    ],
+    "events": [
+      "@success: 属性变更后通知父组件重新生成 SKU"
+    ],
+    "source_nodes": [
+      "function:724e106277efa318f84e8ee8883266b5"
+    ]
+  },
+  {
+    "name": "showInput",
+    "file": "src/views/mall/product/spu/form/ProductAttributes.vue",
+    "native_kind": "function",
+    "semantic_kind": "function",
+    "attributes": [
+      "propertyList: 属性项与属性值列表",
+      "isDetail: 是否为详情模式"
+    ],
+    "behaviors": [
+      "展示已选商品属性（propertyId+valueId 组合）",
+      "支持删除单个属性组合",
+      "通过 @success 事件触发父组件重新生成 SKU 列表"
+    ],
+    "constraints": [
+      "依赖父组件传入的 propertyList"
+    ],
+    "events": [
+      "@success: 属性变更后通知父组件重新生成 SKU"
+    ],
+    "source_nodes": [
+      "function:74038954226892a8cda1d2908085faea"
+    ]
+  },
+  {
+    "name": "handleInputConfirm",
+    "file": "src/views/mall/product/spu/form/ProductAttributes.vue",
+    "native_kind": "function",
+    "semantic_kind": "function",
+    "attributes": [
+      "propertyList: 属性项与属性值列表",
+      "isDetail: 是否为详情模式"
+    ],
+    "behaviors": [
+      "展示已选商品属性（propertyId+valueId 组合）",
+      "支持删除单个属性组合",
+      "通过 @success 事件触发父组件重新生成 SKU 列表"
+    ],
+    "constraints": [
+      "依赖父组件传入的 propertyList"
+    ],
+    "events": [
+      "@success: 属性变更后通知父组件重新生成 SKU"
+    ],
+    "source_nodes": [
+      "function:a7a13881d1aa292c99debe3c382b8f91"
+    ]
+  },
+  {
+    "name": "getAttributeOptions",
+    "file": "src/views/mall/product/spu/form/ProductAttributes.vue",
+    "native_kind": "function",
+    "semantic_kind": "function",
+    "attributes": [
+      "propertyList: 属性项与属性值列表",
+      "isDetail: 是否为详情模式"
+    ],
+    "behaviors": [
+      "展示已选商品属性（propertyId+valueId 组合）",
+      "支持删除单个属性组合",
+      "通过 @success 事件触发父组件重新生成 SKU 列表"
+    ],
+    "constraints": [
+      "依赖父组件传入的 propertyList"
+    ],
+    "events": [
+      "@success: 属性变更后通知父组件重新生成 SKU"
+    ],
+    "source_nodes": [
+      "function:c9a593b51cd772906dfa96e728561c56"
+    ]
+  },
+  {
+    "name": "ProductPropertyAddForm",
+    "file": "src/views/mall/product/spu/form/ProductPropertyAddForm.vue",
+    "native_kind": "component",
+    "semantic_kind": "page",
+    "attributes": [
+      "propertyList: 父组件传入的属性列表"
+    ],
+    "behaviors": [
+      "通过弹窗选择已有属性并指定属性值加入 propertyList",
+      "用于 spu/form/SkuForm 中触发多规格添加"
+    ],
+    "constraints": [
+      "必须传入 propertyList"
+    ],
+    "events": [
+      "@success: 添加完成后回传新 propertyList"
+    ],
+    "source_nodes": [
+      "component:58b810df1c6c35195b854d4b8e616178"
+    ]
+  },
+  {
+    "name": "submitForm",
+    "file": "src/views/mall/product/spu/form/ProductPropertyAddForm.vue",
+    "native_kind": "function",
+    "semantic_kind": "function",
+    "attributes": [
+      "propertyList: 父组件传入的属性列表"
+    ],
+    "behaviors": [
+      "通过弹窗选择已有属性并指定属性值加入 propertyList",
+      "用于 spu/form/SkuForm 中触发多规格添加"
+    ],
+    "constraints": [
+      "必须传入 propertyList"
+    ],
+    "events": [
+      "@success: 添加完成后回传新 propertyList"
+    ],
+    "source_nodes": [
+      "function:50d18af3b0278074d9b1f60f87348a8b"
+    ]
+  },
+  {
+    "name": "getAttributeOptions",
+    "file": "src/views/mall/product/spu/form/ProductPropertyAddForm.vue",
+    "native_kind": "function",
+    "semantic_kind": "function",
+    "attributes": [
+      "propertyList: 父组件传入的属性列表"
+    ],
+    "behaviors": [
+      "通过弹窗选择已有属性并指定属性值加入 propertyList",
+      "用于 spu/form/SkuForm 中触发多规格添加"
+    ],
+    "constraints": [
+      "必须传入 propertyList"
+    ],
+    "events": [
+      "@success: 添加完成后回传新 propertyList"
+    ],
+    "source_nodes": [
+      "function:7575c67967d8586c5ed720bce5cc04cd"
+    ]
+  },
+  {
+    "name": "open",
+    "file": "src/views/mall/product/spu/form/ProductPropertyAddForm.vue",
+    "native_kind": "function",
+    "semantic_kind": "function",
+    "attributes": [
+      "propertyList: 父组件传入的属性列表"
+    ],
+    "behaviors": [
+      "通过弹窗选择已有属性并指定属性值加入 propertyList",
+      "用于 spu/form/SkuForm 中触发多规格添加"
+    ],
+    "constraints": [
+      "必须传入 propertyList"
+    ],
+    "events": [
+      "@success: 添加完成后回传新 propertyList"
+    ],
+    "source_nodes": [
+      "function:794fad20f4a44105dee230eb5f74da70"
+    ]
+  },
+  {
+    "name": "resetForm",
+    "file": "src/views/mall/product/spu/form/ProductPropertyAddForm.vue",
+    "native_kind": "function",
+    "semantic_kind": "function",
+    "attributes": [
+      "propertyList: 父组件传入的属性列表"
+    ],
+    "behaviors": [
+      "通过弹窗选择已有属性并指定属性值加入 propertyList",
+      "用于 spu/form/SkuForm 中触发多规格添加"
+    ],
+    "constraints": [
+      "必须传入 propertyList"
+    ],
+    "events": [
+      "@success: 添加完成后回传新 propertyList"
+    ],
+    "source_nodes": [
+      "function:8c928417df10a79e769eb1856ddfc038"
+    ]
+  },
+  {
+    "name": "SkuForm",
+    "file": "src/views/mall/product/spu/form/SkuForm.vue",
+    "native_kind": "component",
+    "semantic_kind": "page",
+    "attributes": [],
+    "behaviors": [
+      "component: SkuForm"
+    ],
+    "constraints": [],
+    "events": [],
+    "source_nodes": [
+      "component:18a9cdf6cda3537530eea5e2dc6b6492"
+    ]
+  },
+  {
+    "name": "onChangeSpec",
+    "file": "src/views/mall/product/spu/form/SkuForm.vue",
+    "native_kind": "function",
+    "semantic_kind": "function",
+    "attributes": [
+      "(())"
+    ],
+    "behaviors": [
+      "在 SkuForm.vue 中定义的内部函数"
+    ],
+    "constraints": [
+      "作用域: src/views/mall/product/spu/form/SkuForm.vue"
+    ],
+    "events": [],
+    "source_nodes": [
+      "function:336d1b8a658f42852727210bdfdbe697"
+    ]
+  },
+  {
+    "name": "generateSkus",
+    "file": "src/views/mall/product/spu/form/SkuForm.vue",
+    "native_kind": "function",
+    "semantic_kind": "function",
+    "attributes": [
+      "((propertyList: any[]))"
+    ],
+    "behaviors": [
+      "在 SkuForm.vue 中定义的内部函数"
+    ],
+    "constraints": [
+      "作用域: src/views/mall/product/spu/form/SkuForm.vue"
+    ],
+    "events": [],
+    "source_nodes": [
+      "function:99d7466f68877ee5986613066d634cbc"
+    ]
+  },
+  {
+    "name": "changeSubCommissionType",
+    "file": "src/views/mall/product/spu/form/SkuForm.vue",
+    "native_kind": "function",
+    "semantic_kind": "function",
+    "attributes": [
+      "(())"
+    ],
+    "behaviors": [
+      "在 SkuForm.vue 中定义的内部函数"
+    ],
+    "constraints": [
+      "作用域: src/views/mall/product/spu/form/SkuForm.vue"
+    ],
+    "events": [],
+    "source_nodes": [
+      "function:b67a2aabb8dd6043303b3ce48f24170f"
+    ]
+  },
+  {
+    "name": "validate",
+    "file": "src/views/mall/product/spu/form/SkuForm.vue",
+    "native_kind": "function",
+    "semantic_kind": "function",
+    "attributes": [
+      "(())"
+    ],
+    "behaviors": [
+      "在 SkuForm.vue 中定义的内部函数"
+    ],
+    "constraints": [
+      "作用域: src/views/mall/product/spu/form/SkuForm.vue"
+    ],
+    "events": [],
+    "source_nodes": [
+      "function:f2630f06f15fccc3b08ac7fb3f80503a"
+    ]
+  },
+  {
+    "name": "index",
+    "file": "src/views/mall/product/spu/form/index.vue",
+    "native_kind": "component",
+    "semantic_kind": "page",
+    "attributes": [
+      "activeName (string): 当前 Tab 名称（info/sku/delivery/description/other）",
+      "formData (Spu): 完整 SPU 数据",
+      "formLoading: 表单加载状态",
+      "isDetail: 是否为详情查看模式"
+    ],
+    "behaviors": [
+      "聚合 5 个子表单（基础/价格库存/物流/详情/其他）的数据",
+      "提交前依次校验所有子表单",
+      "处理价格分↔元转换、SKU 命名（用 SPU 名）",
+      "处理轮播图结构（前端选图对象转 URL 字符串）",
+      "新增时调 createSpu，更新时调 updateSpu"
+    ],
+    "constraints": [
+      "需要 product:* 权限点"
+    ],
+    "events": [
+      "@success: 表单提交成功后通知父组件刷新"
+    ],
+    "source_nodes": [
+      "component:be487fd29883255ef6a9971a99c1c589"
+    ],
+    "interactions": [
+      {
+        "element": "保存按钮",
+        "user_action": "点击保存",
+        "api_call": "validate(5个子表单) + createSpu/updateSpu",
+        "success_effect": "提示创建/更新成功并关闭页面",
+        "failure_effect": "校验失败提示并切到对应 Tab"
+      },
+      {
+        "element": "返回按钮",
+        "user_action": "点击返回",
+        "api_call": "delView + router.push ProductSpu",
+        "success_effect": "关闭当前 Tab 并跳回列表",
+        "failure_effect": "无"
+      },
+      {
+        "element": "Tab 切换",
+        "user_action": "点击 Tab",
+        "api_call": "activeName 切换",
+        "success_effect": "展示对应子表单",
+        "failure_effect": "无"
+      }
+    ]
+  },
+  {
+    "name": "submitForm",
+    "file": "src/views/mall/product/spu/form/index.vue",
+    "native_kind": "function",
+    "semantic_kind": "function",
+    "attributes": [
+      "activeName (string): 当前 Tab 名称（info/sku/delivery/description/other）",
+      "formData (Spu): 完整 SPU 数据",
+      "formLoading: 表单加载状态",
+      "isDetail: 是否为详情查看模式"
+    ],
+    "behaviors": [
+      "聚合 5 个子表单（基础/价格库存/物流/详情/其他）的数据",
+      "提交前依次校验所有子表单",
+      "处理价格分↔元转换、SKU 命名（用 SPU 名）",
+      "处理轮播图结构（前端选图对象转 URL 字符串）",
+      "新增时调 createSpu，更新时调 updateSpu"
+    ],
+    "constraints": [
+      "需要 product:* 权限点"
+    ],
+    "events": [
+      "@success: 表单提交成功后通知父组件刷新"
+    ],
+    "source_nodes": [
+      "function:21596f96b6297ac93ddf575df68568e1"
+    ],
+    "interactions": [
+      {
+        "element": "保存按钮",
+        "user_action": "点击保存",
+        "api_call": "validate(5个子表单) + createSpu/updateSpu",
+        "success_effect": "提示创建/更新成功并关闭页面",
+        "failure_effect": "校验失败提示并切到对应 Tab"
+      },
+      {
+        "element": "返回按钮",
+        "user_action": "点击返回",
+        "api_call": "delView + router.push ProductSpu",
+        "success_effect": "关闭当前 Tab 并跳回列表",
+        "failure_effect": "无"
+      },
+      {
+        "element": "Tab 切换",
+        "user_action": "点击 Tab",
+        "api_call": "activeName 切换",
+        "success_effect": "展示对应子表单",
+        "failure_effect": "无"
+      }
+    ]
+  },
+  {
+    "name": "getDetail",
+    "file": "src/views/mall/product/spu/form/index.vue",
+    "native_kind": "function",
+    "semantic_kind": "function",
+    "attributes": [
+      "activeName (string): 当前 Tab 名称（info/sku/delivery/description/other）",
+      "formData (Spu): 完整 SPU 数据",
+      "formLoading: 表单加载状态",
+      "isDetail: 是否为详情查看模式"
+    ],
+    "behaviors": [
+      "聚合 5 个子表单（基础/价格库存/物流/详情/其他）的数据",
+      "提交前依次校验所有子表单",
+      "处理价格分↔元转换、SKU 命名（用 SPU 名）",
+      "处理轮播图结构（前端选图对象转 URL 字符串）",
+      "新增时调 createSpu，更新时调 updateSpu"
+    ],
+    "constraints": [
+      "需要 product:* 权限点"
+    ],
+    "events": [
+      "@success: 表单提交成功后通知父组件刷新"
+    ],
+    "source_nodes": [
+      "function:7321e4032b0d7fdadb00a227f7662b41"
+    ],
+    "interactions": [
+      {
+        "element": "保存按钮",
+        "user_action": "点击保存",
+        "api_call": "validate(5个子表单) + createSpu/updateSpu",
+        "success_effect": "提示创建/更新成功并关闭页面",
+        "failure_effect": "校验失败提示并切到对应 Tab"
+      },
+      {
+        "element": "返回按钮",
+        "user_action": "点击返回",
+        "api_call": "delView + router.push ProductSpu",
+        "success_effect": "关闭当前 Tab 并跳回列表",
+        "failure_effect": "无"
+      },
+      {
+        "element": "Tab 切换",
+        "user_action": "点击 Tab",
+        "api_call": "activeName 切换",
+        "success_effect": "展示对应子表单",
+        "failure_effect": "无"
+      }
+    ]
+  },
+  {
+    "name": "close",
+    "file": "src/views/mall/product/spu/form/index.vue",
+    "native_kind": "function",
+    "semantic_kind": "function",
+    "attributes": [
+      "activeName (string): 当前 Tab 名称（info/sku/delivery/description/other）",
+      "formData (Spu): 完整 SPU 数据",
+      "formLoading: 表单加载状态",
+      "isDetail: 是否为详情查看模式"
+    ],
+    "behaviors": [
+      "聚合 5 个子表单（基础/价格库存/物流/详情/其他）的数据",
+      "提交前依次校验所有子表单",
+      "处理价格分↔元转换、SKU 命名（用 SPU 名）",
+      "处理轮播图结构（前端选图对象转 URL 字符串）",
+      "新增时调 createSpu，更新时调 updateSpu"
+    ],
+    "constraints": [
+      "需要 product:* 权限点"
+    ],
+    "events": [
+      "@success: 表单提交成功后通知父组件刷新"
+    ],
+    "source_nodes": [
+      "function:dde7377dc2f80584d5901b8f6d6fac46"
+    ],
+    "interactions": [
+      {
+        "element": "保存按钮",
+        "user_action": "点击保存",
+        "api_call": "validate(5个子表单) + createSpu/updateSpu",
+        "success_effect": "提示创建/更新成功并关闭页面",
+        "failure_effect": "校验失败提示并切到对应 Tab"
+      },
+      {
+        "element": "返回按钮",
+        "user_action": "点击返回",
+        "api_call": "delView + router.push ProductSpu",
+        "success_effect": "关闭当前 Tab 并跳回列表",
+        "failure_effect": "无"
+      },
+      {
+        "element": "Tab 切换",
+        "user_action": "点击 Tab",
+        "api_call": "activeName 切换",
+        "success_effect": "展示对应子表单",
+        "failure_effect": "无"
+      }
+    ]
+  },
+  {
+    "name": "index",
+    "file": "src/views/mall/product/spu/index.vue",
+    "native_kind": "component",
+    "semantic_kind": "page",
+    "attributes": [
+      "name (string): 搜索条件 - 商品名称",
+      "categoryId (number[]): 搜索条件 - 商品分类级联",
+      "createTime (string[]): 搜索条件 - 创建时间区间",
+      "tabType (number): 当前 Tab 类型（0-出售中 1-仓库中 2-已售罄 3-警戒库存 4-回收站）",
+      "list (Spu[]): 商品列表",
+      "categoryList: 分类树"
+    ],
+    "behaviors": [
+      "提供按名称、分类、创建时间查询 SPU 列表",
+      "提供 5 个状态 Tab 切换（出售/仓库/售罄/警戒/回收）",
+      "支持上/下架、回收、恢复、删除等状态流转",
+      "支持查看商品详情、修改商品、导出商品列表为 Excel",
+      "维护权限点 product:spu:create/update/delete/export"
+    ],
+    "constraints": [
+      "需要 product:* 权限点"
+    ],
+    "events": [
+      "@success: 表单提交成功后通知父组件刷新"
+    ],
+    "source_nodes": [
+      "component:766a92ffa67135de01a5219da9b57bf5"
+    ],
+    "interactions": [
+      {
+        "element": "搜索按钮",
+        "user_action": "点击搜索",
+        "api_call": "getSpuPage(queryParams)",
+        "success_effect": "刷新 SPU 列表",
+        "failure_effect": "无"
+      },
+      {
+        "element": "新增按钮",
+        "user_action": "点击新增",
+        "api_call": "router.push ProductSpuAdd",
+        "success_effect": "跳转到商品发布页",
+        "failure_effect": "权限不足时按钮隐藏"
+      },
+      {
+        "element": "Tab 切换",
+        "user_action": "点击状态 Tab",
+        "api_call": "getSpuPage(tabType)",
+        "success_effect": "切换列表",
+        "failure_effect": "无"
+      },
+      {
+        "element": "上/下架 Switch",
+        "user_action": "切换上架/下架",
+        "api_call": "updateStatus({id, status})",
+        "success_effect": "更新状态并刷新列表+Tab 计数",
+        "failure_effect": "用户取消时回滚 status 字段"
+      },
+      {
+        "element": "回收按钮",
+        "user_action": "点击行内回收",
+        "api_call": "updateStatus({id, status: RECYCLE})",
+        "success_effect": "移入回收站并刷新",
+        "failure_effect": "用户取消二次确认时不执行"
+      },
+      {
+        "element": "恢复按钮",
+        "user_action": "点击行内恢复",
+        "api_call": "updateStatus({id, status: DISABLE})",
+        "success_effect": "恢复到仓库并刷新",
+        "failure_effect": "用户取消二次确认时不执行"
+      },
+      {
+        "element": "删除按钮",
+        "user_action": "点击行内删除",
+        "api_call": "deleteSpu(id)",
+        "success_effect": "提示删除成功并刷新",
+        "failure_effect": "用户取消二次确认时不执行"
+      },
+      {
+        "element": "详情按钮",
+        "user_action": "点击详情",
+        "api_call": "router.push ProductSpuDetail",
+        "success_effect": "跳转到商品详情页",
+        "failure_effect": "无"
+      },
+      {
+        "element": "导出按钮",
+        "user_action": "点击导出",
+        "api_call": "exportSpu(queryParams) + download.excel",
+        "success_effect": "下载商品列表 Excel",
+        "failure_effect": "用户取消二次确认时不执行"
+      },
+      {
+        "element": "分页",
+        "user_action": "切换页码/页大小",
+        "api_call": "getSpuPage",
+        "success_effect": "加载对应页数据",
+        "failure_effect": "无"
+      }
+    ]
+  },
+  {
+    "name": "handleStatusChange",
+    "file": "src/views/mall/product/spu/index.vue",
+    "native_kind": "function",
+    "semantic_kind": "function",
+    "attributes": [
+      "name (string): 搜索条件 - 商品名称",
+      "categoryId (number[]): 搜索条件 - 商品分类级联",
+      "createTime (string[]): 搜索条件 - 创建时间区间",
+      "tabType (number): 当前 Tab 类型（0-出售中 1-仓库中 2-已售罄 3-警戒库存 4-回收站）",
+      "list (Spu[]): 商品列表",
+      "categoryList: 分类树"
+    ],
+    "behaviors": [
+      "提供按名称、分类、创建时间查询 SPU 列表",
+      "提供 5 个状态 Tab 切换（出售/仓库/售罄/警戒/回收）",
+      "支持上/下架、回收、恢复、删除等状态流转",
+      "支持查看商品详情、修改商品、导出商品列表为 Excel",
+      "维护权限点 product:spu:create/update/delete/export"
+    ],
+    "constraints": [
+      "需要 product:* 权限点"
+    ],
+    "events": [
+      "@success: 表单提交成功后通知父组件刷新"
+    ],
+    "source_nodes": [
+      "function:00aeabe7ac524f4948732a598941bfa0"
+    ],
+    "interactions": [
+      {
+        "element": "搜索按钮",
+        "user_action": "点击搜索",
+        "api_call": "getSpuPage(queryParams)",
+        "success_effect": "刷新 SPU 列表",
+        "failure_effect": "无"
+      },
+      {
+        "element": "新增按钮",
+        "user_action": "点击新增",
+        "api_call": "router.push ProductSpuAdd",
+        "success_effect": "跳转到商品发布页",
+        "failure_effect": "权限不足时按钮隐藏"
+      },
+      {
+        "element": "Tab 切换",
+        "user_action": "点击状态 Tab",
+        "api_call": "getSpuPage(tabType)",
+        "success_effect": "切换列表",
+        "failure_effect": "无"
+      },
+      {
+        "element": "上/下架 Switch",
+        "user_action": "切换上架/下架",
+        "api_call": "updateStatus({id, status})",
+        "success_effect": "更新状态并刷新列表+Tab 计数",
+        "failure_effect": "用户取消时回滚 status 字段"
+      },
+      {
+        "element": "回收按钮",
+        "user_action": "点击行内回收",
+        "api_call": "updateStatus({id, status: RECYCLE})",
+        "success_effect": "移入回收站并刷新",
+        "failure_effect": "用户取消二次确认时不执行"
+      },
+      {
+        "element": "恢复按钮",
+        "user_action": "点击行内恢复",
+        "api_call": "updateStatus({id, status: DISABLE})",
+        "success_effect": "恢复到仓库并刷新",
+        "failure_effect": "用户取消二次确认时不执行"
+      },
+      {
+        "element": "删除按钮",
+        "user_action": "点击行内删除",
+        "api_call": "deleteSpu(id)",
+        "success_effect": "提示删除成功并刷新",
+        "failure_effect": "用户取消二次确认时不执行"
+      },
+      {
+        "element": "详情按钮",
+        "user_action": "点击详情",
+        "api_call": "router.push ProductSpuDetail",
+        "success_effect": "跳转到商品详情页",
+        "failure_effect": "无"
+      },
+      {
+        "element": "导出按钮",
+        "user_action": "点击导出",
+        "api_call": "exportSpu(queryParams) + download.excel",
+        "success_effect": "下载商品列表 Excel",
+        "failure_effect": "用户取消二次确认时不执行"
+      },
+      {
+        "element": "分页",
+        "user_action": "切换页码/页大小",
+        "api_call": "getSpuPage",
+        "success_effect": "加载对应页数据",
+        "failure_effect": "无"
+      }
+    ]
+  },
+  {
+    "name": "handleDelete",
+    "file": "src/views/mall/product/spu/index.vue",
+    "native_kind": "function",
+    "semantic_kind": "function",
+    "attributes": [
+      "name (string): 搜索条件 - 商品名称",
+      "categoryId (number[]): 搜索条件 - 商品分类级联",
+      "createTime (string[]): 搜索条件 - 创建时间区间",
+      "tabType (number): 当前 Tab 类型（0-出售中 1-仓库中 2-已售罄 3-警戒库存 4-回收站）",
+      "list (Spu[]): 商品列表",
+      "categoryList: 分类树"
+    ],
+    "behaviors": [
+      "提供按名称、分类、创建时间查询 SPU 列表",
+      "提供 5 个状态 Tab 切换（出售/仓库/售罄/警戒/回收）",
+      "支持上/下架、回收、恢复、删除等状态流转",
+      "支持查看商品详情、修改商品、导出商品列表为 Excel",
+      "维护权限点 product:spu:create/update/delete/export"
+    ],
+    "constraints": [
+      "需要 product:* 权限点"
+    ],
+    "events": [
+      "@success: 表单提交成功后通知父组件刷新"
+    ],
+    "source_nodes": [
+      "function:0572a319ef6e3d977b780c4d8388b1d7"
+    ],
+    "interactions": [
+      {
+        "element": "搜索按钮",
+        "user_action": "点击搜索",
+        "api_call": "getSpuPage(queryParams)",
+        "success_effect": "刷新 SPU 列表",
+        "failure_effect": "无"
+      },
+      {
+        "element": "新增按钮",
+        "user_action": "点击新增",
+        "api_call": "router.push ProductSpuAdd",
+        "success_effect": "跳转到商品发布页",
+        "failure_effect": "权限不足时按钮隐藏"
+      },
+      {
+        "element": "Tab 切换",
+        "user_action": "点击状态 Tab",
+        "api_call": "getSpuPage(tabType)",
+        "success_effect": "切换列表",
+        "failure_effect": "无"
+      },
+      {
+        "element": "上/下架 Switch",
+        "user_action": "切换上架/下架",
+        "api_call": "updateStatus({id, status})",
+        "success_effect": "更新状态并刷新列表+Tab 计数",
+        "failure_effect": "用户取消时回滚 status 字段"
+      },
+      {
+        "element": "回收按钮",
+        "user_action": "点击行内回收",
+        "api_call": "updateStatus({id, status: RECYCLE})",
+        "success_effect": "移入回收站并刷新",
+        "failure_effect": "用户取消二次确认时不执行"
+      },
+      {
+        "element": "恢复按钮",
+        "user_action": "点击行内恢复",
+        "api_call": "updateStatus({id, status: DISABLE})",
+        "success_effect": "恢复到仓库并刷新",
+        "failure_effect": "用户取消二次确认时不执行"
+      },
+      {
+        "element": "删除按钮",
+        "user_action": "点击行内删除",
+        "api_call": "deleteSpu(id)",
+        "success_effect": "提示删除成功并刷新",
+        "failure_effect": "用户取消二次确认时不执行"
+      },
+      {
+        "element": "详情按钮",
+        "user_action": "点击详情",
+        "api_call": "router.push ProductSpuDetail",
+        "success_effect": "跳转到商品详情页",
+        "failure_effect": "无"
+      },
+      {
+        "element": "导出按钮",
+        "user_action": "点击导出",
+        "api_call": "exportSpu(queryParams) + download.excel",
+        "success_effect": "下载商品列表 Excel",
+        "failure_effect": "用户取消二次确认时不执行"
+      },
+      {
+        "element": "分页",
+        "user_action": "切换页码/页大小",
+        "api_call": "getSpuPage",
+        "success_effect": "加载对应页数据",
+        "failure_effect": "无"
+      }
+    ]
+  },
+  {
+    "name": "openDetail",
+    "file": "src/views/mall/product/spu/index.vue",
+    "native_kind": "function",
+    "semantic_kind": "function",
+    "attributes": [
+      "name (string): 搜索条件 - 商品名称",
+      "categoryId (number[]): 搜索条件 - 商品分类级联",
+      "createTime (string[]): 搜索条件 - 创建时间区间",
+      "tabType (number): 当前 Tab 类型（0-出售中 1-仓库中 2-已售罄 3-警戒库存 4-回收站）",
+      "list (Spu[]): 商品列表",
+      "categoryList: 分类树"
+    ],
+    "behaviors": [
+      "提供按名称、分类、创建时间查询 SPU 列表",
+      "提供 5 个状态 Tab 切换（出售/仓库/售罄/警戒/回收）",
+      "支持上/下架、回收、恢复、删除等状态流转",
+      "支持查看商品详情、修改商品、导出商品列表为 Excel",
+      "维护权限点 product:spu:create/update/delete/export"
+    ],
+    "constraints": [
+      "需要 product:* 权限点"
+    ],
+    "events": [
+      "@success: 表单提交成功后通知父组件刷新"
+    ],
+    "source_nodes": [
+      "function:07b21ab96e45283d435504d393ae4325"
+    ],
+    "interactions": [
+      {
+        "element": "搜索按钮",
+        "user_action": "点击搜索",
+        "api_call": "getSpuPage(queryParams)",
+        "success_effect": "刷新 SPU 列表",
+        "failure_effect": "无"
+      },
+      {
+        "element": "新增按钮",
+        "user_action": "点击新增",
+        "api_call": "router.push ProductSpuAdd",
+        "success_effect": "跳转到商品发布页",
+        "failure_effect": "权限不足时按钮隐藏"
+      },
+      {
+        "element": "Tab 切换",
+        "user_action": "点击状态 Tab",
+        "api_call": "getSpuPage(tabType)",
+        "success_effect": "切换列表",
+        "failure_effect": "无"
+      },
+      {
+        "element": "上/下架 Switch",
+        "user_action": "切换上架/下架",
+        "api_call": "updateStatus({id, status})",
+        "success_effect": "更新状态并刷新列表+Tab 计数",
+        "failure_effect": "用户取消时回滚 status 字段"
+      },
+      {
+        "element": "回收按钮",
+        "user_action": "点击行内回收",
+        "api_call": "updateStatus({id, status: RECYCLE})",
+        "success_effect": "移入回收站并刷新",
+        "failure_effect": "用户取消二次确认时不执行"
+      },
+      {
+        "element": "恢复按钮",
+        "user_action": "点击行内恢复",
+        "api_call": "updateStatus({id, status: DISABLE})",
+        "success_effect": "恢复到仓库并刷新",
+        "failure_effect": "用户取消二次确认时不执行"
+      },
+      {
+        "element": "删除按钮",
+        "user_action": "点击行内删除",
+        "api_call": "deleteSpu(id)",
+        "success_effect": "提示删除成功并刷新",
+        "failure_effect": "用户取消二次确认时不执行"
+      },
+      {
+        "element": "详情按钮",
+        "user_action": "点击详情",
+        "api_call": "router.push ProductSpuDetail",
+        "success_effect": "跳转到商品详情页",
+        "failure_effect": "无"
+      },
+      {
+        "element": "导出按钮",
+        "user_action": "点击导出",
+        "api_call": "exportSpu(queryParams) + download.excel",
+        "success_effect": "下载商品列表 Excel",
+        "failure_effect": "用户取消二次确认时不执行"
+      },
+      {
+        "element": "分页",
+        "user_action": "切换页码/页大小",
+        "api_call": "getSpuPage",
+        "success_effect": "加载对应页数据",
+        "failure_effect": "无"
+      }
+    ]
+  },
+  {
+    "name": "resetQuery",
+    "file": "src/views/mall/product/spu/index.vue",
+    "native_kind": "function",
+    "semantic_kind": "function",
+    "attributes": [
+      "name (string): 搜索条件 - 商品名称",
+      "categoryId (number[]): 搜索条件 - 商品分类级联",
+      "createTime (string[]): 搜索条件 - 创建时间区间",
+      "tabType (number): 当前 Tab 类型（0-出售中 1-仓库中 2-已售罄 3-警戒库存 4-回收站）",
+      "list (Spu[]): 商品列表",
+      "categoryList: 分类树"
+    ],
+    "behaviors": [
+      "提供按名称、分类、创建时间查询 SPU 列表",
+      "提供 5 个状态 Tab 切换（出售/仓库/售罄/警戒/回收）",
+      "支持上/下架、回收、恢复、删除等状态流转",
+      "支持查看商品详情、修改商品、导出商品列表为 Excel",
+      "维护权限点 product:spu:create/update/delete/export"
+    ],
+    "constraints": [
+      "需要 product:* 权限点"
+    ],
+    "events": [
+      "@success: 表单提交成功后通知父组件刷新"
+    ],
+    "source_nodes": [
+      "function:259908717500363287b6427cfd058f7a"
+    ],
+    "interactions": [
+      {
+        "element": "搜索按钮",
+        "user_action": "点击搜索",
+        "api_call": "getSpuPage(queryParams)",
+        "success_effect": "刷新 SPU 列表",
+        "failure_effect": "无"
+      },
+      {
+        "element": "新增按钮",
+        "user_action": "点击新增",
+        "api_call": "router.push ProductSpuAdd",
+        "success_effect": "跳转到商品发布页",
+        "failure_effect": "权限不足时按钮隐藏"
+      },
+      {
+        "element": "Tab 切换",
+        "user_action": "点击状态 Tab",
+        "api_call": "getSpuPage(tabType)",
+        "success_effect": "切换列表",
+        "failure_effect": "无"
+      },
+      {
+        "element": "上/下架 Switch",
+        "user_action": "切换上架/下架",
+        "api_call": "updateStatus({id, status})",
+        "success_effect": "更新状态并刷新列表+Tab 计数",
+        "failure_effect": "用户取消时回滚 status 字段"
+      },
+      {
+        "element": "回收按钮",
+        "user_action": "点击行内回收",
+        "api_call": "updateStatus({id, status: RECYCLE})",
+        "success_effect": "移入回收站并刷新",
+        "failure_effect": "用户取消二次确认时不执行"
+      },
+      {
+        "element": "恢复按钮",
+        "user_action": "点击行内恢复",
+        "api_call": "updateStatus({id, status: DISABLE})",
+        "success_effect": "恢复到仓库并刷新",
+        "failure_effect": "用户取消二次确认时不执行"
+      },
+      {
+        "element": "删除按钮",
+        "user_action": "点击行内删除",
+        "api_call": "deleteSpu(id)",
+        "success_effect": "提示删除成功并刷新",
+        "failure_effect": "用户取消二次确认时不执行"
+      },
+      {
+        "element": "详情按钮",
+        "user_action": "点击详情",
+        "api_call": "router.push ProductSpuDetail",
+        "success_effect": "跳转到商品详情页",
+        "failure_effect": "无"
+      },
+      {
+        "element": "导出按钮",
+        "user_action": "点击导出",
+        "api_call": "exportSpu(queryParams) + download.excel",
+        "success_effect": "下载商品列表 Excel",
+        "failure_effect": "用户取消二次确认时不执行"
+      },
+      {
+        "element": "分页",
+        "user_action": "切换页码/页大小",
+        "api_call": "getSpuPage",
+        "success_effect": "加载对应页数据",
+        "failure_effect": "无"
+      }
+    ]
+  },
+  {
+    "name": "handleExport",
+    "file": "src/views/mall/product/spu/index.vue",
+    "native_kind": "function",
+    "semantic_kind": "function",
+    "attributes": [
+      "name (string): 搜索条件 - 商品名称",
+      "categoryId (number[]): 搜索条件 - 商品分类级联",
+      "createTime (string[]): 搜索条件 - 创建时间区间",
+      "tabType (number): 当前 Tab 类型（0-出售中 1-仓库中 2-已售罄 3-警戒库存 4-回收站）",
+      "list (Spu[]): 商品列表",
+      "categoryList: 分类树"
+    ],
+    "behaviors": [
+      "提供按名称、分类、创建时间查询 SPU 列表",
+      "提供 5 个状态 Tab 切换（出售/仓库/售罄/警戒/回收）",
+      "支持上/下架、回收、恢复、删除等状态流转",
+      "支持查看商品详情、修改商品、导出商品列表为 Excel",
+      "维护权限点 product:spu:create/update/delete/export"
+    ],
+    "constraints": [
+      "需要 product:* 权限点"
+    ],
+    "events": [
+      "@success: 表单提交成功后通知父组件刷新"
+    ],
+    "source_nodes": [
+      "function:2a94fc6fb71b673f328d3082cf608eed"
+    ],
+    "interactions": [
+      {
+        "element": "搜索按钮",
+        "user_action": "点击搜索",
+        "api_call": "getSpuPage(queryParams)",
+        "success_effect": "刷新 SPU 列表",
+        "failure_effect": "无"
+      },
+      {
+        "element": "新增按钮",
+        "user_action": "点击新增",
+        "api_call": "router.push ProductSpuAdd",
+        "success_effect": "跳转到商品发布页",
+        "failure_effect": "权限不足时按钮隐藏"
+      },
+      {
+        "element": "Tab 切换",
+        "user_action": "点击状态 Tab",
+        "api_call": "getSpuPage(tabType)",
+        "success_effect": "切换列表",
+        "failure_effect": "无"
+      },
+      {
+        "element": "上/下架 Switch",
+        "user_action": "切换上架/下架",
+        "api_call": "updateStatus({id, status})",
+        "success_effect": "更新状态并刷新列表+Tab 计数",
+        "failure_effect": "用户取消时回滚 status 字段"
+      },
+      {
+        "element": "回收按钮",
+        "user_action": "点击行内回收",
+        "api_call": "updateStatus({id, status: RECYCLE})",
+        "success_effect": "移入回收站并刷新",
+        "failure_effect": "用户取消二次确认时不执行"
+      },
+      {
+        "element": "恢复按钮",
+        "user_action": "点击行内恢复",
+        "api_call": "updateStatus({id, status: DISABLE})",
+        "success_effect": "恢复到仓库并刷新",
+        "failure_effect": "用户取消二次确认时不执行"
+      },
+      {
+        "element": "删除按钮",
+        "user_action": "点击行内删除",
+        "api_call": "deleteSpu(id)",
+        "success_effect": "提示删除成功并刷新",
+        "failure_effect": "用户取消二次确认时不执行"
+      },
+      {
+        "element": "详情按钮",
+        "user_action": "点击详情",
+        "api_call": "router.push ProductSpuDetail",
+        "success_effect": "跳转到商品详情页",
+        "failure_effect": "无"
+      },
+      {
+        "element": "导出按钮",
+        "user_action": "点击导出",
+        "api_call": "exportSpu(queryParams) + download.excel",
+        "success_effect": "下载商品列表 Excel",
+        "failure_effect": "用户取消二次确认时不执行"
+      },
+      {
+        "element": "分页",
+        "user_action": "切换页码/页大小",
+        "api_call": "getSpuPage",
+        "success_effect": "加载对应页数据",
+        "failure_effect": "无"
+      }
+    ]
+  },
+  {
+    "name": "handleQuery",
+    "file": "src/views/mall/product/spu/index.vue",
+    "native_kind": "function",
+    "semantic_kind": "function",
+    "attributes": [
+      "name (string): 搜索条件 - 商品名称",
+      "categoryId (number[]): 搜索条件 - 商品分类级联",
+      "createTime (string[]): 搜索条件 - 创建时间区间",
+      "tabType (number): 当前 Tab 类型（0-出售中 1-仓库中 2-已售罄 3-警戒库存 4-回收站）",
+      "list (Spu[]): 商品列表",
+      "categoryList: 分类树"
+    ],
+    "behaviors": [
+      "提供按名称、分类、创建时间查询 SPU 列表",
+      "提供 5 个状态 Tab 切换（出售/仓库/售罄/警戒/回收）",
+      "支持上/下架、回收、恢复、删除等状态流转",
+      "支持查看商品详情、修改商品、导出商品列表为 Excel",
+      "维护权限点 product:spu:create/update/delete/export"
+    ],
+    "constraints": [
+      "需要 product:* 权限点"
+    ],
+    "events": [
+      "@success: 表单提交成功后通知父组件刷新"
+    ],
+    "source_nodes": [
+      "function:3eb539380cbc5814615610c2831420c1"
+    ],
+    "interactions": [
+      {
+        "element": "搜索按钮",
+        "user_action": "点击搜索",
+        "api_call": "getSpuPage(queryParams)",
+        "success_effect": "刷新 SPU 列表",
+        "failure_effect": "无"
+      },
+      {
+        "element": "新增按钮",
+        "user_action": "点击新增",
+        "api_call": "router.push ProductSpuAdd",
+        "success_effect": "跳转到商品发布页",
+        "failure_effect": "权限不足时按钮隐藏"
+      },
+      {
+        "element": "Tab 切换",
+        "user_action": "点击状态 Tab",
+        "api_call": "getSpuPage(tabType)",
+        "success_effect": "切换列表",
+        "failure_effect": "无"
+      },
+      {
+        "element": "上/下架 Switch",
+        "user_action": "切换上架/下架",
+        "api_call": "updateStatus({id, status})",
+        "success_effect": "更新状态并刷新列表+Tab 计数",
+        "failure_effect": "用户取消时回滚 status 字段"
+      },
+      {
+        "element": "回收按钮",
+        "user_action": "点击行内回收",
+        "api_call": "updateStatus({id, status: RECYCLE})",
+        "success_effect": "移入回收站并刷新",
+        "failure_effect": "用户取消二次确认时不执行"
+      },
+      {
+        "element": "恢复按钮",
+        "user_action": "点击行内恢复",
+        "api_call": "updateStatus({id, status: DISABLE})",
+        "success_effect": "恢复到仓库并刷新",
+        "failure_effect": "用户取消二次确认时不执行"
+      },
+      {
+        "element": "删除按钮",
+        "user_action": "点击行内删除",
+        "api_call": "deleteSpu(id)",
+        "success_effect": "提示删除成功并刷新",
+        "failure_effect": "用户取消二次确认时不执行"
+      },
+      {
+        "element": "详情按钮",
+        "user_action": "点击详情",
+        "api_call": "router.push ProductSpuDetail",
+        "success_effect": "跳转到商品详情页",
+        "failure_effect": "无"
+      },
+      {
+        "element": "导出按钮",
+        "user_action": "点击导出",
+        "api_call": "exportSpu(queryParams) + download.excel",
+        "success_effect": "下载商品列表 Excel",
+        "failure_effect": "用户取消二次确认时不执行"
+      },
+      {
+        "element": "分页",
+        "user_action": "切换页码/页大小",
+        "api_call": "getSpuPage",
+        "success_effect": "加载对应页数据",
+        "failure_effect": "无"
+      }
+    ]
+  },
+  {
+    "name": "formatCategoryName",
+    "file": "src/views/mall/product/spu/index.vue",
+    "native_kind": "function",
+    "semantic_kind": "function",
+    "attributes": [
+      "name (string): 搜索条件 - 商品名称",
+      "categoryId (number[]): 搜索条件 - 商品分类级联",
+      "createTime (string[]): 搜索条件 - 创建时间区间",
+      "tabType (number): 当前 Tab 类型（0-出售中 1-仓库中 2-已售罄 3-警戒库存 4-回收站）",
+      "list (Spu[]): 商品列表",
+      "categoryList: 分类树"
+    ],
+    "behaviors": [
+      "提供按名称、分类、创建时间查询 SPU 列表",
+      "提供 5 个状态 Tab 切换（出售/仓库/售罄/警戒/回收）",
+      "支持上/下架、回收、恢复、删除等状态流转",
+      "支持查看商品详情、修改商品、导出商品列表为 Excel",
+      "维护权限点 product:spu:create/update/delete/export"
+    ],
+    "constraints": [
+      "需要 product:* 权限点"
+    ],
+    "events": [
+      "@success: 表单提交成功后通知父组件刷新"
+    ],
+    "source_nodes": [
+      "function:42d02fc607206dbbe62cb55eddff57b3"
+    ],
+    "interactions": [
+      {
+        "element": "搜索按钮",
+        "user_action": "点击搜索",
+        "api_call": "getSpuPage(queryParams)",
+        "success_effect": "刷新 SPU 列表",
+        "failure_effect": "无"
+      },
+      {
+        "element": "新增按钮",
+        "user_action": "点击新增",
+        "api_call": "router.push ProductSpuAdd",
+        "success_effect": "跳转到商品发布页",
+        "failure_effect": "权限不足时按钮隐藏"
+      },
+      {
+        "element": "Tab 切换",
+        "user_action": "点击状态 Tab",
+        "api_call": "getSpuPage(tabType)",
+        "success_effect": "切换列表",
+        "failure_effect": "无"
+      },
+      {
+        "element": "上/下架 Switch",
+        "user_action": "切换上架/下架",
+        "api_call": "updateStatus({id, status})",
+        "success_effect": "更新状态并刷新列表+Tab 计数",
+        "failure_effect": "用户取消时回滚 status 字段"
+      },
+      {
+        "element": "回收按钮",
+        "user_action": "点击行内回收",
+        "api_call": "updateStatus({id, status: RECYCLE})",
+        "success_effect": "移入回收站并刷新",
+        "failure_effect": "用户取消二次确认时不执行"
+      },
+      {
+        "element": "恢复按钮",
+        "user_action": "点击行内恢复",
+        "api_call": "updateStatus({id, status: DISABLE})",
+        "success_effect": "恢复到仓库并刷新",
+        "failure_effect": "用户取消二次确认时不执行"
+      },
+      {
+        "element": "删除按钮",
+        "user_action": "点击行内删除",
+        "api_call": "deleteSpu(id)",
+        "success_effect": "提示删除成功并刷新",
+        "failure_effect": "用户取消二次确认时不执行"
+      },
+      {
+        "element": "详情按钮",
+        "user_action": "点击详情",
+        "api_call": "router.push ProductSpuDetail",
+        "success_effect": "跳转到商品详情页",
+        "failure_effect": "无"
+      },
+      {
+        "element": "导出按钮",
+        "user_action": "点击导出",
+        "api_call": "exportSpu(queryParams) + download.excel",
+        "success_effect": "下载商品列表 Excel",
+        "failure_effect": "用户取消二次确认时不执行"
+      },
+      {
+        "element": "分页",
+        "user_action": "切换页码/页大小",
+        "api_call": "getSpuPage",
+        "success_effect": "加载对应页数据",
+        "failure_effect": "无"
+      }
+    ]
+  },
+  {
+    "name": "getList",
+    "file": "src/views/mall/product/spu/index.vue",
+    "native_kind": "function",
+    "semantic_kind": "function",
+    "attributes": [
+      "name (string): 搜索条件 - 商品名称",
+      "categoryId (number[]): 搜索条件 - 商品分类级联",
+      "createTime (string[]): 搜索条件 - 创建时间区间",
+      "tabType (number): 当前 Tab 类型（0-出售中 1-仓库中 2-已售罄 3-警戒库存 4-回收站）",
+      "list (Spu[]): 商品列表",
+      "categoryList: 分类树"
+    ],
+    "behaviors": [
+      "提供按名称、分类、创建时间查询 SPU 列表",
+      "提供 5 个状态 Tab 切换（出售/仓库/售罄/警戒/回收）",
+      "支持上/下架、回收、恢复、删除等状态流转",
+      "支持查看商品详情、修改商品、导出商品列表为 Excel",
+      "维护权限点 product:spu:create/update/delete/export"
+    ],
+    "constraints": [
+      "需要 product:* 权限点"
+    ],
+    "events": [
+      "@success: 表单提交成功后通知父组件刷新"
+    ],
+    "source_nodes": [
+      "function:6b0b4688cf291bf13175d0fae3b2e4bb"
+    ],
+    "interactions": [
+      {
+        "element": "搜索按钮",
+        "user_action": "点击搜索",
+        "api_call": "getSpuPage(queryParams)",
+        "success_effect": "刷新 SPU 列表",
+        "failure_effect": "无"
+      },
+      {
+        "element": "新增按钮",
+        "user_action": "点击新增",
+        "api_call": "router.push ProductSpuAdd",
+        "success_effect": "跳转到商品发布页",
+        "failure_effect": "权限不足时按钮隐藏"
+      },
+      {
+        "element": "Tab 切换",
+        "user_action": "点击状态 Tab",
+        "api_call": "getSpuPage(tabType)",
+        "success_effect": "切换列表",
+        "failure_effect": "无"
+      },
+      {
+        "element": "上/下架 Switch",
+        "user_action": "切换上架/下架",
+        "api_call": "updateStatus({id, status})",
+        "success_effect": "更新状态并刷新列表+Tab 计数",
+        "failure_effect": "用户取消时回滚 status 字段"
+      },
+      {
+        "element": "回收按钮",
+        "user_action": "点击行内回收",
+        "api_call": "updateStatus({id, status: RECYCLE})",
+        "success_effect": "移入回收站并刷新",
+        "failure_effect": "用户取消二次确认时不执行"
+      },
+      {
+        "element": "恢复按钮",
+        "user_action": "点击行内恢复",
+        "api_call": "updateStatus({id, status: DISABLE})",
+        "success_effect": "恢复到仓库并刷新",
+        "failure_effect": "用户取消二次确认时不执行"
+      },
+      {
+        "element": "删除按钮",
+        "user_action": "点击行内删除",
+        "api_call": "deleteSpu(id)",
+        "success_effect": "提示删除成功并刷新",
+        "failure_effect": "用户取消二次确认时不执行"
+      },
+      {
+        "element": "详情按钮",
+        "user_action": "点击详情",
+        "api_call": "router.push ProductSpuDetail",
+        "success_effect": "跳转到商品详情页",
+        "failure_effect": "无"
+      },
+      {
+        "element": "导出按钮",
+        "user_action": "点击导出",
+        "api_call": "exportSpu(queryParams) + download.excel",
+        "success_effect": "下载商品列表 Excel",
+        "failure_effect": "用户取消二次确认时不执行"
+      },
+      {
+        "element": "分页",
+        "user_action": "切换页码/页大小",
+        "api_call": "getSpuPage",
+        "success_effect": "加载对应页数据",
+        "failure_effect": "无"
+      }
+    ]
+  },
+  {
+    "name": "handleTabClick",
+    "file": "src/views/mall/product/spu/index.vue",
+    "native_kind": "function",
+    "semantic_kind": "function",
+    "attributes": [
+      "name (string): 搜索条件 - 商品名称",
+      "categoryId (number[]): 搜索条件 - 商品分类级联",
+      "createTime (string[]): 搜索条件 - 创建时间区间",
+      "tabType (number): 当前 Tab 类型（0-出售中 1-仓库中 2-已售罄 3-警戒库存 4-回收站）",
+      "list (Spu[]): 商品列表",
+      "categoryList: 分类树"
+    ],
+    "behaviors": [
+      "提供按名称、分类、创建时间查询 SPU 列表",
+      "提供 5 个状态 Tab 切换（出售/仓库/售罄/警戒/回收）",
+      "支持上/下架、回收、恢复、删除等状态流转",
+      "支持查看商品详情、修改商品、导出商品列表为 Excel",
+      "维护权限点 product:spu:create/update/delete/export"
+    ],
+    "constraints": [
+      "需要 product:* 权限点"
+    ],
+    "events": [
+      "@success: 表单提交成功后通知父组件刷新"
+    ],
+    "source_nodes": [
+      "function:9d887772bfbfda595026b206991500f7"
+    ],
+    "interactions": [
+      {
+        "element": "搜索按钮",
+        "user_action": "点击搜索",
+        "api_call": "getSpuPage(queryParams)",
+        "success_effect": "刷新 SPU 列表",
+        "failure_effect": "无"
+      },
+      {
+        "element": "新增按钮",
+        "user_action": "点击新增",
+        "api_call": "router.push ProductSpuAdd",
+        "success_effect": "跳转到商品发布页",
+        "failure_effect": "权限不足时按钮隐藏"
+      },
+      {
+        "element": "Tab 切换",
+        "user_action": "点击状态 Tab",
+        "api_call": "getSpuPage(tabType)",
+        "success_effect": "切换列表",
+        "failure_effect": "无"
+      },
+      {
+        "element": "上/下架 Switch",
+        "user_action": "切换上架/下架",
+        "api_call": "updateStatus({id, status})",
+        "success_effect": "更新状态并刷新列表+Tab 计数",
+        "failure_effect": "用户取消时回滚 status 字段"
+      },
+      {
+        "element": "回收按钮",
+        "user_action": "点击行内回收",
+        "api_call": "updateStatus({id, status: RECYCLE})",
+        "success_effect": "移入回收站并刷新",
+        "failure_effect": "用户取消二次确认时不执行"
+      },
+      {
+        "element": "恢复按钮",
+        "user_action": "点击行内恢复",
+        "api_call": "updateStatus({id, status: DISABLE})",
+        "success_effect": "恢复到仓库并刷新",
+        "failure_effect": "用户取消二次确认时不执行"
+      },
+      {
+        "element": "删除按钮",
+        "user_action": "点击行内删除",
+        "api_call": "deleteSpu(id)",
+        "success_effect": "提示删除成功并刷新",
+        "failure_effect": "用户取消二次确认时不执行"
+      },
+      {
+        "element": "详情按钮",
+        "user_action": "点击详情",
+        "api_call": "router.push ProductSpuDetail",
+        "success_effect": "跳转到商品详情页",
+        "failure_effect": "无"
+      },
+      {
+        "element": "导出按钮",
+        "user_action": "点击导出",
+        "api_call": "exportSpu(queryParams) + download.excel",
+        "success_effect": "下载商品列表 Excel",
+        "failure_effect": "用户取消二次确认时不执行"
+      },
+      {
+        "element": "分页",
+        "user_action": "切换页码/页大小",
+        "api_call": "getSpuPage",
+        "success_effect": "加载对应页数据",
+        "failure_effect": "无"
+      }
+    ]
+  },
+  {
+    "name": "getTabsCount",
+    "file": "src/views/mall/product/spu/index.vue",
+    "native_kind": "function",
+    "semantic_kind": "function",
+    "attributes": [
+      "name (string): 搜索条件 - 商品名称",
+      "categoryId (number[]): 搜索条件 - 商品分类级联",
+      "createTime (string[]): 搜索条件 - 创建时间区间",
+      "tabType (number): 当前 Tab 类型（0-出售中 1-仓库中 2-已售罄 3-警戒库存 4-回收站）",
+      "list (Spu[]): 商品列表",
+      "categoryList: 分类树"
+    ],
+    "behaviors": [
+      "提供按名称、分类、创建时间查询 SPU 列表",
+      "提供 5 个状态 Tab 切换（出售/仓库/售罄/警戒/回收）",
+      "支持上/下架、回收、恢复、删除等状态流转",
+      "支持查看商品详情、修改商品、导出商品列表为 Excel",
+      "维护权限点 product:spu:create/update/delete/export"
+    ],
+    "constraints": [
+      "需要 product:* 权限点"
+    ],
+    "events": [
+      "@success: 表单提交成功后通知父组件刷新"
+    ],
+    "source_nodes": [
+      "function:a03bb0b8b280e9336f84cd3ba4f598b4"
+    ],
+    "interactions": [
+      {
+        "element": "搜索按钮",
+        "user_action": "点击搜索",
+        "api_call": "getSpuPage(queryParams)",
+        "success_effect": "刷新 SPU 列表",
+        "failure_effect": "无"
+      },
+      {
+        "element": "新增按钮",
+        "user_action": "点击新增",
+        "api_call": "router.push ProductSpuAdd",
+        "success_effect": "跳转到商品发布页",
+        "failure_effect": "权限不足时按钮隐藏"
+      },
+      {
+        "element": "Tab 切换",
+        "user_action": "点击状态 Tab",
+        "api_call": "getSpuPage(tabType)",
+        "success_effect": "切换列表",
+        "failure_effect": "无"
+      },
+      {
+        "element": "上/下架 Switch",
+        "user_action": "切换上架/下架",
+        "api_call": "updateStatus({id, status})",
+        "success_effect": "更新状态并刷新列表+Tab 计数",
+        "failure_effect": "用户取消时回滚 status 字段"
+      },
+      {
+        "element": "回收按钮",
+        "user_action": "点击行内回收",
+        "api_call": "updateStatus({id, status: RECYCLE})",
+        "success_effect": "移入回收站并刷新",
+        "failure_effect": "用户取消二次确认时不执行"
+      },
+      {
+        "element": "恢复按钮",
+        "user_action": "点击行内恢复",
+        "api_call": "updateStatus({id, status: DISABLE})",
+        "success_effect": "恢复到仓库并刷新",
+        "failure_effect": "用户取消二次确认时不执行"
+      },
+      {
+        "element": "删除按钮",
+        "user_action": "点击行内删除",
+        "api_call": "deleteSpu(id)",
+        "success_effect": "提示删除成功并刷新",
+        "failure_effect": "用户取消二次确认时不执行"
+      },
+      {
+        "element": "详情按钮",
+        "user_action": "点击详情",
+        "api_call": "router.push ProductSpuDetail",
+        "success_effect": "跳转到商品详情页",
+        "failure_effect": "无"
+      },
+      {
+        "element": "导出按钮",
+        "user_action": "点击导出",
+        "api_call": "exportSpu(queryParams) + download.excel",
+        "success_effect": "下载商品列表 Excel",
+        "failure_effect": "用户取消二次确认时不执行"
+      },
+      {
+        "element": "分页",
+        "user_action": "切换页码/页大小",
+        "api_call": "getSpuPage",
+        "success_effect": "加载对应页数据",
+        "failure_effect": "无"
+      }
+    ]
+  },
+  {
+    "name": "openForm",
+    "file": "src/views/mall/product/spu/index.vue",
+    "native_kind": "function",
+    "semantic_kind": "function",
+    "attributes": [
+      "name (string): 搜索条件 - 商品名称",
+      "categoryId (number[]): 搜索条件 - 商品分类级联",
+      "createTime (string[]): 搜索条件 - 创建时间区间",
+      "tabType (number): 当前 Tab 类型（0-出售中 1-仓库中 2-已售罄 3-警戒库存 4-回收站）",
+      "list (Spu[]): 商品列表",
+      "categoryList: 分类树"
+    ],
+    "behaviors": [
+      "提供按名称、分类、创建时间查询 SPU 列表",
+      "提供 5 个状态 Tab 切换（出售/仓库/售罄/警戒/回收）",
+      "支持上/下架、回收、恢复、删除等状态流转",
+      "支持查看商品详情、修改商品、导出商品列表为 Excel",
+      "维护权限点 product:spu:create/update/delete/export"
+    ],
+    "constraints": [
+      "需要 product:* 权限点"
+    ],
+    "events": [
+      "@success: 表单提交成功后通知父组件刷新"
+    ],
+    "source_nodes": [
+      "function:bcdf7fcbc3940f5eeef51f75a44e451e"
+    ],
+    "interactions": [
+      {
+        "element": "搜索按钮",
+        "user_action": "点击搜索",
+        "api_call": "getSpuPage(queryParams)",
+        "success_effect": "刷新 SPU 列表",
+        "failure_effect": "无"
+      },
+      {
+        "element": "新增按钮",
+        "user_action": "点击新增",
+        "api_call": "router.push ProductSpuAdd",
+        "success_effect": "跳转到商品发布页",
+        "failure_effect": "权限不足时按钮隐藏"
+      },
+      {
+        "element": "Tab 切换",
+        "user_action": "点击状态 Tab",
+        "api_call": "getSpuPage(tabType)",
+        "success_effect": "切换列表",
+        "failure_effect": "无"
+      },
+      {
+        "element": "上/下架 Switch",
+        "user_action": "切换上架/下架",
+        "api_call": "updateStatus({id, status})",
+        "success_effect": "更新状态并刷新列表+Tab 计数",
+        "failure_effect": "用户取消时回滚 status 字段"
+      },
+      {
+        "element": "回收按钮",
+        "user_action": "点击行内回收",
+        "api_call": "updateStatus({id, status: RECYCLE})",
+        "success_effect": "移入回收站并刷新",
+        "failure_effect": "用户取消二次确认时不执行"
+      },
+      {
+        "element": "恢复按钮",
+        "user_action": "点击行内恢复",
+        "api_call": "updateStatus({id, status: DISABLE})",
+        "success_effect": "恢复到仓库并刷新",
+        "failure_effect": "用户取消二次确认时不执行"
+      },
+      {
+        "element": "删除按钮",
+        "user_action": "点击行内删除",
+        "api_call": "deleteSpu(id)",
+        "success_effect": "提示删除成功并刷新",
+        "failure_effect": "用户取消二次确认时不执行"
+      },
+      {
+        "element": "详情按钮",
+        "user_action": "点击详情",
+        "api_call": "router.push ProductSpuDetail",
+        "success_effect": "跳转到商品详情页",
+        "failure_effect": "无"
+      },
+      {
+        "element": "导出按钮",
+        "user_action": "点击导出",
+        "api_call": "exportSpu(queryParams) + download.excel",
+        "success_effect": "下载商品列表 Excel",
+        "failure_effect": "用户取消二次确认时不执行"
+      },
+      {
+        "element": "分页",
+        "user_action": "切换页码/页大小",
+        "api_call": "getSpuPage",
+        "success_effect": "加载对应页数据",
+        "failure_effect": "无"
+      }
+    ]
+  },
+  {
+    "name": "handleStatus02Change",
+    "file": "src/views/mall/product/spu/index.vue",
+    "native_kind": "function",
+    "semantic_kind": "function",
+    "attributes": [
+      "name (string): 搜索条件 - 商品名称",
+      "categoryId (number[]): 搜索条件 - 商品分类级联",
+      "createTime (string[]): 搜索条件 - 创建时间区间",
+      "tabType (number): 当前 Tab 类型（0-出售中 1-仓库中 2-已售罄 3-警戒库存 4-回收站）",
+      "list (Spu[]): 商品列表",
+      "categoryList: 分类树"
+    ],
+    "behaviors": [
+      "提供按名称、分类、创建时间查询 SPU 列表",
+      "提供 5 个状态 Tab 切换（出售/仓库/售罄/警戒/回收）",
+      "支持上/下架、回收、恢复、删除等状态流转",
+      "支持查看商品详情、修改商品、导出商品列表为 Excel",
+      "维护权限点 product:spu:create/update/delete/export"
+    ],
+    "constraints": [
+      "需要 product:* 权限点"
+    ],
+    "events": [
+      "@success: 表单提交成功后通知父组件刷新"
+    ],
+    "source_nodes": [
+      "function:d5c05c24dea1402feb45fcfd6f8c253a"
+    ],
+    "interactions": [
+      {
+        "element": "搜索按钮",
+        "user_action": "点击搜索",
+        "api_call": "getSpuPage(queryParams)",
+        "success_effect": "刷新 SPU 列表",
+        "failure_effect": "无"
+      },
+      {
+        "element": "新增按钮",
+        "user_action": "点击新增",
+        "api_call": "router.push ProductSpuAdd",
+        "success_effect": "跳转到商品发布页",
+        "failure_effect": "权限不足时按钮隐藏"
+      },
+      {
+        "element": "Tab 切换",
+        "user_action": "点击状态 Tab",
+        "api_call": "getSpuPage(tabType)",
+        "success_effect": "切换列表",
+        "failure_effect": "无"
+      },
+      {
+        "element": "上/下架 Switch",
+        "user_action": "切换上架/下架",
+        "api_call": "updateStatus({id, status})",
+        "success_effect": "更新状态并刷新列表+Tab 计数",
+        "failure_effect": "用户取消时回滚 status 字段"
+      },
+      {
+        "element": "回收按钮",
+        "user_action": "点击行内回收",
+        "api_call": "updateStatus({id, status: RECYCLE})",
+        "success_effect": "移入回收站并刷新",
+        "failure_effect": "用户取消二次确认时不执行"
+      },
+      {
+        "element": "恢复按钮",
+        "user_action": "点击行内恢复",
+        "api_call": "updateStatus({id, status: DISABLE})",
+        "success_effect": "恢复到仓库并刷新",
+        "failure_effect": "用户取消二次确认时不执行"
+      },
+      {
+        "element": "删除按钮",
+        "user_action": "点击行内删除",
+        "api_call": "deleteSpu(id)",
+        "success_effect": "提示删除成功并刷新",
+        "failure_effect": "用户取消二次确认时不执行"
+      },
+      {
+        "element": "详情按钮",
+        "user_action": "点击详情",
+        "api_call": "router.push ProductSpuDetail",
+        "success_effect": "跳转到商品详情页",
+        "failure_effect": "无"
+      },
+      {
+        "element": "导出按钮",
+        "user_action": "点击导出",
+        "api_call": "exportSpu(queryParams) + download.excel",
+        "success_effect": "下载商品列表 Excel",
+        "failure_effect": "用户取消二次确认时不执行"
+      },
+      {
+        "element": "分页",
+        "user_action": "切换页码/页大小",
+        "api_call": "getSpuPage",
+        "success_effect": "加载对应页数据",
+        "failure_effect": "无"
+      }
+    ]
+  },
+  {
+    "name": "imagePreview",
+    "file": "src/views/mall/product/spu/index.vue",
+    "native_kind": "function",
+    "semantic_kind": "function",
+    "attributes": [
+      "name (string): 搜索条件 - 商品名称",
+      "categoryId (number[]): 搜索条件 - 商品分类级联",
+      "createTime (string[]): 搜索条件 - 创建时间区间",
+      "tabType (number): 当前 Tab 类型（0-出售中 1-仓库中 2-已售罄 3-警戒库存 4-回收站）",
+      "list (Spu[]): 商品列表",
+      "categoryList: 分类树"
+    ],
+    "behaviors": [
+      "提供按名称、分类、创建时间查询 SPU 列表",
+      "提供 5 个状态 Tab 切换（出售/仓库/售罄/警戒/回收）",
+      "支持上/下架、回收、恢复、删除等状态流转",
+      "支持查看商品详情、修改商品、导出商品列表为 Excel",
+      "维护权限点 product:spu:create/update/delete/export"
+    ],
+    "constraints": [
+      "需要 product:* 权限点"
+    ],
+    "events": [
+      "@success: 表单提交成功后通知父组件刷新"
+    ],
+    "source_nodes": [
+      "function:f1381d811a3959de8ff61c12e39f6b1e"
+    ],
+    "interactions": [
+      {
+        "element": "搜索按钮",
+        "user_action": "点击搜索",
+        "api_call": "getSpuPage(queryParams)",
+        "success_effect": "刷新 SPU 列表",
+        "failure_effect": "无"
+      },
+      {
+        "element": "新增按钮",
+        "user_action": "点击新增",
+        "api_call": "router.push ProductSpuAdd",
+        "success_effect": "跳转到商品发布页",
+        "failure_effect": "权限不足时按钮隐藏"
+      },
+      {
+        "element": "Tab 切换",
+        "user_action": "点击状态 Tab",
+        "api_call": "getSpuPage(tabType)",
+        "success_effect": "切换列表",
+        "failure_effect": "无"
+      },
+      {
+        "element": "上/下架 Switch",
+        "user_action": "切换上架/下架",
+        "api_call": "updateStatus({id, status})",
+        "success_effect": "更新状态并刷新列表+Tab 计数",
+        "failure_effect": "用户取消时回滚 status 字段"
+      },
+      {
+        "element": "回收按钮",
+        "user_action": "点击行内回收",
+        "api_call": "updateStatus({id, status: RECYCLE})",
+        "success_effect": "移入回收站并刷新",
+        "failure_effect": "用户取消二次确认时不执行"
+      },
+      {
+        "element": "恢复按钮",
+        "user_action": "点击行内恢复",
+        "api_call": "updateStatus({id, status: DISABLE})",
+        "success_effect": "恢复到仓库并刷新",
+        "failure_effect": "用户取消二次确认时不执行"
+      },
+      {
+        "element": "删除按钮",
+        "user_action": "点击行内删除",
+        "api_call": "deleteSpu(id)",
+        "success_effect": "提示删除成功并刷新",
+        "failure_effect": "用户取消二次确认时不执行"
+      },
+      {
+        "element": "详情按钮",
+        "user_action": "点击详情",
+        "api_call": "router.push ProductSpuDetail",
+        "success_effect": "跳转到商品详情页",
+        "failure_effect": "无"
+      },
+      {
+        "element": "导出按钮",
+        "user_action": "点击导出",
+        "api_call": "exportSpu(queryParams) + download.excel",
+        "success_effect": "下载商品列表 Excel",
+        "failure_effect": "用户取消二次确认时不执行"
+      },
+      {
+        "element": "分页",
+        "user_action": "切换页码/页大小",
+        "api_call": "getSpuPage",
+        "success_effect": "加载对应页数据",
+        "failure_effect": "无"
+      }
+    ]
+  }
+]

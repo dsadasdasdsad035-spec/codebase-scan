@@ -1,0 +1,155 @@
+{
+  "version": "1.1",
+  "rules": [
+    {
+      "semantic_kind": "controller",
+      "native_kind": "class",
+      "path_regex": "/controller/admin/",
+      "name_regex": "Controller$"
+    },
+    {
+      "semantic_kind": "app_controller",
+      "native_kind": "class",
+      "path_regex": "/controller/app/",
+      "name_regex": "Controller$"
+    },
+    {
+      "semantic_kind": "service",
+      "native_kind": "class",
+      "path_regex": "/service/",
+      "name_regex": "ServiceImpl$"
+    },
+    {
+      "semantic_kind": "service_contract",
+      "native_kind": "interface",
+      "path_regex": "/service/",
+      "name_regex": "Service$"
+    },
+    {
+      "semantic_kind": "rpc_api",
+      "native_kind": "class",
+      "path_regex": "/api/.+/.+",
+      "name_regex": "ApiImpl$"
+    },
+    {
+      "semantic_kind": "rpc_contract",
+      "native_kind": "interface",
+      "path_regex": "/api/.+/.+",
+      "name_regex": "Api$"
+    },
+    {
+      "semantic_kind": "repository",
+      "native_kind": "interface",
+      "path_regex": "/dal/mysql/",
+      "name_regex": "Mapper$"
+    },
+    {
+      "semantic_kind": "entity",
+      "native_kind": "class",
+      "path_regex": "/dal/dataobject/",
+      "name_regex": "DO$"
+    },
+    {
+      "semantic_kind": "vo_request",
+      "native_kind": "class",
+      "path_regex": "/controller/.+/vo/",
+      "name_regex": "ReqVO$|SaveReqVO$|PageReqVO$|CreateReqVO$|UpdateReqVO$|ExportReqVO$"
+    },
+    {
+      "semantic_kind": "vo_response",
+      "native_kind": "class",
+      "path_regex": "/controller/.+/vo/",
+      "name_regex": "RespVO$|ListRespVO$|DetailRespVO$|SimpleRespVO$|ExcelVO$"
+    },
+    {
+      "semantic_kind": "dto",
+      "native_kind": "class",
+      "path_regex": "/api/.+/dto/",
+      "name_regex": "DTO$|RespDTO$|ReqDTO$"
+    },
+    {
+      "semantic_kind": "convert",
+      "native_kind": "interface",
+      "path_regex": "/convert/",
+      "name_regex": "Convert$"
+    },
+    {
+      "semantic_kind": "enum",
+      "native_kind": "enum",
+      "path_regex": "/enums/",
+      "name_regex": ".*"
+    },
+    {
+      "semantic_kind": "enum",
+      "native_kind": "class",
+      "path_regex": "/enums/",
+      "name_regex": "Enum$"
+    },
+    {
+      "semantic_kind": "endpoint",
+      "native_kind": "route",
+      "path_regex": ".*",
+      "name_regex": ".*"
+    },
+    {
+      "semantic_kind": "controller_method",
+      "native_kind": "method",
+      "path_regex": "/controller/admin/",
+      "name_regex": ".*"
+    },
+    {
+      "semantic_kind": "app_controller_method",
+      "native_kind": "method",
+      "path_regex": "/controller/app/",
+      "name_regex": ".*"
+    },
+    {
+      "semantic_kind": "service_method",
+      "native_kind": "method",
+      "path_regex": "/service/",
+      "name_regex": ".*"
+    },
+    {
+      "semantic_kind": "repository_method",
+      "native_kind": "method",
+      "path_regex": "/dal/mysql/",
+      "name_regex": ".*"
+    },
+    {
+      "semantic_kind": "rpc_method",
+      "native_kind": "method",
+      "path_regex": "/api/.+/.+",
+      "name_regex": ".*"
+    },
+    {
+      "semantic_kind": "convert_method",
+      "native_kind": "method",
+      "path_regex": "/convert/",
+      "name_regex": ".*"
+    },
+    {
+      "semantic_kind": "framework",
+      "native_kind": "class",
+      "path_regex": "/framework/",
+      "name_regex": ".*"
+    },
+    {
+      "semantic_kind": "class",
+      "native_kind": "class",
+      "path_regex": ".*",
+      "name_regex": ".*"
+    },
+    {
+      "semantic_kind": "interface",
+      "native_kind": "interface",
+      "path_regex": ".*",
+      "name_regex": ".*"
+    },
+    {
+      "semantic_kind": "method",
+      "native_kind": "method",
+      "path_regex": ".*",
+      "name_regex": ".*"
+    }
+  ]
+}

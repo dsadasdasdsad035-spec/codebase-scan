@@ -1,0 +1,178 @@
+{
+  "index": {
+    "indexed": true,
+    "indexPath": "/Users/mjy/Downloads/yudao-ui-admin-vue3/.codegraph",
+    "fileCount": 1923,
+    "nodeCount": 30874,
+    "watcher": "auto"
+  },
+  "codegraph_transport": "cli",
+  "codegraph_cli_version": "0.9.9",
+  "executed_commands": [
+    {
+      "phase": "verify",
+      "args": ["codegraph", "--version"],
+      "exit_code": 0
+    },
+    {
+      "phase": "verify",
+      "args": ["codegraph", "status", "-j", "/Users/mjy/Downloads/yudao-ui-admin-vue3"],
+      "exit_code": 0
+    },
+    {
+      "phase": "discover",
+      "args": ["codegraph", "files", "-p", "/Users/mjy/Downloads/yudao-ui-admin-vue3", "--format", "tree", "--max-depth", "4", "-j"],
+      "exit_code": 0
+    },
+    {
+      "phase": "enumerate",
+      "args_template": ["codegraph", "files", "-p", "<source>", "--glob", "src/views/mall/product/<pattern>", "-j"],
+      "expanded_patterns": ["**/*.vue", "**/*.ts", "**/*.tsx", "**/*.js"],
+      "exit_code": 0,
+      "note": "tsx/js 模式无匹配，按 output_normalization.files_no_match 归一化为 []"
+    },
+    {
+      "phase": "reconcile",
+      "args_template": ["codegraph", "query", "-p", "<source>", "-l", "30874", "path:<file>"],
+      "files_processed": 26,
+      "exit_code": 0,
+      "duration_ms_total": 0
+    },
+    {
+      "phase": "callers",
+      "args_template": ["codegraph", "callers", "-p", "<source>", "-l", "200", "<symbol>"],
+      "symbols_processed": 141,
+      "exit_code": 0
+    },
+    {
+      "phase": "callees",
+      "args_template": ["codegraph", "callees", "-p", "<source>", "-l", "200", "<symbol>"],
+      "symbols_processed": 141,
+      "exit_code": 0
+    }
+  ],
+  "query_failures": [],
+  "reconciliation_failures": [],
+  "total_modules": 1,
+  "total_types_discovered": 490,
+  "total_types_processed": 141,
+  "type_coverage": 1.0,
+  "entry_coverage": {
+    "frontend-mall-product": {
+      "entry_type": "frontend_root",
+      "path": "src/views/mall/product",
+      "package_prefix": null,
+      "inventory_files": 26,
+      "enumerated_files": 26,
+      "expected_symbols": 490,
+      "enumerated_symbols": 490,
+      "symbol_enumeration_complete": true,
+      "incomplete_files": [],
+      "queried_files": 26,
+      "total_files": 26,
+      "nodes_discovered": 490,
+      "nodes_analysable": 141,
+      "nodes_completeness_evidence": 349,
+      "native_kind_distribution": {
+        "component": 25,
+        "constant": 204,
+        "file": 26,
+        "function": 113,
+        "import": 119,
+        "interface": 2,
+        "type_alias": 1
+      },
+      "semantic_kind_distribution": {
+        "page": 25,
+        "function": 113,
+        "(none)": 352
+      },
+      "typecards_generated": 141,
+      "typecards_with_interactions": 51,
+      "required_documents": [
+        "ui-layout.md",
+        "architecture.md",
+        "business-flows.md",
+        "data-model.md",
+        "state-machines.md",
+        "error-handling.md",
+        "database.md",
+        "DOCUMENTATION.md"
+      ],
+      "complete_documents": [
+        "ui-layout.md",
+        "architecture.md",
+        "business-flows.md",
+        "data-model.md",
+        "state-machines.md",
+        "error-handling.md",
+        "database.md",
+        "DOCUMENTATION.md"
+      ],
+      "document_generation_complete": true,
+      "document_errors": [],
+      "coverage": 1.0,
+      "skipped": null,
+      "truncation_warnings": []
+    }
+  },
+  "config_snapshot": {
+    "manifest_version": "1.0",
+    "tool_policy_version": "1.0",
+    "semantic_kinds_version": "1.0",
+    "prompts_version": "1.0",
+    "codebook_root": "/Users/mjy/Downloads/inverse-engineering/output/yudao-ui-admin-vue3/.codebook/",
+    "codegraph_transport": "cli"
+  },
+  "query_truncation_warnings": [],
+  "ui_layout": {
+    "status": "generated",
+    "generated_entries": ["frontend-mall-product"],
+    "skipped_entries": []
+  },
+  "doc_completeness_score": 1.0,
+  "doc_completeness_denominator": 8,
+  "tech_agnostic_score": 1.0,
+  "completeness_score": 1.0,
+  "uml_coverage_score": 1.0,
+  "entry_coverage_score": 1.0,
+  "refine_count": 0,
+  "artifacts": [
+    "entries/frontend-mall-product/ui-layout.md",
+    "entries/frontend-mall-product/architecture.md",
+    "entries/frontend-mall-product/business-flows.md",
+    "entries/frontend-mall-product/data-model.md",
+    "entries/frontend-mall-product/state-machines.md",
+    "entries/frontend-mall-product/error-handling.md",
+    "entries/frontend-mall-product/database.md",
+    "entries/frontend-mall-product/DOCUMENTATION.md",
+    "architecture.md",
+    "business-flows.md",
+    "data-model.md",
+    "state-machines.md",
+    "error-handling.md",
+    "database.md",
+    "DOCUMENTATION.md",
+    "srs.md",
+    "flowcharts/flowchart.md",
+    "flowcharts/sequence-brand-crud.md",
+    "flowcharts/sequence-category-crud.md",
+    "flowcharts/sequence-property-flow.md",
+    "flowcharts/sequence-comment-flow.md",
+    "flowcharts/sequence-spu-status.md",
+    "flowcharts/sequence-spu-form.md",
+    "flowcharts/sequence-component-reuse.md",
+    "uml/business/state-spu.md",
+    "uml/business/state-comment-visible.md",
+    "uml/business/state-form-dialog.md",
+    "uml/business/class-entity.md",
+    "uml/technical/component-diagram.md",
+    "uml/technical/hotspot-callers.md",
+    ".codebook/evidence/frontend-mall-product/inventory.json",
+    ".codebook/evidence/frontend-mall-product/nodes.json",
+    ".codebook/evidence/frontend-mall-product/typecards.json"
+  ],
+  "uml_split_warnings": [
+    "uml/technical/component-diagram.md 包含 30+ 节点，已按子图分组（外部库 / 公共组件 / 工具 / store / 页面 / 入口组件 / API / 后端）以保证可读性"
+  ]
+}

@@ -1,0 +1,777 @@
+{
+  "entry_id": "backend-package-yudao-module-product",
+  "source_path": "/Users/mjy/Downloads/ruoyi-vue-pro",
+  "module_path": "yudao-module-mall/yudao-module-product",
+  "files": [
+    {
+      "path": "yudao-module-mall/yudao-module-product/src/main/java/cn/iocoder/yudao/module/product/api/category/ProductCategoryApi.java",
+      "language": "java",
+      "nodeCount": 4,
+      "size": 440
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-product/src/main/java/cn/iocoder/yudao/module/product/api/category/ProductCategoryApiImpl.java",
+      "language": "java",
+      "nodeCount": 9,
+      "size": 675
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-product/src/main/java/cn/iocoder/yudao/module/product/api/comment/ProductCommentApi.java",
+      "language": "java",
+      "nodeCount": 4,
+      "size": 426
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-product/src/main/java/cn/iocoder/yudao/module/product/api/comment/ProductCommentApiImpl.java",
+      "language": "java",
+      "nodeCount": 9,
+      "size": 738
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-product/src/main/java/cn/iocoder/yudao/module/product/api/comment/dto/ProductCommentCreateReqDTO.java",
+      "language": "java",
+      "nodeCount": 14,
+      "size": 1236
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-product/src/main/java/cn/iocoder/yudao/module/product/api/package-info.java",
+      "language": "java",
+      "nodeCount": 1,
+      "size": 118
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-product/src/main/java/cn/iocoder/yudao/module/product/api/property/dto/ProductPropertyValueDetailRespDTO.java",
+      "language": "java",
+      "nodeCount": 7,
+      "size": 498
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-product/src/main/java/cn/iocoder/yudao/module/product/api/sku/ProductSkuApi.java",
+      "language": "java",
+      "nodeCount": 13,
+      "size": 1441
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-product/src/main/java/cn/iocoder/yudao/module/product/api/sku/ProductSkuApiImpl.java",
+      "language": "java",
+      "nodeCount": 17,
+      "size": 1643
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-product/src/main/java/cn/iocoder/yudao/module/product/api/sku/dto/ProductSkuRespDTO.java",
+      "language": "java",
+      "nodeCount": 18,
+      "size": 1346
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-product/src/main/java/cn/iocoder/yudao/module/product/api/sku/dto/ProductSkuUpdateStockReqDTO.java",
+      "language": "java",
+      "nodeCount": 11,
+      "size": 923
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-product/src/main/java/cn/iocoder/yudao/module/product/api/spu/ProductSpuApi.java",
+      "language": "java",
+      "nodeCount": 11,
+      "size": 1267
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-product/src/main/java/cn/iocoder/yudao/module/product/api/spu/ProductSpuApiImpl.java",
+      "language": "java",
+      "nodeCount": 15,
+      "size": 1369
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-product/src/main/java/cn/iocoder/yudao/module/product/api/spu/dto/ProductSpuRespDTO.java",
+      "language": "java",
+      "nodeCount": 19,
+      "size": 1840
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-product/src/main/java/cn/iocoder/yudao/module/product/controller/admin/brand/ProductBrandController.java",
+      "language": "java",
+      "nodeCount": 35,
+      "size": 4053
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-product/src/main/java/cn/iocoder/yudao/module/product/controller/admin/brand/vo/ProductBrandBaseVO.java",
+      "language": "java",
+      "nodeCount": 10,
+      "size": 1200
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-product/src/main/java/cn/iocoder/yudao/module/product/controller/admin/brand/vo/ProductBrandCreateReqVO.java",
+      "language": "java",
+      "nodeCount": 6,
+      "size": 407
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-product/src/main/java/cn/iocoder/yudao/module/product/controller/admin/brand/vo/ProductBrandListReqVO.java",
+      "language": "java",
+      "nodeCount": 5,
+      "size": 344
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-product/src/main/java/cn/iocoder/yudao/module/product/controller/admin/brand/vo/ProductBrandPageReqVO.java",
+      "language": "java",
+      "nodeCount": 13,
+      "size": 981
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-product/src/main/java/cn/iocoder/yudao/module/product/controller/admin/brand/vo/ProductBrandRespVO.java",
+      "language": "java",
+      "nodeCount": 9,
+      "size": 674
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-product/src/main/java/cn/iocoder/yudao/module/product/controller/admin/brand/vo/ProductBrandSimpleRespVO.java",
+      "language": "java",
+      "nodeCount": 8,
+      "size": 626
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-product/src/main/java/cn/iocoder/yudao/module/product/controller/admin/brand/vo/ProductBrandUpdateReqVO.java",
+      "language": "java",
+      "nodeCount": 8,
+      "size": 628
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-product/src/main/java/cn/iocoder/yudao/module/product/controller/admin/category/ProductCategoryController.java",
+      "language": "java",
+      "nodeCount": 31,
+      "size": 3360
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-product/src/main/java/cn/iocoder/yudao/module/product/controller/admin/category/vo/ProductCategoryListReqVO.java",
+      "language": "java",
+      "nodeCount": 9,
+      "size": 677
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-product/src/main/java/cn/iocoder/yudao/module/product/controller/admin/category/vo/ProductCategoryRespVO.java",
+      "language": "java",
+      "nodeCount": 13,
+      "size": 1285
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-product/src/main/java/cn/iocoder/yudao/module/product/controller/admin/category/vo/ProductCategorySaveReqVO.java",
+      "language": "java",
+      "nodeCount": 13,
+      "size": 1403
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-product/src/main/java/cn/iocoder/yudao/module/product/controller/admin/comment/ProductCommentController.java",
+      "language": "java",
+      "nodeCount": 26,
+      "size": 2704
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-product/src/main/java/cn/iocoder/yudao/module/product/controller/admin/comment/vo/ProductCommentCreateReqVO.java",
+      "language": "java",
+      "nodeCount": 16,
+      "size": 2167
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-product/src/main/java/cn/iocoder/yudao/module/product/controller/admin/comment/vo/ProductCommentPageReqVO.java",
+      "language": "java",
+      "nodeCount": 19,
+      "size": 1576
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-product/src/main/java/cn/iocoder/yudao/module/product/controller/admin/comment/vo/ProductCommentReplyReqVO.java",
+      "language": "java",
+      "nodeCount": 9,
+      "size": 801
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-product/src/main/java/cn/iocoder/yudao/module/product/controller/admin/comment/vo/ProductCommentRespVO.java",
+      "language": "java",
+      "nodeCount": 30,
+      "size": 3594
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-product/src/main/java/cn/iocoder/yudao/module/product/controller/admin/comment/vo/ProductCommentUpdateVisibleReqVO.java",
+      "language": "java",
+      "nodeCount": 8,
+      "size": 739
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-product/src/main/java/cn/iocoder/yudao/module/product/controller/admin/favorite/ProductFavoriteController.java",
+      "language": "java",
+      "nodeCount": 28,
+      "size": 2472
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-product/src/main/java/cn/iocoder/yudao/module/product/controller/admin/favorite/vo/ProductFavoriteBaseVO.java",
+      "language": "java",
+      "nodeCount": 6,
+      "size": 596
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-product/src/main/java/cn/iocoder/yudao/module/product/controller/admin/favorite/vo/ProductFavoritePageReqVO.java",
+      "language": "java",
+      "nodeCount": 8,
+      "size": 545
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-product/src/main/java/cn/iocoder/yudao/module/product/controller/admin/favorite/vo/ProductFavoriteReqVO.java",
+      "language": "java",
+      "nodeCount": 7,
+      "size": 582
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-product/src/main/java/cn/iocoder/yudao/module/product/controller/admin/favorite/vo/ProductFavoriteRespVO.java",
+      "language": "java",
+      "nodeCount": 8,
+      "size": 659
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-product/src/main/java/cn/iocoder/yudao/module/product/controller/admin/history/ProductBrowseHistoryController.java",
+      "language": "java",
+      "nodeCount": 29,
+      "size": 2878
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-product/src/main/java/cn/iocoder/yudao/module/product/controller/admin/history/vo/ProductBrowseHistoryPageReqVO.java",
+      "language": "java",
+      "nodeCount": 14,
+      "size": 1119
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-product/src/main/java/cn/iocoder/yudao/module/product/controller/admin/history/vo/ProductBrowseHistoryRespVO.java",
+      "language": "java",
+      "nodeCount": 12,
+      "size": 1112
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-product/src/main/java/cn/iocoder/yudao/module/product/controller/admin/property/ProductPropertyController.java",
+      "language": "java",
+      "nodeCount": 34,
+      "size": 3926
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-product/src/main/java/cn/iocoder/yudao/module/product/controller/admin/property/ProductPropertyValueController.java",
+      "language": "java",
+      "nodeCount": 35,
+      "size": 4387
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-product/src/main/java/cn/iocoder/yudao/module/product/controller/admin/property/vo/property/ProductPropertyPageReqVO.java",
+      "language": "java",
+      "nodeCount": 13,
+      "size": 1026
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-product/src/main/java/cn/iocoder/yudao/module/product/controller/admin/property/vo/property/ProductPropertyRespVO.java",
+      "language": "java",
+      "nodeCount": 9,
+      "size": 751
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-product/src/main/java/cn/iocoder/yudao/module/product/controller/admin/property/vo/property/ProductPropertySaveReqVO.java",
+      "language": "java",
+      "nodeCount": 8,
+      "size": 652
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-product/src/main/java/cn/iocoder/yudao/module/product/controller/admin/property/vo/value/ProductPropertyValuePageReqVO.java",
+      "language": "java",
+      "nodeCount": 10,
+      "size": 778
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-product/src/main/java/cn/iocoder/yudao/module/product/controller/admin/property/vo/value/ProductPropertyValueRespVO.java",
+      "language": "java",
+      "nodeCount": 12,
+      "size": 1010
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-product/src/main/java/cn/iocoder/yudao/module/product/controller/admin/property/vo/value/ProductPropertyValueSaveReqVO.java",
+      "language": "java",
+      "nodeCount": 10,
+      "size": 912
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-product/src/main/java/cn/iocoder/yudao/module/product/controller/admin/spu/ProductSpuController.java",
+      "language": "java",
+      "nodeCount": 53,
+      "size": 6361
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-product/src/main/java/cn/iocoder/yudao/module/product/controller/admin/spu/vo/ProductSkuRespVO.java",
+      "language": "java",
+      "nodeCount": 18,
+      "size": 1802
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-product/src/main/java/cn/iocoder/yudao/module/product/controller/admin/spu/vo/ProductSkuSaveReqVO.java",
+      "language": "java",
+      "nodeCount": 26,
+      "size": 2596
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-product/src/main/java/cn/iocoder/yudao/module/product/controller/admin/spu/vo/ProductSpuPageReqVO.java",
+      "language": "java",
+      "nodeCount": 19,
+      "size": 1635
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-product/src/main/java/cn/iocoder/yudao/module/product/controller/admin/spu/vo/ProductSpuRespVO.java",
+      "language": "java",
+      "nodeCount": 37,
+      "size": 5431
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-product/src/main/java/cn/iocoder/yudao/module/product/controller/admin/spu/vo/ProductSpuSaveReqVO.java",
+      "language": "java",
+      "nodeCount": 27,
+      "size": 3943
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-product/src/main/java/cn/iocoder/yudao/module/product/controller/admin/spu/vo/ProductSpuSimpleRespVO.java",
+      "language": "java",
+      "nodeCount": 14,
+      "size": 1656
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-product/src/main/java/cn/iocoder/yudao/module/product/controller/admin/spu/vo/ProductSpuUpdateStatusReqVO.java",
+      "language": "java",
+      "nodeCount": 9,
+      "size": 839
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-product/src/main/java/cn/iocoder/yudao/module/product/controller/app/category/AppCategoryController.java",
+      "language": "java",
+      "nodeCount": 27,
+      "size": 2423
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-product/src/main/java/cn/iocoder/yudao/module/product/controller/app/category/vo/AppCategoryRespVO.java",
+      "language": "java",
+      "nodeCount": 10,
+      "size": 1007
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-product/src/main/java/cn/iocoder/yudao/module/product/controller/app/comment/AppProductCommentController.java",
+      "language": "java",
+      "nodeCount": 23,
+      "size": 2177
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-product/src/main/java/cn/iocoder/yudao/module/product/controller/app/comment/vo/AppCommentPageReqVO.java",
+      "language": "java",
+      "nodeCount": 13,
+      "size": 1087
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-product/src/main/java/cn/iocoder/yudao/module/product/controller/app/comment/vo/AppProductCommentRespVO.java",
+      "language": "java",
+      "nodeCount": 34,
+      "size": 4456
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-product/src/main/java/cn/iocoder/yudao/module/product/controller/app/favorite/AppFavoriteController.java",
+      "language": "java",
+      "nodeCount": 34,
+      "size": 3723
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-product/src/main/java/cn/iocoder/yudao/module/product/controller/app/favorite/vo/AppFavoriteBatchReqVO.java",
+      "language": "java",
+      "nodeCount": 7,
+      "size": 586
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-product/src/main/java/cn/iocoder/yudao/module/product/controller/app/favorite/vo/AppFavoritePageReqVO.java",
+      "language": "java",
+      "nodeCount": 5,
+      "size": 334
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-product/src/main/java/cn/iocoder/yudao/module/product/controller/app/favorite/vo/AppFavoriteReqVO.java",
+      "language": "java",
+      "nodeCount": 6,
+      "size": 537
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-product/src/main/java/cn/iocoder/yudao/module/product/controller/app/favorite/vo/AppFavoriteRespVO.java",
+      "language": "java",
+      "nodeCount": 9,
+      "size": 841
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-product/src/main/java/cn/iocoder/yudao/module/product/controller/app/history/AppProductBrowseHistoryController.java",
+      "language": "java",
+      "nodeCount": 34,
+      "size": 3885
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-product/src/main/java/cn/iocoder/yudao/module/product/controller/app/history/vo/AppProductBrowseHistoryDeleteReqVO.java",
+      "language": "java",
+      "nodeCount": 7,
+      "size": 558
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-product/src/main/java/cn/iocoder/yudao/module/product/controller/app/history/vo/AppProductBrowseHistoryPageReqVO.java",
+      "language": "java",
+      "nodeCount": 11,
+      "size": 827
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-product/src/main/java/cn/iocoder/yudao/module/product/controller/app/history/vo/AppProductBrowseHistoryRespVO.java",
+      "language": "java",
+      "nodeCount": 11,
+      "size": 1261
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-product/src/main/java/cn/iocoder/yudao/module/product/controller/app/property/package-info.java",
+      "language": "java",
+      "nodeCount": 1,
+      "size": 128
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-product/src/main/java/cn/iocoder/yudao/module/product/controller/app/property/vo/property/package-info.java",
+      "language": "java",
+      "nodeCount": 1,
+      "size": 140
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-product/src/main/java/cn/iocoder/yudao/module/product/controller/app/property/vo/value/AppProductPropertyValueDetailRespVO.java",
+      "language": "java",
+      "nodeCount": 8,
+      "size": 843
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-product/src/main/java/cn/iocoder/yudao/module/product/controller/app/spu/AppProductSpuController.java",
+      "language": "java",
+      "nodeCount": 43,
+      "size": 5010
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-product/src/main/java/cn/iocoder/yudao/module/product/controller/app/spu/vo/AppProductSpuDetailRespVO.java",
+      "language": "java",
+      "nodeCount": 29,
+      "size": 3708
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-product/src/main/java/cn/iocoder/yudao/module/product/controller/app/spu/vo/AppProductSpuPageReqVO.java",
+      "language": "java",
+      "nodeCount": 21,
+      "size": 1702
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-product/src/main/java/cn/iocoder/yudao/module/product/controller/app/spu/vo/AppProductSpuRespVO.java",
+      "language": "java",
+      "nodeCount": 17,
+      "size": 2100
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-product/src/main/java/cn/iocoder/yudao/module/product/convert/brand/ProductBrandConvert.java",
+      "language": "java",
+      "nodeCount": 17,
+      "size": 1224
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-product/src/main/java/cn/iocoder/yudao/module/product/convert/comment/ProductCommentConvert.java",
+      "language": "java",
+      "nodeCount": 16,
+      "size": 2739
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-product/src/main/java/cn/iocoder/yudao/module/product/convert/favorite/ProductFavoriteConvert.java",
+      "language": "java",
+      "nodeCount": 20,
+      "size": 2492
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-product/src/main/java/cn/iocoder/yudao/module/product/convert/sku/ProductSkuConvert.java",
+      "language": "java",
+      "nodeCount": 13,
+      "size": 2059
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-product/src/main/java/cn/iocoder/yudao/module/product/convert/spu/ProductSpuConvert.java",
+      "language": "java",
+      "nodeCount": 18,
+      "size": 1711
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-product/src/main/java/cn/iocoder/yudao/module/product/dal/dataobject/brand/ProductBrandDO.java",
+      "language": "java",
+      "nodeCount": 13,
+      "size": 1209
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-product/src/main/java/cn/iocoder/yudao/module/product/dal/dataobject/category/ProductCategoryDO.java",
+      "language": "java",
+      "nodeCount": 15,
+      "size": 1462
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-product/src/main/java/cn/iocoder/yudao/module/product/dal/dataobject/comment/ProductCommentDO.java",
+      "language": "java",
+      "nodeCount": 35,
+      "size": 3488
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-product/src/main/java/cn/iocoder/yudao/module/product/dal/dataobject/favorite/ProductFavoriteDO.java",
+      "language": "java",
+      "nodeCount": 10,
+      "size": 1103
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-product/src/main/java/cn/iocoder/yudao/module/product/dal/dataobject/history/ProductBrowseHistoryDO.java",
+      "language": "java",
+      "nodeCount": 10,
+      "size": 1012
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-product/src/main/java/cn/iocoder/yudao/module/product/dal/dataobject/property/ProductPropertyDO.java",
+      "language": "java",
+      "nodeCount": 11,
+      "size": 1129
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-product/src/main/java/cn/iocoder/yudao/module/product/dal/dataobject/property/ProductPropertyValueDO.java",
+      "language": "java",
+      "nodeCount": 12,
+      "size": 1286
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-product/src/main/java/cn/iocoder/yudao/module/product/dal/dataobject/sku/ProductSkuDO.java",
+      "language": "java",
+      "nodeCount": 31,
+      "size": 3297
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-product/src/main/java/cn/iocoder/yudao/module/product/dal/dataobject/spu/ProductSpuDO.java",
+      "language": "java",
+      "nodeCount": 37,
+      "size": 4073
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-product/src/main/java/cn/iocoder/yudao/module/product/dal/mysql/brand/ProductBrandMapper.java",
+      "language": "java",
+      "nodeCount": 14,
+      "size": 1600
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-product/src/main/java/cn/iocoder/yudao/module/product/dal/mysql/category/ProductCategoryMapper.java",
+      "language": "java",
+      "nodeCount": 13,
+      "size": 1742
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-product/src/main/java/cn/iocoder/yudao/module/product/dal/mysql/comment/ProductCommentMapper.java",
+      "language": "java",
+      "nodeCount": 14,
+      "size": 3213
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-product/src/main/java/cn/iocoder/yudao/module/product/dal/mysql/favorite/ProductFavoriteMapper.java",
+      "language": "java",
+      "nodeCount": 14,
+      "size": 1686
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-product/src/main/java/cn/iocoder/yudao/module/product/dal/mysql/history/ProductBrowseHistoryMapper.java",
+      "language": "java",
+      "nodeCount": 16,
+      "size": 2522
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-product/src/main/java/cn/iocoder/yudao/module/product/dal/mysql/property/ProductPropertyMapper.java",
+      "language": "java",
+      "nodeCount": 10,
+      "size": 1103
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-product/src/main/java/cn/iocoder/yudao/module/product/dal/mysql/property/ProductPropertyValueMapper.java",
+      "language": "java",
+      "nodeCount": 15,
+      "size": 1989
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-product/src/main/java/cn/iocoder/yudao/module/product/dal/mysql/sku/ProductSkuMapper.java",
+      "language": "java",
+      "nodeCount": 17,
+      "size": 2785
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-product/src/main/java/cn/iocoder/yudao/module/product/dal/mysql/spu/ProductSpuMapper.java",
+      "language": "java",
+      "nodeCount": 24,
+      "size": 7438
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-product/src/main/java/cn/iocoder/yudao/module/product/enums/DictTypeConstants.java",
+      "language": "java",
+      "nodeCount": 2,
+      "size": 229
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-product/src/main/java/cn/iocoder/yudao/module/product/enums/ErrorCodeConstants.java",
+      "language": "java",
+      "nodeCount": 3,
+      "size": 3604
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-product/src/main/java/cn/iocoder/yudao/module/product/enums/ProductConstants.java",
+      "language": "java",
+      "nodeCount": 2,
+      "size": 281
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-product/src/main/java/cn/iocoder/yudao/module/product/enums/comment/ProductCommentAuditStatusEnum.java",
+      "language": "java",
+      "nodeCount": 13,
+      "size": 824
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-product/src/main/java/cn/iocoder/yudao/module/product/enums/comment/ProductCommentScoresEnum.java",
+      "language": "java",
+      "nodeCount": 15,
+      "size": 809
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-product/src/main/java/cn/iocoder/yudao/module/product/enums/spu/ProductSpuStatusEnum.java",
+      "language": "java",
+      "nodeCount": 14,
+      "size": 1019
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-product/src/main/java/cn/iocoder/yudao/module/product/framework/package-info.java",
+      "language": "java",
+      "nodeCount": 1,
+      "size": 131
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-product/src/main/java/cn/iocoder/yudao/module/product/framework/web/config/ProductWebConfiguration.java",
+      "language": "java",
+      "nodeCount": 7,
+      "size": 664
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-product/src/main/java/cn/iocoder/yudao/module/product/framework/web/package-info.java",
+      "language": "java",
+      "nodeCount": 1,
+      "size": 95
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-product/src/main/java/cn/iocoder/yudao/module/product/package-info.java",
+      "language": "java",
+      "nodeCount": 1,
+      "size": 307
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-product/src/main/java/cn/iocoder/yudao/module/product/service/brand/ProductBrandService.java",
+      "language": "java",
+      "nodeCount": 17,
+      "size": 1873
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-product/src/main/java/cn/iocoder/yudao/module/product/service/brand/ProductBrandServiceImpl.java",
+      "language": "java",
+      "nodeCount": 31,
+      "size": 3996
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-product/src/main/java/cn/iocoder/yudao/module/product/service/category/ProductCategoryService.java",
+      "language": "java",
+      "nodeCount": 18,
+      "size": 2334
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-product/src/main/java/cn/iocoder/yudao/module/product/service/category/ProductCategoryServiceImpl.java",
+      "language": "java",
+      "nodeCount": 37,
+      "size": 6880
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-product/src/main/java/cn/iocoder/yudao/module/product/service/comment/ProductCommentService.java",
+      "language": "java",
+      "nodeCount": 18,
+      "size": 2312
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-product/src/main/java/cn/iocoder/yudao/module/product/service/comment/ProductCommentServiceImpl.java",
+      "language": "java",
+      "nodeCount": 39,
+      "size": 5619
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-product/src/main/java/cn/iocoder/yudao/module/product/service/favorite/ProductFavoriteService.java",
+      "language": "java",
+      "nodeCount": 13,
+      "size": 1585
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-product/src/main/java/cn/iocoder/yudao/module/product/service/favorite/ProductFavoriteServiceImpl.java",
+      "language": "java",
+      "nodeCount": 22,
+      "size": 2677
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-product/src/main/java/cn/iocoder/yudao/module/product/service/history/ProductBrowseHistoryService.java",
+      "language": "java",
+      "nodeCount": 10,
+      "size": 1126
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-product/src/main/java/cn/iocoder/yudao/module/product/service/history/ProductBrowseHistoryServiceImpl.java",
+      "language": "java",
+      "nodeCount": 17,
+      "size": 2615
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-product/src/main/java/cn/iocoder/yudao/module/product/service/property/ProductPropertyService.java",
+      "language": "java",
+      "nodeCount": 15,
+      "size": 1751
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-product/src/main/java/cn/iocoder/yudao/module/product/service/property/ProductPropertyServiceImpl.java",
+      "language": "java",
+      "nodeCount": 30,
+      "size": 4199
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-product/src/main/java/cn/iocoder/yudao/module/product/service/property/ProductPropertyValueService.java",
+      "language": "java",
+      "nodeCount": 16,
+      "size": 2152
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-product/src/main/java/cn/iocoder/yudao/module/product/service/property/ProductPropertyValueServiceImpl.java",
+      "language": "java",
+      "nodeCount": 29,
+      "size": 4135
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-product/src/main/java/cn/iocoder/yudao/module/product/service/sku/ProductSkuService.java",
+      "language": "java",
+      "nodeCount": 20,
+      "size": 2918
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-product/src/main/java/cn/iocoder/yudao/module/product/service/sku/ProductSkuServiceImpl.java",
+      "language": "java",
+      "nodeCount": 45,
+      "size": 11537
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-product/src/main/java/cn/iocoder/yudao/module/product/service/spu/ProductSpuService.java",
+      "language": "java",
+      "nodeCount": 30,
+      "size": 3942
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-product/src/main/java/cn/iocoder/yudao/module/product/service/spu/ProductSpuServiceImpl.java",
+      "language": "java",
+      "nodeCount": 54,
+      "size": 12067
+    }
+  ],
+  "total_files": 128,
+  "total_nodes_sum": 2132
+}

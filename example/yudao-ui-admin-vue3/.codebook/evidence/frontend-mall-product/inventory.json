@@ -1,0 +1,137 @@
+{
+  "entry_id": "frontend-mall-product",
+  "entry_path": "src/views/mall/product",
+  "generated_at": "2026-06-10",
+  "files": [
+    {
+      "path": "src/views/mall/product/brand/BrandForm.vue",
+      "language": "vue",
+      "nodeCount": 17
+    },
+    {
+      "path": "src/views/mall/product/brand/index.vue",
+      "language": "vue",
+      "nodeCount": 18
+    },
+    {
+      "path": "src/views/mall/product/category/CategoryForm.vue",
+      "language": "vue",
+      "nodeCount": 18
+    },
+    {
+      "path": "src/views/mall/product/category/components/ProductCategorySelect.vue",
+      "language": "vue",
+      "nodeCount": 10
+    },
+    {
+      "path": "src/views/mall/product/category/index.vue",
+      "language": "vue",
+      "nodeCount": 20
+    },
+    {
+      "path": "src/views/mall/product/comment/CommentForm.vue",
+      "language": "vue",
+      "nodeCount": 22
+    },
+    {
+      "path": "src/views/mall/product/comment/ReplyForm.vue",
+      "language": "vue",
+      "nodeCount": 14
+    },
+    {
+      "path": "src/views/mall/product/comment/index.vue",
+      "language": "vue",
+      "nodeCount": 20
+    },
+    {
+      "path": "src/views/mall/product/property/PropertyForm.vue",
+      "language": "vue",
+      "nodeCount": 15
+    },
+    {
+      "path": "src/views/mall/product/property/index.vue",
+      "language": "vue",
+      "nodeCount": 18
+    },
+    {
+      "path": "src/views/mall/product/property/value/ValueForm.vue",
+      "language": "vue",
+      "nodeCount": 15
+    },
+    {
+      "path": "src/views/mall/product/property/value/index.vue",
+      "language": "vue",
+      "nodeCount": 18
+    },
+    {
+      "path": "src/views/mall/product/spu/components/SkuList.vue",
+      "language": "vue",
+      "nodeCount": 30
+    },
+    {
+      "path": "src/views/mall/product/spu/components/SkuTableSelect.vue",
+      "language": "vue",
+      "nodeCount": 16
+    },
+    {
+      "path": "src/views/mall/product/spu/components/SpuShowcase.vue",
+      "language": "vue",
+      "nodeCount": 16
+    },
+    {
+      "path": "src/views/mall/product/spu/components/SpuTableSelect.vue",
+      "language": "vue",
+      "nodeCount": 31
+    },
+    {
+      "path": "src/views/mall/product/spu/components/index.ts",
+      "language": "typescript",
+      "nodeCount": 6
+    },
+    {
+      "path": "src/views/mall/product/spu/form/DeliveryForm.vue",
+      "language": "vue",
+      "nodeCount": 17
+    },
+    {
+      "path": "src/views/mall/product/spu/form/DescriptionForm.vue",
+      "language": "vue",
+      "nodeCount": 14
+    },
+    {
+      "path": "src/views/mall/product/spu/form/InfoForm.vue",
+      "language": "vue",
+      "nodeCount": 23
+    },
+    {
+      "path": "src/views/mall/product/spu/form/OtherForm.vue",
+      "language": "vue",
+      "nodeCount": 13
+    },
+    {
+      "path": "src/views/mall/product/spu/form/ProductAttributes.vue",
+      "language": "vue",
+      "nodeCount": 20
+    },
+    {
+      "path": "src/views/mall/product/spu/form/ProductPropertyAddForm.vue",
+      "language": "vue",
+      "nodeCount": 16
+    },
+    {
+      "path": "src/views/mall/product/spu/form/SkuForm.vue",
+      "language": "vue",
+      "nodeCount": 24
+    },
+    {
+      "path": "src/views/mall/product/spu/form/index.vue",
+      "language": "vue",
+      "nodeCount": 25
+    },
+    {
+      "path": "src/views/mall/product/spu/index.vue",
+      "language": "vue",
+      "nodeCount": 34
+    }
+  ]
+}

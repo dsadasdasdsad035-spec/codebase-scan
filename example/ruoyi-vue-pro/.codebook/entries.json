@@ -1,0 +1,16 @@
+{
+  "version": "1.0",
+  "discovery_strategy": ["explicit_module_package", "build_tool_marker", "package_grouping", "frontend_root", "project_root_fallback"],
+  "entries": [
+    {
+      "id": "backend-package-yudao-module-product",
+      "entry_type": "backend_package",
+      "path": "yudao-module-mall/yudao-module-product",
+      "package_prefix": "cn.iocoder.yudao.module.product",
+      "languages": ["java"],
+      "include_patterns": ["**/*.java"],
+      "exclude_patterns": ["**/*Test.java", "**/test/**", "**/fixtures/**"],
+      "enabled": true
+    }
+  ]
+}
