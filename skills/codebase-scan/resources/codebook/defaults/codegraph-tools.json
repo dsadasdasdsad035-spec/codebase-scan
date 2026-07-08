@@ -1,0 +1,199 @@
+{
+  "version": "1.0",
+  "description": "iidp-codebase-scan 调用 Codegraph CLI 时使用的默认参数，可在本次输出目录中按项目调整。",
+  "transport": {
+    "mode": "cli",
+    "binary": "codegraph",
+    "minimum_version": "0.9.9",
+    "record_commands": true,
+    "error_policy": "block_current_entry"
+  },
+  "commands": {
+    "version": [
+      "<binary>",
+      "--version"
+    ],
+    "status": [
+      "<binary>",
+      "status",
+      "-j",
+      "<source>"
+    ],
+    "files": [
+      "<binary>",
+      "files",
+      "-p",
+      "<source>",
+      "--filter",
+      "<entry-path>",
+      "--pattern",
+      "<include-pattern>",
+      "--format",
+      "flat",
+      "-j"
+    ],
+    "query": [
+      "<binary>",
+      "query",
+      "-p",
+      "<source>",
+      "-l",
+      "<index-total-nodes>",
+      "-j",
+      "path:<exact-file-path>"
+    ],
+    "query_by_kind": [
+      "<binary>",
+      "query",
+      "-p",
+      "<source>",
+      "-l",
+      "<index-total-nodes>",
+      "-k",
+      "<native-kind>",
+      "-j",
+      "lang:<file-language> path:\"<exact-file-path>\""
+    ],
+    "query_by_kind_without_language": [
+      "<binary>",
+      "query",
+      "-p",
+      "<source>",
+      "-l",
+      "<index-total-nodes>",
+      "-k",
+      "<native-kind>",
+      "-j",
+      "path:\"<exact-file-path>\""
+    ],
+    "callers": [
+      "<binary>",
+      "callers",
+      "-p",
+      "<source>",
+      "-l",
+      "<limit>",
+      "-j",
+      "<symbol>"
+    ],
+    "callees": [
+      "<binary>",
+      "callees",
+      "-p",
+      "<source>",
+      "-l",
+      "<limit>",
+      "-j",
+      "<symbol>"
+    ]
+  },
+  "output_normalization": {
+    "files_no_match": "empty_array",
+    "all_other_invalid_json": "error"
+  },
+  "pagination": {
+    "on_limit_reached": "narrow_entry_or_file",
+    "record_truncation_warning": true,
+    "deduplicate_by": [
+      "node.id"
+    ]
+  },
+  "symbol_enumeration": {
+    "query": "path:<exact-file-path>",
+    "strategy": "kind_first_per_file",
+    "scope": "per_file",
+    "sampling": "forbidden",
+    "limit_source": "status.nodeCount",
+    "reconcile_with": "files.nodeCount",
+    "exact_filter": "node.filePath == current_file && node.kind == current_kind",
+    "deduplicate_by": "node.id",
+    "on_mismatch": "block_entry",
+    "kinds": [
+      "file",
+      "module",
+      "class",
+      "struct",
+      "interface",
+      "trait",
+      "protocol",
+      "function",
+      "method",
+      "property",
+      "field",
+      "variable",
+      "constant",
+      "enum",
+      "enum_member",
+      "type_alias",
+      "namespace",
+      "parameter",
+      "import",
+      "export",
+      "route",
+      "component"
+    ]
+  },
+  "tools": {
+    "codegraph_status": {},
+    "codegraph_files": {
+      "format": "flat",
+      "maxDepth": 5
+    },
+    "codegraph_query": {
+      "limit": 50,
+      "kinds": [
+        "class",
+        "struct",
+        "interface",
+        "trait",
+        "protocol",
+        "type_alias",
+        "method",
+        "function",
+        "property",
+        "field",
+        "route",
+        "component",
+        "enum",
+        "enum_member",
+        "constant",
+        "variable"
+      ]
+    },
+    "typecard_planning": {
+      "policy_file": "typecard-policy.json",
+      "default_action": "evidence_only",
+      "annotation_sources": [
+        "node.decorators",
+        "decorates_edges",
+        "source_slice_fallback"
+      ],
+      "source_slice_fallback": {
+        "enabled": true,
+        "scope": "current_node_only"
+      },
+      "deep_dive": {
+        "source_read_required": true,
+        "callers_callees_for_actions": [
+          "deep_dive"
+        ],
+        "skip_name_regex": "^(get|set|is|toString|equals|hashCode|canEqual)$",
+        "public_method_only_for_services": true
+      },
+      "batch_generation": {
+        "enabled": true,
+        "batch_size": 20,
+        "failure_policy": "bisect_then_single"
+      }
+    },
+    "source_read": {
+      "includeCode": true
+    },
+    "codegraph_callers": {
+      "limit": 20
+    },
+    "codegraph_callees": {
+      "limit": 20
+    }
+  }
+}

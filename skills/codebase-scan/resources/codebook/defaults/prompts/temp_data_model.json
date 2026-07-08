@@ -1,0 +1,274 @@
+{
+  "name": "temp_data_model",
+  "version": "1.0",
+  "description": "按顶级入口生成数据模型证据。",
+  "input_refs": [
+    "evidence/<entry-id>/typecards.json",
+    "evidence/<entry-id>/nodes.json"
+  ],
+  "prompt": "基于以下类型卡片和节点源码生成数据模型。列出实体、字段、关系、值域、写入证据和公开方法；字段和关系必须绑定 source_nodes；未发现真实写入的状态必须标记为未生效；禁止根据命名习惯猜测不存在的关系。输入：{input}",
+  "output_schema": {
+    "type": "object",
+    "required": [
+      "entry_id",
+      "entities",
+      "relationships",
+      "source_nodes"
+    ],
+    "properties": {
+      "entry_id": {
+        "type": "string"
+      },
+      "entities": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "required": [
+            "name",
+            "fields",
+            "source_nodes"
+          ],
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "semantic_kind": {
+              "type": "string"
+            },
+            "native_kind": {
+              "type": "string"
+            },
+            "table": {
+              "type": "string"
+            },
+            "description": {
+              "type": "string"
+            },
+            "fields": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "required": [
+                  "name",
+                  "type",
+                  "source_nodes"
+                ],
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "type": {
+                    "type": "string"
+                  },
+                  "description": {
+                    "type": "string"
+                  },
+                  "db_column": {
+                    "type": "string"
+                  },
+                  "nullable": {
+                    "type": "boolean"
+                  },
+                  "decorators": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "constraints": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "required": [
+                        "kind",
+                        "name"
+                      ],
+                      "properties": {
+                        "kind": {
+                          "type": "string"
+                        },
+                        "name": {
+                          "type": "string"
+                        },
+                        "detail": {
+                          "type": "string"
+                        },
+                        "source_nodes": {
+                          "type": "array",
+                          "items": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "source_nodes": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            },
+            "value_domains": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "required": [
+                  "name",
+                  "values",
+                  "source_nodes"
+                ],
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "values": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "source_nodes": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            },
+            "write_evidence": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "required": [
+                  "operation",
+                  "source_nodes"
+                ],
+                "properties": {
+                  "operation": {
+                    "type": "string"
+                  },
+                  "writer": {
+                    "type": "string"
+                  },
+                  "evidence": {
+                    "type": "string"
+                  },
+                  "source_nodes": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            },
+            "public_methods": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "required": [
+                  "name",
+                  "source_nodes"
+                ],
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "signature": {
+                    "type": "string"
+                  },
+                  "operation": {
+                    "type": "string"
+                  },
+                  "source_nodes": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            },
+            "source_nodes": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      },
+      "relationships": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "required": [
+            "source",
+            "target",
+            "relationship_type",
+            "source_nodes"
+          ],
+          "properties": {
+            "source": {
+              "type": "string"
+            },
+            "target": {
+              "type": "string"
+            },
+            "relationship_type": {
+              "type": "string",
+              "enum": [
+                "owns",
+                "belongs_to",
+                "references",
+                "maps_to",
+                "reads",
+                "writes",
+                "calls",
+                "publishes",
+                "listens_to",
+                "extends",
+                "implements"
+              ]
+            },
+            "cardinality": {
+              "type": "string",
+              "enum": [
+                "one_to_one",
+                "one_to_many",
+                "many_to_one",
+                "many_to_many",
+                "unknown"
+              ]
+            },
+            "via_fields": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "evidence": {
+              "type": "string"
+            },
+            "source_nodes": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      },
+      "source_nodes": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

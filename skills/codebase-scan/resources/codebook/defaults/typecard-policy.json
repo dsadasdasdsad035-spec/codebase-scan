@@ -1,0 +1,131 @@
+{
+  "version": "1.0",
+  "description": "TypeCard 计划器默认策略。注解和装饰器仍从 Codegraph 节点、decorates 关系或源码片段动态读取；本文件只负责解释这些事实并决定 TypeCard 生成动作。",
+  "annotation_sources": {
+    "priority": [
+      "node.decorators",
+      "decorates_edges",
+      "source_slice_fallback"
+    ],
+    "source_slice_fallback": {
+      "enabled": true,
+      "scope": "current_node_only",
+      "reason": "仅当结构化注解缺失时读取当前节点源码片段兜底，不做全库扫描。"
+    }
+  },
+  "normalization": {
+    "strip_prefixes": [
+      "@",
+      "org.springframework.stereotype.",
+      "org.springframework.web.bind.annotation.",
+      "org.springframework.beans.factory.annotation.",
+      "javax.annotation.",
+      "jakarta.annotation.",
+      "javax.persistence.",
+      "jakarta.persistence.",
+      "com.baomidou.mybatisplus.annotation.",
+      "org.apache.ibatis.annotations."
+    ],
+    "strip_arguments": true,
+    "case_sensitive": false
+  },
+  "kind_actions": {
+    "metadata_only": [
+      "field",
+      "property",
+      "constant",
+      "enum",
+      "enum_member",
+      "type_alias"
+    ],
+    "container_summary": [
+      "class",
+      "interface",
+      "struct",
+      "trait",
+      "protocol"
+    ],
+    "deep_dive": [
+      "method",
+      "function",
+      "route",
+      "component"
+    ],
+    "evidence_only": [
+      "file",
+      "module",
+      "namespace",
+      "parameter",
+      "import",
+      "export",
+      "variable"
+    ]
+  },
+  "decorator_rules": [
+    {
+      "annotations": ["RestController", "Controller"],
+      "node_kinds": ["class"],
+      "semantic_kind": "controller",
+      "action": "container_summary",
+      "child_method_action": "deep_dive_route_methods"
+    },
+    {
+      "annotations": ["Service", "Component"],
+      "node_kinds": ["class"],
+      "semantic_kind": "service",
+      "action": "container_summary",
+      "child_method_action": "deep_dive_public_business_methods"
+    },
+    {
+      "annotations": ["Repository", "Mapper"],
+      "node_kinds": ["class", "interface"],
+      "semantic_kind": "repository",
+      "action": "container_summary",
+      "child_method_action": "deep_dive_public_business_methods"
+    },
+    {
+      "annotations": ["Entity", "Table", "TableName"],
+      "node_kinds": ["class"],
+      "semantic_kind": "entity",
+      "action": "metadata_only",
+      "child_field_action": "metadata_only"
+    },
+    {
+      "annotations": ["Autowired", "Inject", "Resource"],
+      "node_kinds": ["field", "property"],
+      "semantic_kind": "dependency",
+      "action": "metadata_only"
+    },
+    {
+      "annotations": ["GetMapping", "PostMapping", "PutMapping", "DeleteMapping", "PatchMapping", "RequestMapping"],
+      "node_kinds": ["method", "function", "route"],
+      "semantic_kind": "api_operation",
+      "action": "deep_dive"
+    }
+  ],
+  "method_selection": {
+    "deep_dive_public_only": true,
+    "skip_name_regex": "^(get|set|is|toString|equals|hashCode|canEqual)$",
+    "deep_dive_if_decorated": true,
+    "deep_dive_if_call_edge_exists": true
+  },
+  "metadata_only_generation": {
+    "requires_source_nodes": true,
+    "include_signature": true,
+    "include_decorators": true,
+    "include_parent_container": true,
+    "callers_callees": false,
+    "llm_required": false
+  },
+  "batch_generation": {
+    "enabled": true,
+    "batch_size": 20,
+    "failure_policy": "bisect_then_single",
+    "preserve_source_nodes": true
+  },
+  "unknown_annotation_policy": {
+    "semantic_kind": "unknown_decorated",
+    "action": "evidence_only",
+    "reason": "未知注解只作为证据保留，不自动猜测业务语义。"
+  }
+}

@@ -1,0 +1,129 @@
+{
+  "version": "1.0",
+  "description": "将 codegraph 原生 kind、路径和命名特征映射为文档生成使用的语义 kind。",
+  "rules": [
+    {
+      "semantic_kind": "component",
+      "native_kind": "component",
+      "path_regex": "(^|/)(components|widgets)/",
+      "name_regex": ".*"
+    },
+    {
+      "semantic_kind": "page",
+      "native_kind": "component",
+      "path_regex": "(^|/)(pages|views|screens)/",
+      "name_regex": ".*"
+    },
+    {
+      "semantic_kind": "store",
+      "native_kind": "variable",
+      "path_regex": "(^|/)(store|stores|state)/",
+      "name_regex": ".*"
+    },
+    {
+      "semantic_kind": "hook",
+      "native_kind": "function",
+      "path_regex": "(^|/)(hooks|composables)/",
+      "name_regex": "^(use|createUse).*"
+    },
+    {
+      "semantic_kind": "api",
+      "native_kind": "function",
+      "path_regex": "(^|/)(api|apis|services|clients|request|requests|http|fetch|network)/",
+      "name_regex": ".*"
+    },
+    {
+      "semantic_kind": "controller",
+      "native_kind": "class",
+      "decorator_regex": "(^|\\.)(RestController|Controller)$",
+      "path_regex": ".*",
+      "name_regex": ".*(Controller|Resource)$"
+    },
+    {
+      "semantic_kind": "service",
+      "native_kind": "class",
+      "decorator_regex": "(^|\\.)(Service|Component)$",
+      "path_regex": ".*",
+      "name_regex": ".*(Service|ServiceImpl|Manager)$"
+    },
+    {
+      "semantic_kind": "repository",
+      "native_kind": "interface",
+      "decorator_regex": "(^|\\.)(Repository|Mapper)$",
+      "path_regex": ".*",
+      "name_regex": ".*(Repository|Mapper|Dao|DAO)$"
+    },
+    {
+      "semantic_kind": "repository",
+      "native_kind": "interface",
+      "path_regex": "(^|/)dao/",
+      "name_regex": ".*(Repository|Mapper|Dao|DAO)$"
+    },
+    {
+      "semantic_kind": "repository",
+      "native_kind": "class",
+      "decorator_regex": "(^|\\.)(Repository|Mapper)$",
+      "path_regex": ".*",
+      "name_regex": ".*(Repository|Mapper|Dao|DAO)$"
+    },
+    {
+      "semantic_kind": "repository",
+      "native_kind": "class",
+      "path_regex": "(^|/)dao/",
+      "name_regex": ".*(Repository|Mapper|Dao|DAO)$"
+    },
+    {
+      "semantic_kind": "entity",
+      "native_kind": "class",
+      "decorator_regex": "(^|\\.)(Entity|Table|TableName)$",
+      "path_regex": ".*",
+      "name_regex": ".*(Entity|DO|PO|Model)$"
+    },
+    {
+      "semantic_kind": "dependency",
+      "native_kind": "field",
+      "decorator_regex": "(^|\\.)(Autowired|Inject|Resource)$",
+      "path_regex": ".*",
+      "name_regex": ".*"
+    },
+    {
+      "semantic_kind": "dependency",
+      "native_kind": "property",
+      "decorator_regex": "(^|\\.)(Autowired|Inject|Resource)$",
+      "path_regex": ".*",
+      "name_regex": ".*"
+    },
+    {
+      "semantic_kind": "enum",
+      "native_kind": "enum",
+      "path_regex": ".*",
+      "name_regex": ".*"
+    },
+    {
+      "semantic_kind": "data_field",
+      "native_kind": "field",
+      "path_regex": ".*",
+      "name_regex": ".*"
+    },
+    {
+      "semantic_kind": "api_operation",
+      "native_kind": "method",
+      "decorator_regex": "(^|\\.)(GetMapping|PostMapping|PutMapping|DeleteMapping|PatchMapping|RequestMapping)$",
+      "path_regex": ".*",
+      "name_regex": ".*"
+    },
+    {
+      "semantic_kind": "route",
+      "native_kind": "route",
+      "path_regex": ".*",
+      "name_regex": ".*"
+    },
+    {
+      "semantic_kind": "function",
+      "native_kind": "function",
+      "path_regex": ".*",
+      "name_regex": ".*"
+    }
+  ],
+  "fallback_semantic_kind": "function"
+}
